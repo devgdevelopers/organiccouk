@@ -4,6 +4,7 @@
   height: 300px;
   border: 1px solid #f1f1f1;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  z-index: 0;
 }
 
 /* This container is needed to position the front and back side */
@@ -45,4 +46,46 @@
   background-color: dodgerblue;
   color: white;
   transform: rotateY(180deg);
+}
+.footer-section {
+  border-top: 1px solid #388521;
+  margin-top: 100px;
+}
+.text-purple {
+  color: #2e2e84;
+}
+.text-green {
+  color: #388521;
+}
+.logo-image {
+  border-radius: 50%;
+}
+.bg-green {
+  background-color: #388521;
+}
+
+.bg-purple {
+  background-color: #2e2e84;
+}
+.footer-section {
+  overflow: hidden;
+}
+.footer-section div ul a {
+  font-size: 16px;
+  color: white;
+  font-weight: 300;
+}
+.footer-section div ul a:hover {
+  transform: scale(1.1);
+}
+
+header{
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+
+ul.gap-4.h-full.flex-row.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\[justify\=start\]\:flex-grow.data-\[justify\=start\]\:basis-0.data-\[justify\=center\]\:justify-center.data-\[justify\=end\]\:justify-end.data-\[justify\=end\]\:flex-grow.data-\[justify\=end\]\:basis-0.sm\:hidden.flex.justify-end.align-bottom {
+  justify-content: end;
 }

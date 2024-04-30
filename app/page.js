@@ -140,15 +140,15 @@ export default function Home() {
           </div>
         </section>
 
-        <section>
+        {/* <section>
           <h1 className="text-2xl font-bold my-10 text-center">
             Featured Solutions
           </h1>
-        </section>
+        </section> */}
 
         <section className="container">
           <div>
-            <h1 className="text-2xl font-bold my-10 text-center">
+            <h1 className="text-2xl font-bold my-10 text-center text-purple">
               Featured Products
             </h1>
           </div>
@@ -169,7 +169,7 @@ export default function Home() {
                   <p>We love that guy</p>
                 </div>
                 <div className="flip-card-back rounded-xl p-5">
-                  <button>Learn More</button>
+                  <button className="text-green">Learn More</button>
                 </div>
               </div>
             </div>
@@ -236,7 +236,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-black w-screen  p-24 mt-10">
+        <section className="bg-black p-2  sm:p-24 mt-10">
           <div className="container bg-white mx-auto p-10">
             <h1 className="text-2xl font-bold my-10 text-center">
               News and Blogs
@@ -258,15 +258,9 @@ export default function Home() {
           </div>
         </section>
 
-        <div>
-          <Card />
-          <h1>here i am </h1>
-        </div>
+   
       </main>
-      <p>
-        Copyright © 2024 Material Tailwind by Creative Tim. Made with ❤️ for a
-        better web.
-      </p>
+     
     </>
   );
 }
