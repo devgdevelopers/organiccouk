@@ -22,7 +22,7 @@ const BlogCard = ({ title, subtitle, desc, cardImage, cardLink }) => {
             </div>
             <div className="flex justify-start align-bottom">
               <a
-                className="bg-green text-white p-2 hover:scale-100"
+                className="bg-green news-blog-btn text-white p-2 hover:scale-100"
                 href={cardLink}
                 target="_blank"
                 rel="noopener noreferrer"
