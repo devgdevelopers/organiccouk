@@ -135,7 +135,7 @@ export default function Home() {
                   title={lala.title}
                   subtitle={lala.subtitle}
                   desc={lala.desc}
-                  cardImage={lala.cardImage}
+                  bgClass={lala.bgClass}
                   cardLink={lala.cardLink}
                 />
               ))}

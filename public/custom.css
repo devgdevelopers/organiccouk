@@ -38,10 +38,7 @@
 .flip-card-front {
 
   color: white;
-  background-image: url('./assets/ecohero-loctroi-1.jpg');
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+ 
   /* filter: blur(1px); */
   z-index: 1000;
  display: flex;
@@ -51,6 +48,27 @@ justify-content: center;
  border-radius: 8px;
   
 }
+
+
+.product-card1{
+  background-image: url('./assets/ecohero-loctroi-1.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.product-card2{
+  background-image: url('./assets/ecodryer.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.product-card3{
+  background-image: url('./assets/ecoenergy-banner.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 
 .flip-card-front::before {
 
@@ -167,8 +185,6 @@ ul.gap-4.h-full.flex-row.flex-nowrap.items-center.data-\[justify\=start\]\:justi
   background-size: cover;
   background-position: center center;
 }
-
-
 
 .news-main-div{
   display: flex;

@@ -1,19 +1,12 @@
 import React from "react";
 import Image from "next/image";
 
-export default function Card({ title, subtitle, desc, cardImage, cardLink }) {
+export default function Card({ title, subtitle, desc, bgClass, cardLink }) {
   return (
     <div className="flip-card rounded-xl w">
       <div className="flip-card-inner rounded-xl bg-white">
-        <div className="flip-card-front rounded-xl bg-white">
-          {/* <Image
-            className="w-full  rounded-t-xl"
-            src={cardImage}
-            width={100}
-            height={400}
-            alt="Avatar"
-            unoptimized
-          ></Image> */}
+        <div className={`flip-card-front rounded-xl bg-white ${bgClass}`}>
+        
           <h1 className="text-xl z-100">{title}</h1>
           <p>{subtitle}</p>
         
