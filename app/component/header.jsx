@@ -44,7 +44,6 @@ link: "/contact-us",
 return (
 <>
   <header className="sticky top-0 left-0 z-100">
-
     <Navbar className="hidden sm:flex py-6 bg-white">
       <NavbarContent className="sm:flex justify-between">
         <NavbarBrand>

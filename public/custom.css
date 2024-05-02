@@ -1,13 +1,12 @@
 .flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 300px;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  background-color:  transparent;
+  width: 350px;
+  height: 370px;
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px; 
   z-index: 0;
 }
 
-/* This container is needed to position the front and back side */
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -17,40 +16,77 @@
   transform-style: preserve-3d;
 }
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
+
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
-  /* opacity: 0.5; */
   cursor: pointer;
 }
 
-/* Position the front and back side */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+  -webkit-backface-visibility: hidden; 
   cursor: pointer;
   backface-visibility: hidden;
 }
 
-/* Style the front side (fallback if image is missing) */
+.tilted-item{
+  transform: rotate(5deg);
+}
 .flip-card-front {
-  background-color: #bbb;
-  color: black;
+
+  color: white;
+  background-image: url('./assets/ecohero-loctroi-1.jpg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* filter: blur(1px); */
+  z-index: 1000;
+ display: flex;
+ flex-direction: column;
+justify-content: center;
+ align-items: center;
+ border-radius: 8px;
+  
 }
 
-/* Style the back side */
+.flip-card-front::before {
+
+  content: ""; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.719);
+  opacity: 0.6; 
+ border-radius: 8px;
+
+}
+
+.flip-card-front h1 , .flip-card-front p {
+  z-index: 1001; /* Higher than .flip-card-front z-index */
+}
+.flip-card-front h1 , .flip-card-front p {
+
+  z-index: 100px;
+}
 .flip-card-back {
-  background-color: dodgerblue;
-  color: white;
+  background-color:  white;
+  color: black;
   transform: rotateY(180deg);
+ 
 }
 .footer-section {
   border-top: 1px solid #388521;
-  margin-top: 100px;
 }
+
+
+/* .blog-card{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+} */
 .text-purple {
   color: #2e2e84;
 }
@@ -63,7 +99,15 @@
 .bg-green {
   background-color: #388521;
 }
-
+.bg-dark-purple {
+  background-color: #0c0c4c;
+}
+.bg-purple-light{
+  background-color: #2e2e8414;
+}
+.bg-green-light {
+  background-color: #1969011c;
+}
 .bg-purple {
   background-color: #2e2e84;
 }
@@ -79,7 +123,7 @@
   transform: scale(1.1);
 }
 
-header{
+header {
   position: sticky;
   top: 0;
   left: 0;

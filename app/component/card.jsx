@@ -1,18 +1,32 @@
 import React from "react";
+import Image from "next/image";
 
-export async function getServerSideProps() {
-  // Fetch data from external API
-  const res = await fetch("/data.json");
-  const repo = await res.json();
-  console.log(repo);
-  // Pass data to the page via props
-  return { props: { repo } };
-}
-
-export default function Card({ repo }) {
+export default function Card({ title, subtitle, desc, cardImage, cardLink }) {
   return (
-    <main>
-      <p>{repo?.name}</p>
-    </main>
+    <div className="flip-card rounded-xl w">
+      <div className="flip-card-inner rounded-xl bg-white">
+        <div className="flip-card-front rounded-xl bg-white">
+          {/* <Image
+            className="w-full  rounded-t-xl"
+            src={cardImage}
+            width={100}
+            height={400}
+            alt="Avatar"
+            unoptimized
+          ></Image> */}
+          <h1 className="text-xl z-100">{title}</h1>
+          <p>{subtitle}</p>
+        
+        </div>
+        <div className="flip-card-back rounded-xl p-5">
+          <p className=" mb-5 text-justify ">
+            {desc}
+          </p>
+          <a className="text-white bg-black p-2 mt-4" href={cardLink} target="_blank" rel="noopener noreferrer">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }

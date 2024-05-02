@@ -25,17 +25,17 @@ const footer = () => {
             <h2 className="text-lg text-green mt-6 md:mt-0">Product</h2>
             <ul className="flex flex-col gap-y-3 ">
               <Link href="/products/ecohero">ECOHero</Link>
-              <Link href="/products/ecohero">ECODryer</Link>
-              <Link href="/products/ecohero">ECOEnergy</Link>
+              <Link href="/products/ecodryer">ECODryer</Link>
+              <Link href="/products/ecoenergy">ECOEnergy</Link>
             </ul>
           </div>
           <div className="flex flex-col gap-y-3">
-            <h3 className="text-lg text-green mt-6 md:mt-0">Service</h3>
+            <h3 className="text-lg text-green mt-6 md:mt-0">Services</h3>
             <ul className="flex flex-col gap-y-3">
-              <Link href="/products/ecohero">Odour Control</Link>
-              <Link href="/products/ecohero">Automation</Link>
-              <Link href="/products/ecohero">Net Zero</Link>
-              <Link href="/products/ecohero">Consultancy</Link>
+              <Link href="/services/odour-control">Odour Control</Link>
+              <Link href="/services/automation">Automation</Link>
+              <Link href="/services/net-zero">Net Zero</Link>
+              <Link href="/services/consultancy">Consultancy</Link>
             </ul>
           </div>
           <div className="flex flex-col gap-y-3">
@@ -46,12 +46,15 @@ const footer = () => {
             </ul>
           </div>
         </div>
-
-      
       </div>
-      <div className="text-center bg-green w-full py-3 ">
-          <p className="text-white">@copyright 2024</p>
-        </div>
+      <div className="text-center bg-dark-purple w-full py-3 flex justify-evenly align-center">
+        <p className="text-white text-sm">
+          Copyright ©Organicco Ltd. All rights reserved | 2024
+        </p>
+        <a className="text-white text-sm" href="/privacy-policy">
+          Privacy Policy
+        </a>
+      </div>
     </section>
   );
 };
