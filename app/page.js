@@ -78,29 +78,29 @@ export default function Home() {
         </section>
 
         {/* below banner */}
-        <section className="w-full mx-auto grid justify-center flex-auto gap-5 p-6  t">
-          <div className="container mx-auto text-justify max-w-[1154px] pt-7 pb-7">
-            <p className=" text-xl pb-4 text-green">
+        <section className="w-full mx-auto grid justify-center flex-auto gap-5 p-12 ">
+          <div className="container mx-auto max-w-[1154px] pb-7">
+            <p className=" text-2xl pb-4 text-purple font-semibold mb-4">
               The most advanced organic waste and food waste recycling solution
               in the world
             </p>
-            <p className="sm:text-justify">
+            <p className="sm:text-justify mb-4">
               Organicco is an innovative and modern biotechnology company
               specialising in
-              <i> organic and food waste recycling</i>,
-              <i className="text-brown"> waste to energy</i>,
-              <i> organic fertiliser</i>, and
-              <i> sustainable engineering consultancy </i>
+              <i className="font-bold "> organic and food waste recycling</i>,
+              <i className="font-bold "> waste to energy</i>,
+              <i className="font-bold "> organic fertiliser</i>, and
+              <i className="font-bold "> sustainable engineering consultancy </i>
               services.
             </p>
 
-            <p className="m-0 p-0">
+            <p className="m-0 p-0 mb-4">
               Our business offers affordable technology for solving escalating
               food security problems. The main focus concentrates on
               decarbonisation whilst reducing costs and providing environmental
               benefits for all.
             </p>
-            <p>
+            <p className="mb-4">
               This has been achieved with the continuous development of
               Organicco’s closed-loop solution where we waste nothing. Depending
               on the input material our technologies convert organic waste into
@@ -109,7 +109,7 @@ export default function Home() {
               compressed CO2 i.e., the input material is recycled into a
               commodity with financial value.
             </p>
-            <h3 className="text-xl my-4 text-green">Empowering Businesses</h3>
+            <h3 className="text-xl my-4 text-purple">Empowering Businesses</h3>
             <p>
               Organicco provides solutions for empowering businesses to divert
               waste away from expensive traditional disposal options whilst
@@ -121,7 +121,7 @@ export default function Home() {
         </section>
 
         {/* featured products */}
-        <section className="w-full bg-purple-light py-20">
+        <section className="w-full bg-purple-light py-10">
           <div className="container mx-auto">
             <div>
               <h1 className="text-xl md:text-2xl font-bold mb-10 text-center text-purple">
@@ -144,8 +144,8 @@ export default function Home() {
         </section>
 
         {/* video section */}
-        <section className="container">
-          <h1 className="text-xl md:text-2xl font-bold my-10 text-center text-purple">
+        <section className="container py-12">
+          <h1 className="text-xl md:text-2xl font-bold  text-center text-purple mb-6">
             Organicco Presentation
           </h1>
           <div className="mx-auto">
@@ -172,7 +172,7 @@ export default function Home() {
 
         {/* featured services */}
         <section className="w-full sm:py-20 p-6 mx-auto">
-          <div className="container mx-auto ">
+          <div className="container max-w-[1154px] mx-auto ">
             <div>
               <h1 className="text-xl md:text-2xl  font-bold mb-4 text-center text-purple">
                 Featured Solutions
@@ -257,9 +257,7 @@ export default function Home() {
                   aria-label="Accordion 1"
                   title="What is organicco?"
                   onClick={toggleAccordion}
-                  className={`p-2 outline-none ${
-                    isActive ? "bg-green-200" : ""
-                  }`}
+                  className={` outline-none `}
                 >
                   {defaultContent}
                 </AccordionItem>
@@ -267,7 +265,7 @@ export default function Home() {
                   key="2"
                   aria-label="Accordion 2"
                   title="Who we Are?"
-                  className="p-2"
+                  className=""
                 >
                   {defaultContent}
                 </AccordionItem>
@@ -275,7 +273,7 @@ export default function Home() {
                   key="3"
                   aria-label="Accordion 3"
                   title="What we Do?"
-                  className="p-2"
+                  className=""
                 >
                   {defaultContent}
                 </AccordionItem>
@@ -283,7 +281,7 @@ export default function Home() {
                   key="4"
                   aria-label="Accordion 4"
                   title="How we Do?"
-                  className="p-2"
+                  className=""
                 >
                   {defaultContent}
                 </AccordionItem>
