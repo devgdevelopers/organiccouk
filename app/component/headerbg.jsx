@@ -19,7 +19,7 @@ import Image from "next/image";
 const headerbg = () => {
   return (
     <div>
-        <Navbar className=" hidden sm:flex flex-col-3 justify-center py-5  absolute top-0 bg-white " shouldHideOnScroll>
+        <Navbar className=" hidden sm:flex flex-col-3 justify-center py-5  absolute top-0 bg-white header-bg " shouldHideOnScroll>
         <NavbarContent className="text-white  flex justify-start">
           <NavbarBrand className="flex justify-start">
             <Link href="http://localhost:3000/">

@@ -225,6 +225,9 @@
   color: black;
  font-weight: 500;
 }
+.header-bg {
+  z-index: 99999;
+}
 header{
  
   width: 100%;
