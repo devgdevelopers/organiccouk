@@ -1,26 +1,46 @@
 "use client";
+import React, { useState, useEffect } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./component/header";
-import TopHeader from "./component/topheader";
+import HeaderBg from "./component/headerbg";
 import Footer from "./component/footer";
 import { NextUIProvider } from "@nextui-org/react";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
+  const [showHeaderBg, setShowHeaderBg] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the user has scrolled beyond 100vh
+      if (window.scrollY > window.innerHeight) {
+        setShowHeaderBg(true);
+      } else {
+        setShowHeaderBg(false);
+      }
+    };
+
+    // Attach the scroll event listener when the component mounts
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <html lang="en">
-        <head>
+      <head>
         <link rel="stylesheet" href="/custom.css" />
-        </head>
+      </head>
       <body className={inter.className}>
         <NextUIProvider>
-        
-          
-        
-            <Header />
-         
-          {children}  
+          <Header />
+          {showHeaderBg && <HeaderBg />}
+          {children}
           <footer>
             <Footer />
           </footer>
@@ -29,5 +49,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
-// g1cihgodqzvgf6t57shq0un9deqo2yrk7kt8g3w3mzdr151g

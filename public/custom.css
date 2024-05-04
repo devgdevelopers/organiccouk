@@ -221,6 +221,10 @@
 .link-div-head a{
   color: white;
 }
+.link-div-head-bg a{
+  color: black;
+ font-weight: 500;
+}
 header{
  
   width: 100%;
