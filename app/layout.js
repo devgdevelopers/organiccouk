@@ -2,7 +2,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./component/header";
-import TopHeader from "./component/topheader"
+import TopHeader from "./component/topheader";
 import Footer from "./component/footer";
 import { NextUIProvider } from "@nextui-org/react";
 const inter = Inter({ subsets: ["latin"] });

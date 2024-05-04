@@ -1,9 +1,9 @@
 .flip-card {
-  background-color:  transparent;
+  background-color: transparent;
   width: 350px;
   height: 370px;
   /* border: 1px solid #f1f1f1; */
-  perspective: 1000px; 
+  perspective: 1000px;
   z-index: 0;
 }
 
@@ -16,7 +16,6 @@
   transform-style: preserve-3d;
 }
 
-
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
   cursor: pointer;
@@ -27,83 +26,93 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; 
+  -webkit-backface-visibility: hidden;
   cursor: pointer;
   backface-visibility: hidden;
 }
 
-.tilted-item{
+.tilted-item {
   transform: rotate(5deg);
 }
 .flip-card-front {
-
   color: white;
- 
+
   /* filter: blur(1px); */
   z-index: 1000;
- display: flex;
- flex-direction: column;
-justify-content: center;
- align-items: center;
- border-radius: 8px;
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
 }
 
-
-.product-card1{
-  background-image: url('./assets/ecohero-loctroi-1.jpg');
+.product-card1 {
+  background-image: url("./assets/ecohero-loctroi-1.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.product-card2{
-  background-image: url('./assets/ecodryer.jpg');
+.product-card2 {
+  background-image: url("./assets/ecodryer.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.product-card3{
-  background-image: url('./assets/ecoenergy-banner.jpg');
+.product-card3 {
+  background-image: url("./assets/ecoenergy-banner.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 
 .flip-card-front::before {
-
-  content: ""; 
-  position: absolute; 
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%; 
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.719);
-  opacity: 0.6; 
- border-radius: 8px;
-
+  opacity: 0.6;
+  border-radius: 8px;
+}
+.link-div-head a {
+  color: white;
 }
 
-.flip-card-front h1 , .flip-card-front p {
+.flip-card-front h1,
+.flip-card-front p {
   z-index: 1001; /* Higher than .flip-card-front z-index */
 }
-.flip-card-front h1 , .flip-card-front p {
-
+.flip-card-front h1,
+.flip-card-front p {
   z-index: 100px;
 }
 .flip-card-back {
-  background-color:  white;
+  background-color: white;
   color: black;
   transform: rotateY(180deg);
- 
 }
 .footer-section {
   border-top: 1px solid #388521;
 }
 
+.blog-card {
+  overflow: hidden;
+}
 
-.blog-card{
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.blog-card:hover .blog-image {
+  transition: 2s;
+  transform: scale(1.1);
+}
+
+.blog-card:hover .straight-line-icon {
+  transition: 3s;
+  display: none !important;
+}
+.blog-card:hover .arrow-right-icon {
+  transition: 3s;
+  display: block !important;
 }
 .text-purple {
   color: #2e2e84;
@@ -120,14 +129,14 @@ justify-content: center;
 .bg-dark-purple {
   background-color: #0c0c4c;
 }
-.bg-purple-light{
+.bg-purple-light {
   background-color: #2e2e8414;
 }
 .bg-green-light {
   background-color: #1969011c;
 }
 .bg-purple {
-  background-color: #2e2e84;
+  background-color: #2e2e85;
 }
 .footer-section {
   overflow: hidden;
@@ -141,19 +150,13 @@ justify-content: center;
   transform: scale(1.1);
 }
 
-header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 999;
-}
+/* 
 
-ul.gap-4.h-full.flex-row.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\[justify\=start\]\:flex-grow.data-\[justify\=start\]\:basis-0.data-\[justify\=center\]\:justify-center.data-\[justify\=end\]\:justify-end.data-\[justify\=end\]\:flex-grow.data-\[justify\=end\]\:basis-0.sm\:hidden.flex.justify-end.align-bottom {
-  justify-content: end;
-}
-.main-hero-slide{
+
+
+.main-hero-slide {
   z-index: 1000;
- border-radius: 8px;
+  border-radius: 8px;
 }
 /* .main-hero-slide::before{
   content: ""; 
@@ -167,40 +170,23 @@ ul.gap-4.h-full.flex-row.flex-nowrap.items-center.data-\[justify\=start\]\:justi
  border-radius: 8px;
 } */
 
-.hero-banner1{
-  background-image: url('./assets/banner1.jpg') ;
+.hero-banner1 {
+  background-image: url("./assets/banner1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
-.hero-banner2{
-  background-image: url('./assets/banner2.jpg') ;
+.hero-banner2 {
+  background-image: url("./assets/banner2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
-.hero-banner3{
-  background-image: url('./assets/banner3.jpg') ;
+.hero-banner3 {
+  background-image: url("./assets/banner3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
-}
-
-.news-main-div{
-  display: flex;
-  justify-content: center;
-}
-.news-text-div{
-width: 35%;
-}
-
-.news-slide-div{
-  width: 65%;
-}
-
-
-.news-car-inner-div{
-height: 600px;
 }
 
 .news-blog-btn {
@@ -209,22 +195,54 @@ height: 600px;
   border-radius: 5px;
   transition: 0.5s;
 }
-.news-blog-btn:hover{
+.news-blog-btn:hover {
   background-color: #2e2e84;
-
-
 }
 
-@media (max-width: 821px){
-  .news-main-div{
+.get-q-form-home {
+  width: 90%;
+}
+.main-nav {
+  background: none;
+  backdrop-filter: none;
+}
+.top-header {
+  background: none;
+  backdrop-filter: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+.main-banner-img {
+  position: relative;
+  z-index: 1;
+}
+.main-banner-img::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0 0 0 / 17%);
+  filter: blur(5px);
+  z-index: 1;
+}
+
+@media (max-width: 821px) {
+  .news-main-div {
     flex-direction: column;
   }
-  .news-text-div{
+  .news-text-div {
     width: 100% !important;
-    }
-    
-    .news-slide-div{
-      width: 100% !important;
-    }
-    
+  }
+
+  .news-slide-div {
+    width: 100% !important;
+  }
+}
+
+header.z-40.flex.px-6.gap-4.w-full.flex-row.relative.flex-nowrap.items-center.justify-between.h-\[var\(--navbar-height\)\].max-w-\[1024px\] {
+  width: 100% !important;
+  max-width: 90%;
 }
