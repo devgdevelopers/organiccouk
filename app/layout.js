@@ -10,10 +10,13 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+        <head>
+        <link rel="stylesheet" href="/custom.css" />
+        </head>
       <body className={inter.className}>
         <NextUIProvider>
           <header>
-            <link rel="stylesheet" href="/custom.css" />
+          
             <TopHeader />
             <Header />
           </header>

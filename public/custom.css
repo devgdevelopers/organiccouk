@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+  font-family: "Montserrat", sans-serif;
+}
 .flip-card {
   background-color: transparent;
   width: 350px;
@@ -242,6 +247,25 @@
   }
 }
 
+.image-section{
+  position: relative;
+  z-index: 1;
+  background-image: url(./assets/sustainable-development-goals-still-life.jpg);
+  background-position: bottom center ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.image-section::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  filter: blur(5px);
+  z-index: 1;
+}
 header.z-40.flex.px-6.gap-4.w-full.flex-row.relative.flex-nowrap.items-center.justify-between.h-\[var\(--navbar-height\)\].max-w-\[1024px\] {
   width: 100% !important;
   max-width: 90%;
