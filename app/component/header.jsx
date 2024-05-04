@@ -45,11 +45,13 @@ export default function page() {
 
   return (
     <>
-      <Navbar className=" hidden sm:flex flex-col-3 justify-center py-4  sticky top-0 bg-white main-nav">
-        <NavbarContent className="text-black flex justify-start">
+    <header className="sticky top-0 left-0 z-40">
+    <Navbar className=" hidden sm:flex flex-col-3 justify-center py-5  absolute top-0 bg-transparent main-nav" shouldHideOnScroll>
+        <NavbarContent className="text-white  flex justify-start">
           <NavbarBrand className="flex justify-start">
             <Link href="http://localhost:3000/">
               <Image
+              className="bg-white rounded-xl"
                 src="/assets/Organicco_no_bg.png"
                 width={100}
                 height={100}
@@ -59,34 +61,34 @@ export default function page() {
           </NavbarBrand>
         </NavbarContent>
 
-        <NavbarContent className="flex gap-5 justify-center link-div-head">
+        <NavbarContent className="flex text-white gap-5 justify-center link-div-head">
           <NavbarItem>
-            <Link color="foreground" href="/">
+            <Link  href="/">
               Home
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link href="/products" color="foreground">
+            <Link href="/products" >
               Products
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="/services">
+            <Link  href="/services">
               Services
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="/about">
+            <Link  href="/about">
               About
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="/news">
+            <Link  href="/news">
               News
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="/contact-us">
+            <Link  href="/contact-us">
               Contact
             </Link>
           </NavbarItem>
@@ -95,17 +97,17 @@ export default function page() {
         <NavbarContent className="flex gap-5 justify-end">
           <Link
             href="mailto:enquiry@organicco.uk"
-            className="text-black text-sm"
+            className="text-white text-sm"
           >
             <EmailIcon className="text-sm" /> enquiry@organicco.uk
           </Link>
-          <Link href="tel:+44 (0)20 8133 3129" className="text-black text-sm">
+          <Link href="tel:+44 (0)20 8133 3129" className="text-white text-sm">
             <PhoneIcon className="text-sm" /> +44 (0)20 8133 3129
           </Link>
         </NavbarContent>
       </Navbar>
 
-      <Navbar className="sticky sm:hidden py-4 flex justify-end">
+      <Navbar className="sticky sm:hidden py-4 flex bg-white justify-end z-[1000] ">
         <NavbarContent className=" ">
           <NavbarBrand>
             <Image
@@ -117,7 +119,7 @@ export default function page() {
           </NavbarBrand>
         </NavbarContent>
 
-        <NavbarMenu className="pt-36">
+        <NavbarMenu className="pt-36 h-screen bg-white">
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link className="w-full" href={item.link} size="lg">
@@ -143,6 +145,8 @@ export default function page() {
         </NavbarContent>
         
       </Navbar>
+    </header>
+    
     </>
   );
 }

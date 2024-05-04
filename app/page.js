@@ -1,7 +1,9 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import ReactPlayer from "react-player";
+
 import {
   BlogscardDataArray,
   servicescardDataArray,
@@ -10,6 +12,7 @@ import {
 } from "../public/assets/data";
 import Image from "next/image";
 import Card from "./component/card";
+import DoneAllIcon from "@mui/icons-material/DoneAll";
 import BlogCard from "./component/BlogCard";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Slider from "react-slick";
@@ -23,6 +26,19 @@ export default function Home() {
     setActiveItem(key === activeItem ? null : key);
   };
 
+  const playerRef = useRef(null);
+
+  const handleIconClick = (e) => {
+    e.stopPropagation(); // Stop the click event from reaching the video player
+    playVideo(); // Call function to play the video
+  };
+
+  const playVideo = () => {
+    if (playerRef.current) {
+      playerRef.current.seekTo(0); // Start the video from the beginning
+      playerRef.current.getInternalPlayer("video").play(); // Play the video
+    }
+  };
   useEffect(() => {
     AOS.init({
       duration: 500,
@@ -100,10 +116,10 @@ export default function Home() {
       </Slider>
     </section> */}
 
-        <section className="w-full main-banner-img ">
+        <section className="w-full h-full ">
           <Image
-            className="w-full sm:h-[90vh] "
-            src="/assets/banner2.jpg"
+            className="w-full h-screen banner-image-section"
+            src="/001.jpg"
             height={100}
             width={100}
             unoptimized
@@ -163,7 +179,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="get-q-form-home   bg-white pt-2 pb-5 mx-auto">
-                <form className="bg-white rounded-xl  sm:-mt-32 shadow-lg pt-2 pb-6 px-5 mx-auto">
+                <form className="bg-white rounded-xl  md:-mt-32 shadow-lg pt-2 pb-6 px-5 mx-auto">
                   <p className="text-lg py-6  text-green">send a message</p>
                   <h1 className="text-2xl font-bold my-3 text-purple">
                     Request a call back
@@ -219,7 +235,7 @@ export default function Home() {
         </div>
 
         {/* featured products */}
-        <div className="z-50 my-20" >
+        <div className="z-50 my-20">
           <section className="w-full ">
             <div className="container mx-auto">
               <div>
@@ -227,7 +243,10 @@ export default function Home() {
                   Featured Products
                 </h1>
               </div>
-              <div data-aos="zoom-in" className="flex flex-row container gap-10 flex-wrap align-center justify-center flex-auto">
+              <div
+                data-aos="zoom-in"
+                className="flex flex-row container gap-10 flex-wrap align-center justify-center flex-auto"
+              >
                 {productcardDataArray.map((lala, id) => (
                   <Card
                     key={id}
@@ -247,7 +266,7 @@ export default function Home() {
         <div className="z-50 h-96 w-full mx-auto my-20">
           <section className="image-section h-[50vh] w-full flex justify-center">
             <div
-              className="flex justify-center z-50 container px-40"
+              className="flex justify-center z-50 container px-10 sm:px-40"
               data-aos="fade-up"
             >
               <p className="text-white text-2xl font-bold text-center my-auto">
@@ -260,7 +279,7 @@ export default function Home() {
         </div>
 
         {/* video section */}
-        <div className="z-50 relative my-20 w-full mx-auto" data-aos="fade-in">
+        <div className="z-50 relative w-full mx-auto my-20" data-aos="fade-in">
           <section className="container mx-auto">
             <h1 className="text-xl md:text-2xl font-bold  text-center text-purple mb-6">
               Organicco Presentation
@@ -286,20 +305,46 @@ export default function Home() {
               </video>
             </div>
           </section>
+          {/* <section className="container mx-auto player-wrapper ">
+            <ReactPlayer
+              className=" react-player "
+              url="https://organicco.uk/video/Organicco%20presentation-1222.mp4"
+              controls
+              width="80%"
+              height="auto"
+            />
+          </section> */}
         </div>
 
+        {/* <section className="continer">
+          <div className="player-wrapper">
+            <ReactPlayer
+              ref={playerRef}
+              className="react-player"
+              url="https://organicco.uk/video/Organicco%20presentation-1222.mp4"
+              controls
+              width="100%"
+              height="100%"
+              onStart={() => console.log("onStart")}
+            />
+          </div>
+          <div className="play-icon" onClick={handleIconClick}>
+            ▶️
+          </div>
+        </section> */}
+
         {/* featured services */}
-        <section  data-aos="flip-down" className="w-full py-20 px-4  mx-auto bg-green-light flex justify-center ">
-          <div  className="container max-w-[1154px] mx-auto my-auto flex flex-col gap-6">
+        <section
+          data-aos="flip-down"
+          className="w-full py-20 px-4  mx-auto bg-green-light flex justify-center "
+        >
+          <div className="container max-w-[1154px] mx-auto my-auto flex flex-col gap-6">
             <div>
               <h1 className="text-xl md:text-2xl  font-bold mb-4 text-center text-purple">
                 Featured Solutions
               </h1>
             </div>
-            <div
-            
-              className="grid grid-cols-1 md:grid-cols-3 gap-10"
-            >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {servicescardDataArray.map((lala, id) => (
                 <BlogCard
                   key={id}
@@ -316,30 +361,24 @@ export default function Home() {
 
         {/* accordian section */}
 
-        <section className="w-full my-20 ">
-          <div className="container mx-auto grid sm:grid-cols-2">
-            <div
-              data-aos="fade-right"
-              data-aos-duration="1000"
-              className="p-5 my-auto"
-            >
+        <section className=" my-20 h-[60vh] p-20 ">
+          <div className="container mx-auto flex justify-center flex-col-2 my-auto">
+            <div data-aos="fade-right" className="p-5 my-auto w-[50%]">
               <h1 className=" sm:text-xl md:text-3xl font-extrabold  text-green py-3">
                 Frequently Asked Questions{" "}
               </h1>
-              <p className="text-sm sm:text-sm ">
+              <p className="text-sm sm:text-sm mb-5">
                 Find quick solutions to your questions about our services,
                 operations, and sustainability efforts.
-                <span className="block">
-                  <a
-                    href="tel:950248458"
-                    className=" bg-green text-white news-blog-btn font-bold my-3 py-3 px-4 rounded focus:outline-none focus:shadow-outline"
-                  >
-                    Learn More
-                  </a>
-                </span>{" "}
               </p>
+              <a
+                href="tel:950248458"
+                className=" bg-green text-white news-blog-btn font-bold  py-3 px-4 my-5 rounded focus:outline-none focus:shadow-outline"
+              >
+                Learn More
+              </a>
             </div>
-            <div className="p-5" data-aos="fade-left" data-aos-duration="1000">
+            <div className="p-5 w-[50%]" data-aos="fade-left">
               <Accordion defaultExpandedKeys={["1"]}>
                 <AccordionItem
                   key="1"
@@ -412,41 +451,85 @@ export default function Home() {
           </div>
         </section>
 
+        {/* companies vision  */}
+
+        <section className="w-full h-[60vh] ">
+          <div className="container flex justify-center gap-10 my-auto">
+            <div className="flex w-[100%] justify-end">
+              <Image
+                src="/faq1.jpg"
+                width={100}
+                height={100}
+                className=" w-[471px] h-[500px] rounded-xl"
+                unoptimized
+              ></Image>
+            </div>
+            <div className="p-5 flex flex-col justify-center ">
+              <p className="text-purple">our vision</p>
+              <h1 className="text-3xl font-bold mb-3 text-green">
+                Innovation Driving Sustainable Environmental Solutions.
+              </h1>
+              <p className="font-lighter my-4">
+                By investing in sustainable practices and cutting-edge
+                technologies, we're paving the way for a brighter, cleaner
+                future for generations to come.
+              </p>
+              <ul className="flex flex-col gap-5 my-4">
+                <li>
+                  {" "}
+                  <span>
+                    <DoneAllIcon className="text-green text-2xl" />
+                  </span>{" "}
+                  Environmental Innovation
+                </li>
+                <li>
+                  {" "}
+                  <span className="text">
+                    <DoneAllIcon className="text-green" />
+                  </span>{" "}
+                  Sustainable Impact
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         {/* news and blog */}
 
-        <div className="mb-20 w-full">
-          <section className=" px-6   w-full">
-            <div  data-aos="fade-up" className="w-100 container mx-auto gap-5 md:gap-20 news-main-div">
-              <div className="mx-auto text-center">
-                <h1 className="text-xl md:text-3xl mb-5 font-bold text-green">
-                  hub news
-                </h1>
-                <p className="pb-5">
-                  Stay Updated on the Latest Innovations and Developments in
-                  Organic Waste Recycling and Energy Generation.
-                </p>
-              </div>
-
-              <div className="w-full ">
-                <Slider {...settings} className="flex gap-15 justify-center">
-                  {BlogscardDataArray.map((lala, id) => (
-                    <div
-                      key={id}
-                      className="carousel-item p-10 news-car-inner-div flex justify-center my-auto "
-                    >
-                      <BlogCard
-                        title={lala.title}
-                        desc={lala.desc}
-                        cardImage={lala.cardImage}
-                        cardLink={lala.cardLink}
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
+        <section className="mb-20 w-full h-[80vh] my-auto flex justify-center">
+          <div
+            data-aos="fade-up"
+            className="w-100 container mx-auto gap-5 md:gap-20 news-main-div  my-auto"
+          >
+            <div className="mx-auto text-center">
+              <h1 className="text-xl md:text-3xl mb-5 font-bold text-purple">
+                hub news
+              </h1>
+              <p className="pb-5">
+                Stay Updated on the Latest Innovations and Developments in
+                Organic Waste Recycling and Energy Generation.
+              </p>
             </div>
-          </section>
-        </div>
+
+            <div className="w-full ">
+              <Slider {...settings} className="flex gap-15 justify-center">
+                {BlogscardDataArray.map((lala, id) => (
+                  <div
+                    key={id}
+                    className="carousel-item p-10 news-car-inner-div flex justify-center my-auto "
+                  >
+                    <BlogCard
+                      title={lala.title}
+                      desc={lala.desc}
+                      cardImage={lala.cardImage}
+                      cardLink={lala.cardLink}
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );

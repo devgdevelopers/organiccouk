@@ -20,7 +20,7 @@ const BlogCard = ({ title, subtitle, desc, cardImage, cardLink }) => {
 
         <div className="grid justify-between overflow-hidden">
           <div>
-            <h1 className="text-lg font-bold text-left my-1 text-purple">
+            <h1 className="text-lg font-bold text-left my-1 text-green">
               {title}
             </h1>
             <p className="text-left text-md text-green ">{subtitle}</p>
@@ -29,7 +29,7 @@ const BlogCard = ({ title, subtitle, desc, cardImage, cardLink }) => {
           <div className="flex justify-start align-center">
             <HorizontalRuleIcon className="my-auto text-3xl straight-line-icon" />
             <a
-              className=" text-black p-2 hover:scale-100 read-con-btn"
+              className=" text-purple p-2 hover:scale-100 read-con-btn"
               href={cardLink}
               target="_blank"
               rel="noopener noreferrer"
