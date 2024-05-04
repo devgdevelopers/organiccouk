@@ -15,12 +15,12 @@ export default function RootLayout({ children }) {
         </head>
       <body className={inter.className}>
         <NextUIProvider>
-          <header>
+        
           
-            <TopHeader />
+        
             <Header />
-          </header>
-          {children}
+         
+          {children}  
           <footer>
             <Footer />
           </footer>

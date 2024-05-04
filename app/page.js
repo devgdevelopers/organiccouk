@@ -86,7 +86,7 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between banner-section bg-white">
+      <main className="flex min-h-screen  flex-col items-center justify-between banner-section bg-white">
         {/* <section className="w-full overflow-hidden">
       <Slider {...settingsSlider} className="flex gap-10 w-full">
         {BannerSlidesData.map((item, id) => (
@@ -102,7 +102,7 @@ export default function Home() {
 
         <section className="w-full main-banner-img ">
           <Image
-            className="w-full sm:h-screen h-96 "
+            className="w-full sm:h-[90vh] "
             src="/assets/banner2.jpg"
             height={100}
             width={100}
@@ -227,7 +227,7 @@ export default function Home() {
                   Featured Products
                 </h1>
               </div>
-              <div data-aos="zoom-in" className="flex flex-row container gap-5 flex-wrap align-center justify-center flex-auto">
+              <div data-aos="zoom-in" className="flex flex-row container gap-10 flex-wrap align-center justify-center flex-auto">
                 {productcardDataArray.map((lala, id) => (
                   <Card
                     key={id}
@@ -289,7 +289,7 @@ export default function Home() {
         </div>
 
         {/* featured services */}
-        <section  data-aos="flip-down" className="w-full h-[80vh]  mx-auto bg-green-light flex justify-center ">
+        <section  data-aos="flip-down" className="w-full py-20 px-4  mx-auto bg-green-light flex justify-center ">
           <div  className="container max-w-[1154px] mx-auto my-auto flex flex-col gap-6">
             <div>
               <h1 className="text-xl md:text-2xl  font-bold mb-4 text-center text-purple">
