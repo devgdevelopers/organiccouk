@@ -305,7 +305,7 @@ export default function Home() {
               <ReactPlayer
                 ref={playerRef}
                 className="react-player bg-none rounded-lg my-20 w-full z-20 mx-auto"
-                url="/assets/Organicco presentation-1222.mp4"
+                url="/video.mp4"
                 playing={isPlaying}
                 width="90%"
                 height="auto"
