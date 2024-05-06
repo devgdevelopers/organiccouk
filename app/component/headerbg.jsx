@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -15,12 +15,15 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
 import Image from "next/image";
 
+const HeaderBg = () => {
+  useEffect(() => {
+    console.log("HeaderBg component is rendered");
+  }, []); // Empty dependency array means this effect runs only once after the component mounts
 
-const headerbg = () => {
   return (
     <div>
-        <Navbar className=" hidden sm:flex flex-col-3 justify-center py-5  absolute top-0 bg-white header-bg " shouldHideOnScroll>
-        <NavbarContent className="text-white  flex justify-start">
+        <Navbar isBordered className="hidden sm:flex flex-col-3 justify-center py-5 fixed top-0 bg-white header-bg"  >
+        <NavbarContent className="text-white flex justify-start">
           <NavbarBrand className="flex justify-start">
             <Link href="http://localhost:3000/">
               <Image
@@ -83,4 +86,4 @@ const headerbg = () => {
   )
 }
 
-export default headerbg
+export default HeaderBg;

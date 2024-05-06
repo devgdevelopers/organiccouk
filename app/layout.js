@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./component/header";
-import HeaderBg from "./component/headerbg"
+import HeaderBg from "./component/headerbg";
 import Footer from "./component/footer";
 import { NextUIProvider } from "@nextui-org/react";
 
@@ -18,7 +18,9 @@ export default function RootLayout({ children }) {
       const newScrollY = window.scrollY;
       setScrollY(newScrollY);
 
-     
+      if (newScrollY >= 960) {
+        // console.log("Scrolled beyond 960px:", newScrollY);
+      }
     };
 
     // Attach the scroll event listener when the component mounts
@@ -38,15 +40,25 @@ export default function RootLayout({ children }) {
     }
   }, [scrollY]);
 
+
   return (
     <html lang="en">
       <head>
         <link rel="stylesheet" href="/custom.css" />
+        <style>
+          {`
+            .header-bg {
+              z-index: 9999; /* Set a higher z-index for the HeaderBg */
+            }
+          `}
+        </style>
       </head>
       <body className={inter.className}>
         <NextUIProvider>
-          {!showHeaderBg && <Header/>}
-          {showHeaderBg && <HeaderBg />}
+          {!showHeaderBg && <Header />}
+          {showHeaderBg && (
+            <HeaderBg className="header-bg" />
+          )}
           {children}
           <footer>
             <Footer />

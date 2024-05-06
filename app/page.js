@@ -41,11 +41,10 @@ export default function Home() {
   };
   useEffect(() => {
     AOS.init({
-      duration: 500,
+      duration: 300,
       once: false,
       easing: "ease",
-      mirror: false,
-      anchorPlacement: "top-bottom",
+      mirror: true
     });
   }, []);
 
@@ -455,7 +454,7 @@ export default function Home() {
 
         <section className="w-full h-[60vh] ">
           <div className="container flex justify-center gap-10 my-auto">
-            <div className="flex w-[100%] justify-end">
+            <div className="flex w-[100%] justify-end" data-aos="flip-left" data-aos-duration="500">
               <Image
                 src="/faq1.jpg"
                 width={100}
@@ -464,7 +463,7 @@ export default function Home() {
                 unoptimized
               ></Image>
             </div>
-            <div className="p-5 flex flex-col justify-center ">
+            <div className="p-5 flex flex-col justify-center " data-aos="flip-right">
               <p className="text-purple">our vision</p>
               <h1 className="text-3xl font-bold mb-3 text-green">
                 Innovation Driving Sustainable Environmental Solutions.
@@ -496,9 +495,9 @@ export default function Home() {
 
         {/* news and blog */}
 
-        <section className="mb-20 w-full h-[80vh] my-auto flex justify-center">
+        <section className="mb-20 w-full h-[80vh] my-auto flex justify-center"  data-aos-duration="300"  data-aos="fade-down">
           <div
-            data-aos="fade-up"
+           
             className="w-100 container mx-auto gap-5 md:gap-20 news-main-div  my-auto"
           >
             <div className="mx-auto text-center">
