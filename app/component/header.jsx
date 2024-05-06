@@ -51,7 +51,7 @@ export default function page() {
           <NavbarBrand className="flex justify-start">
             <Link href="http://localhost:3000/">
               <Image
-              className="bg-white rounded-xl"
+              className="bg-white rounded-xl w-[100px] h-[100px]"
                 src="/assets/Organicco_no_bg.png"
                 width={100}
                 height={100}
@@ -94,7 +94,7 @@ export default function page() {
           </NavbarItem>
         </NavbarContent>
 
-        <NavbarContent className="flex gap-5 justify-end">
+        <NavbarContent className="hidden sm:flex gap-5 justify-end">
           <Link
             href="mailto:enquiry@organicco.uk"
             className="text-white text-sm"

@@ -26,17 +26,19 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
-
+.bg-grey {
+  background-color: #e8e2e4;
+}
 p {
   font-size: 16px;
 }
 
-h1{
+h1 {
   font-size: 50px;
 }
-h2{
+h2 {
   font-size: 42px;
 }
 

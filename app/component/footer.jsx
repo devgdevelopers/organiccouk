@@ -10,7 +10,7 @@ const footer = () => {
           <div className="">
             <Image
               src="/assets/Organicco_no_bg.png"
-              className="my-2 bg-white "
+              className="my-2 bg-white rounded-xl "
               width={100}
               height={100}
               alt="logo"

@@ -6,6 +6,7 @@ import Header from "./component/header";
 import HeaderBg from "./component/headerbg";
 import Footer from "./component/footer";
 import { NextUIProvider } from "@nextui-org/react";
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -54,6 +55,7 @@ export default function RootLayout({ children }) {
         </style>
       </head>
       <body className={inter.className}>
+      <Analytics/>
         <NextUIProvider>
           {!showHeaderBg && <Header />}
           {showHeaderBg && (

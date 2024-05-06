@@ -3,6 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ReactPlayer from "react-player";
+import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 
 import {
   BlogscardDataArray,
@@ -21,35 +22,35 @@ import "slick-carousel/slick/slick-theme.css";
 
 export default function Home() {
   const [activeItem, setActiveItem] = useState(null);
+  const playerRef = useRef(null);
 
   const toggleAccordion = (key) => {
     setActiveItem(key === activeItem ? null : key);
   };
 
-  const playerRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  const handleIconClick = (e) => {
-    e.stopPropagation(); // Stop the click event from reaching the video player
-    playVideo(); // Call function to play the video
+  const togglePlay = () => {
+    setIsPlaying(!isPlaying);
   };
-
-  const playVideo = () => {
+  const handlePlay = () => {
     if (playerRef.current) {
-      playerRef.current.seekTo(0); // Start the video from the beginning
-      playerRef.current.getInternalPlayer("video").play(); // Play the video
+      // Seek to 10 seconds when the video starts playing
+      playerRef.current.seekTo(11);
     }
   };
+
   useEffect(() => {
     AOS.init({
       duration: 300,
       once: false,
       easing: "ease",
-      mirror: true
+      mirror: true,
     });
   }, []);
 
   const settingsSlider = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -101,36 +102,31 @@ export default function Home() {
 
   return (
     <>
-      <main className="flex min-h-screen  flex-col items-center justify-between banner-section bg-white">
-        {/* <section className="w-full overflow-hidden">
-      <Slider {...settingsSlider} className="flex gap-10 w-full">
-        {BannerSlidesData.map((item, id) => (
-        <div key={id} className={`main-hero-slide flex justify-center align-center h-[60vh] p-12 ${item.bgClass}`}>
-          <div className="my-auto w-inline">
-            <h2>{item.heading}</h2>
-            <p>{item.desc}</p>
-          </div>
-        </div>
-        ))}
-      </Slider>
-    </section> */}
-
-        <section className="w-full h-full ">
-          <Image
-            className="w-full h-screen banner-image-section"
-            src="/001.jpg"
-            height={100}
-            width={100}
-            unoptimized
-          />
+      <main className="flex w-full flex-col items-center bg-white">
+        <section className="w-full ">
+          <Slider {...settingsSlider} className="flex gap-10 w-full">
+            {BannerSlidesData.map((item, id) => (
+              <div
+                key={id}
+                className={`w-full h-[65vh] md:h-[100vh]  main-hero-slide flex justify-center align-center p-12 ${item.bgClass}`}
+              >
+                <div className="container mx-auto flex flex-col justify-center h-full">
+                  <h2 className="text-[60px] text-white">{item.heading}</h2>
+                  <p className="text-[20px] text-white">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </Slider>
         </section>
 
         {/* below banner */}
-        <div className="z-50">
-          <section className="w-full mx-auto  justify-center py-10 z-40">
-            <div className="container mx-auto sm:flex sm:flex-col-2 gap-10">
-              <div className="p-10 ">
-                <p className="text-klg  text-purple font-semibold">ABOUT US</p>
+        <section className="w-full z-50 bg-grey py-10">
+          <div className="w-full mx-auto justify-center z-40">
+            <div className="container mx-auto block lg:flex">
+              <div className="p-10 w-[130%] ">
+                <p className="text-xl md:text-2xl font-bold mb-4 text-purple">
+                  About Us
+                </p>
                 <p className=" text-xl pb-4 text-purple font-semibold mb-2">
                   The most advanced organic waste and food waste recycling
                   solution in the world
@@ -177,8 +173,8 @@ export default function Home() {
                   into natural assets.
                 </p>
               </div>
-              <div className="get-q-form-home   bg-white pt-2 pb-5 mx-auto">
-                <form className="bg-white rounded-xl  md:-mt-32 shadow-lg pt-2 pb-6 px-5 mx-auto">
+              <div className="get-q-form-home w-[70%]  pt-2 pb-5 mx-auto">
+                <form className="bg-white rounded-xl  lg:-mt-32 shadow-lg pt-2 pb-6 px-7 mx-auto">
                   <p className="text-lg py-6  text-green">send a message</p>
                   <h1 className="text-2xl font-bold my-3 text-purple">
                     Request a call back
@@ -195,9 +191,17 @@ export default function Home() {
                   <div className="mb-4">
                     <input
                       className="shadow appearance-none border rounded w-full py-5 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      id="Enail"
+                      id="Email"
                       type="email"
                       placeholder="Email"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <input
+                      className="shadow appearance-none border rounded w-full py-5 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="Phone"
+                      type="tel"
+                      placeholder="Phone Number"
                     />
                   </div>
                   <div className="mb-6">
@@ -230,116 +234,95 @@ export default function Home() {
                 </form>
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
 
         {/* featured products */}
-        <div className="z-50 my-20">
-          <section className="w-full ">
-            <div className="container mx-auto">
-              <div>
-                <h1 className="text-xl md:text-2xl font-bold mb-10 text-center text-purple">
-                  Featured Products
-                </h1>
-              </div>
-              <div
-                data-aos="zoom-in"
-                className="flex flex-row container gap-10 flex-wrap align-center justify-center flex-auto"
-              >
-                {productcardDataArray.map((lala, id) => (
-                  <Card
-                    key={id}
-                    title={lala.title}
-                    subtitle={lala.subtitle}
-                    desc={lala.desc}
-                    bgClass={lala.bgClass}
-                    cardLink={lala.cardLink}
-                  />
-                ))}
-              </div>
+
+        <section className="w-full z-50 py-20">
+          <div className="container mx-auto flex gap-10 flex-col">
+            <div>
+              <h1 className="text-xl md:text-2xl font-bold  text-center text-purple">
+                Featured Products
+              </h1>
             </div>
-          </section>
-        </div>
+            <div
+              data-aos="zoom-in"
+              className="flex flex-row container gap-10 flex-wrap align-center justify-center flex-auto"
+            >
+              {productcardDataArray.map((lala, id) => (
+                <Card
+                  key={id}
+                  title={lala.title}
+                  subtitle={lala.subtitle}
+                  desc={lala.desc}
+                  bgClass={lala.bgClass}
+                  cardLink={lala.cardLink}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* image section  */}
-        <div className="z-50 h-96 w-full mx-auto my-20">
-          <section className="image-section h-[50vh] w-full flex justify-center">
+        <section className="z-50 h-96 w-full mx-auto ">
+          <div className="image-section h-[50vh] w-full flex justify-center">
             <div
               className="flex justify-center z-50 container px-10 sm:px-40"
               data-aos="fade-up"
             >
-              <p className="text-white text-2xl font-bold text-center my-auto">
+              <p className="text-white text-[40px] font-bold text-center my-auto">
                 We're indeed committed to leading the charge in tackling
                 environmental challenges through{" "}
                 <span className="text-green">our innovative solutions</span>
               </p>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
 
         {/* video section */}
-        <div className="z-50 relative w-full mx-auto my-20" data-aos="fade-in">
-          <section className="container mx-auto">
-            <h1 className="text-xl md:text-2xl font-bold  text-center text-purple mb-6">
-              Organicco Presentation
-            </h1>
-            <div className="mx-auto">
-              <video
-                className="mx-auto w-[90%] sm:w-[70%]"
-                width="70%"
-                height="240"
-                controls
-                muted
-                poster="/assets/organicco-vid-poster.jpg"
-              >
-                <source
-                  src="https://organicco.uk/video/Organicco%20presentation-1222.mp4"
-                  type="video/mp4"
-                />
-                <source
-                  src="https://organicco.uk/video/Organicco%20presentation-1222.ogg"
-                  type="video/ogg"
-                />
-                Your browser does not support the video tag.
-              </video>
+        <section className="w-full bg-white py-20">
+          <div className="relative container my-auto  mx-auto flex flex-col-2 ">
+            <div className=" sm:w-[50%] w-[50%]  my-auto p-2 ">
+              <h3 className="text-xl md:text-2xl font-bold mb-3 text-purple">
+                Get to Know the Heart Behind Organicco
+              </h3>
+              <p className="text-green text-lg font-semibold">
+                Embark on a visual journey through Organicco's ethos,
+                innovations, and commitment to sustainability with our
+                compelling About Us video. Discover the faces and stories behind
+                our groundbreaking work, as we strive to redefine the future of
+                waste management and environmental stewardship. Join us in our
+                mission to create a greener, more sustainable world for
+                generations to come.
+              </p>
             </div>
-          </section>
-          {/* <section className="container mx-auto player-wrapper ">
-            <ReactPlayer
-              className=" react-player "
-              url="https://organicco.uk/video/Organicco%20presentation-1222.mp4"
-              controls
-              width="80%"
-              height="auto"
-            />
-          </section> */}
-        </div>
 
-        {/* <section className="continer">
-          <div className="player-wrapper">
-            <ReactPlayer
-              ref={playerRef}
-              className="react-player"
-              url="https://organicco.uk/video/Organicco%20presentation-1222.mp4"
-              controls
-              width="100%"
-              height="100%"
-              onStart={() => console.log("onStart")}
-            />
+            <div className="relative sm:w-[50%] w-[100%]">
+              <div onClick={togglePlay}>
+                {!isPlaying && <PlayCircleIcon className="play-icon" />}
+              </div>
+              <ReactPlayer
+                ref={playerRef}
+                className="react-player bg-none rounded-lg my-20 w-full z-20 mx-auto"
+                url="/assets/Organicco presentation-1222.mp4"
+                playing={isPlaying}
+                width="90%"
+                height="auto"
+                onPlay={handlePlay}
+              />
+            </div>
           </div>
-          <div className="play-icon" onClick={handleIconClick}>
-            ▶️
-          </div>
-        </section> */}
+        </section>
 
         {/* featured services */}
         <section
-          data-aos="flip-down"
-          className="w-full py-20 px-4  mx-auto bg-green-light flex justify-center "
+          data-aos="fade-in"
+          className="w-full py-20 px-4  mx-auto bg-grey flex justify-center "
         >
-          <div className="container max-w-[1154px] mx-auto my-auto flex flex-col gap-6">
+          <div className="container mx-auto my-auto flex flex-col gap-6">
             <div>
-              <h1 className="text-xl md:text-2xl  font-bold mb-4 text-center text-purple">
+              <h1 className="text-xl md:text-2xl font-bold mb-10 text-center text-purple">
                 Featured Solutions
               </h1>
             </div>
@@ -360,10 +343,13 @@ export default function Home() {
 
         {/* accordian section */}
 
-        <section className=" my-20 h-[60vh] p-20 ">
-          <div className="container mx-auto flex justify-center flex-col-2 my-auto">
-            <div data-aos="fade-right" className="p-5 my-auto w-[50%]">
-              <h1 className=" sm:text-xl md:text-3xl font-extrabold  text-green py-3">
+        <section className="py-10 md:py-20 w-full  ">
+          <div className="container mx-auto flex md:flex-row flex-col">
+            <div
+              data-aos="fade-right"
+              className="p-2 sm:p-5 my-auto w-full lg:w-[80%]"
+            >
+              <h1 className="  text-xl md:text-2xl font-bold mb-4 text-purple">
                 Frequently Asked Questions{" "}
               </h1>
               <p className="text-sm sm:text-sm mb-5">
@@ -377,7 +363,7 @@ export default function Home() {
                 Learn More
               </a>
             </div>
-            <div className="p-5 w-[50%]" data-aos="fade-left">
+            <div className="p-5 w-full lg:w-[120%]" data-aos="fade-left">
               <Accordion defaultExpandedKeys={["1"]}>
                 <AccordionItem
                   key="1"
@@ -452,9 +438,9 @@ export default function Home() {
 
         {/* companies vision  */}
 
-        <section className="w-full h-[60vh] ">
-          <div className="container flex justify-center gap-10 my-auto">
-            <div className="flex w-[100%] justify-end" data-aos="flip-left" data-aos-duration="500">
+        <section className="w-full  md:py-10 bg-grey ">
+          <div className="container flex md:flex-row flex-col justify-center my-auto mx-auto gap-10">
+            <div className="flex w-[100%] justify-center md:justify-end">
               <Image
                 src="/faq1.jpg"
                 width={100}
@@ -463,7 +449,10 @@ export default function Home() {
                 unoptimized
               ></Image>
             </div>
-            <div className="p-5 flex flex-col justify-center " data-aos="flip-right">
+            <div
+              className="p-5 flex flex-col justify-center w-[100%]"
+              data-aos="flip-right"
+            >
               <p className="text-purple">our vision</p>
               <h1 className="text-3xl font-bold mb-3 text-green">
                 Innovation Driving Sustainable Environmental Solutions.
@@ -495,14 +484,15 @@ export default function Home() {
 
         {/* news and blog */}
 
-        <section className="mb-20 w-full h-[80vh] my-auto flex justify-center"  data-aos-duration="300"  data-aos="fade-down">
-          <div
-           
-            className="w-100 container mx-auto gap-5 md:gap-20 news-main-div  my-auto"
-          >
+        <section
+          className="w-full my-auto flex justify-center pb-10 pt-20"
+          data-aos-duration="300"
+          data-aos="fade-down"
+        >
+          <div className="w-100 container mx-auto gap-5 md:gap-20 news-main-div  my-auto">
             <div className="mx-auto text-center">
-              <h1 className="text-xl md:text-3xl mb-5 font-bold text-purple">
-                hub news
+              <h1 className="text-xl md:text-2xl font-bold mb-4 text-center text-purple">
+                News & Blog
               </h1>
               <p className="pb-5">
                 Stay Updated on the Latest Innovations and Developments in

@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.slider1 {
+  padding: 0 200px;
+}
+
+.owl-carousel .owl-item .box-img {
+  width: 50px;
+  /* margin-right: 6px; */
+}
+
+.owl-carousel .owl-item {
+  width: 100%;
+}
+.owl-carousel .owl-item img {
+  display: block;
+  width: 95%;
+}
+.owl-theme .owl-dots .owl-dot span {
+  width: 25px;
+  height: 8px;
+  margin: 15px 7px;
+  border-radius: 5px;
+}
+.card.item {
+  margin: 10px;
+  border: 1px solid #e7e7e7;
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+}
+.card img {
+  padding: 10px;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.slider1 .owl-stage-outer {
+  padding-bottom: 80px;
+}
+
+.card-inner-item {
+  padding: 10px;
+  border-radius: 8px;
+  width: 80%;
+  color: rgb(50, 52, 59);
+  font-size: 16px;
+  font-weight: 600;
+  position: absolute;
+  background-color: white;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  box-shadow: 0px 0px 5px #d3d3d3;
+}
+
+.card-inner-item i {
+  font-size: 13px;
+}
+
+.box-img-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.house-icon-div {
+  opacity: 0;
+  padding: 0;
+  height: 0;
+  transition: 0.5s;
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-name-div {
+  display: flex;
+  align-items: center;
+}
+
+.house-icon-inner-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover .house-icon-div {
+  display: flex;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  opacity: 1;
+  height: 35px;
+  padding-top: 10px 16px;
+  overflow: hidden;
+}
+
+.house-icon-div p {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.house-icon-div i {
+  margin: 0 5px;
+}
+
+.location-div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.location-div i {
+  margin: 0 5px;
+}
+
+.location-div p {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.book-apart-btn {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(6, 47, 67);
+  font-size: 13px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  padding: 5px 10px;
+}
+
+.possession-btn {
+  background-color: rgb(196, 155, 15);
+  color: white;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  border: none;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+}
+
+.ready-to-occupy-btn,
+.ready-to-move-btn {
+  background-color: rgb(114, 180, 38);
+  color: white;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  border: none;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+}
+
+.few-unit-left-btn {
+  background-color: rgb(255, 87, 34);
+  color: white;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  border: none;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 8px 16px 0px;
+}
+
+@media (max-width: 768px) {
+    .card-inner-item {
+        padding: 10px;
+        /* border-radius: 8px; */
+        /* width: 80%; */
+        color: rgb(50, 52, 59);
+        font-size: 16px;
+        font-weight: 600;
+        position: relative;
+        background-color: white;
+        /* bottom: -30px; */
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 100;
+        box-shadow: 0px 0px 5px #d3d3d3;
+    }
+  .card.item {
+    display: block;
+  }
+  .house-icon-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 1;
+    height: auto;
+  }
+  .slider1 {
+    padding: 0;
+  }
+  .slider1 .owl-stage-outer {
+    padding-bottom: 40px;
+  }
+  .owl-theme .owl-dots .owl-dot span {
+    width: 17px;
+    height: 8px;
+    margin: 15px 7px;
+    border-radius: 5px;
+  }
+}
