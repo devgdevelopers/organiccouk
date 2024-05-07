@@ -111,8 +111,8 @@ export default function Home() {
                 className={`w-full h-[65vh] md:h-[100vh]  main-hero-slide flex justify-center align-center p-12 ${item.bgClass}`}
               >
                 <div className="container mx-auto flex flex-col justify-center h-full">
-                  <h2 className="text-[60px] text-white">{item.heading}</h2>
-                  <p className="text-[20px] text-white">{item.desc}</p>
+                  <h2 className="text-[32px] lg:text-[60px]  text-white">{item.heading}</h2>
+                  <p className="text-[15px] lg:text-[20px] text-white">{item.desc}</p>
                 </div>
               </div>
             ))}
