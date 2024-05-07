@@ -44,7 +44,7 @@
   color: white;
 
   /* filter: blur(1px); */
-  z-index: 1000;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,12 +85,9 @@
 
 .flip-card-front h1,
 .flip-card-front p {
-  z-index: 1001; /* Higher than .flip-card-front z-index */
+  z-index: 2; /* Higher than .flip-card-front z-index */
 }
-.flip-card-front h1,
-.flip-card-front p {
-  z-index: 100px;
-}
+
 .flip-card-back {
   background-color: white;
   color: black;
@@ -237,7 +234,8 @@
   font-weight: 500;
 }
 .header-bg {
-  z-index: 999;
+  z-index: 9099 !important;
+  background-color: white ;
 }
 header {
   width: 100%;

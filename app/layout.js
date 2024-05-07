@@ -49,7 +49,8 @@ export default function RootLayout({ children }) {
         <style>
           {`
             .header-bg {
-              z-index: 9999; /* Set a higher z-index for the HeaderBg */
+              z-index: 9999; 
+              
             }
           `}
         </style>

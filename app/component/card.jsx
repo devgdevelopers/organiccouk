@@ -7,7 +7,7 @@ export default function Card({ title, subtitle, desc, bgClass, cardLink }) {
       <div className="flip-card-inner rounded-xl bg-white">
         <div className={`flip-card-front rounded-xl bg-white ${bgClass}`}>
         
-          <h1 className="text-xl z-100">{title}</h1>
+          <h1 className="text-xl ">{title}</h1>
           <p>{subtitle}</p>
         
         </div>

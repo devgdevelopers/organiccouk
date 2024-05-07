@@ -48,7 +48,8 @@ const HeaderBg = () => {
 
   return (
     <div>
-        <Navbar isBordered className="hidden sm:flex flex-col-3 justify-center py-5 fixed top-0 bg-white header-bg"  >
+       <header className="sticky top-0 left-0 z-50">
+        <Navbar isBordered className="hidden  md:flex flex-col-3 justify-center py-5 fixed top-0 bg-white header-bg"  >
         <NavbarContent className="text-white flex justify-start">
           <NavbarBrand className="flex justify-start">
             <Link href="http://localhost:3000/">
@@ -146,6 +147,7 @@ const HeaderBg = () => {
         </NavbarContent>
         
       </Navbar>
+      </header>
     </div>
   )
 }

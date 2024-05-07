@@ -45,8 +45,8 @@ export default function page() {
 
   return (
     <>
-    <header className="sticky top-0 left-0 z-40">
-    <Navbar className=" hidden md:flex flex-col-3 justify-center py-5  absolute top-0 bg-transparent main-nav" shouldHideOnScroll>
+    <header className="sticky top-0 left-0 z-50">
+    <Navbar className="hidden md:flex flex-col-3 justify-center py-5  absolute top-0 bg-transparent main-nav" >
         <NavbarContent className="text-white  flex justify-start">
           <NavbarBrand className="flex justify-start">
             <Link href="http://localhost:3000/">

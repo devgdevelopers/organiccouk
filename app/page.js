@@ -24,9 +24,6 @@ export default function Home() {
   const [activeItem, setActiveItem] = useState(null);
   const playerRef = useRef(null);
 
-  const toggleAccordion = (key) => {
-    setActiveItem(key === activeItem ? null : key);
-  };
 
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -42,10 +39,11 @@ export default function Home() {
 
   useEffect(() => {
     AOS.init({
-      duration: 300,
-      once: true,
+      duration: 500,
+      once: false,
       easing: "ease",
       mirror: true,
+      delay:"10"
     });
   }, []);
 
@@ -122,7 +120,7 @@ export default function Home() {
         </section>
 
         {/* below banner */}
-        <section className="w-full z-50 bg-grey py-10">
+        <section className="w-full z-40 bg-grey py-10">
           <div className="w-full mx-auto justify-center z-40">
             <div className="container mx-auto block lg:flex">
               <div className="p-10 w-[100%]  lg:w-[130%] ">
@@ -241,7 +239,7 @@ export default function Home() {
 
         {/* featured products */}
 
-        <section className="w-full z-50 py-20">
+        <section className="w-full  py-20">
           <div className="container mx-auto flex gap-10 flex-col">
             <div>
               <h1 className="text-xl md:text-2xl font-bold  text-center text-purple">
@@ -267,7 +265,7 @@ export default function Home() {
         </section>
 
         {/* image section  */}
-        <section className="z-50 w-full mx-auto ">
+        <section className="z-40 w-full mx-auto ">
           <div className="image-section w-full flex justify-center py-20 lg:py-40 px-10">
             <div
               className="flex justify-center z-50 container "
@@ -379,7 +377,7 @@ export default function Home() {
                       What is organicco?
                     </span>
                   }
-                  onClick={() => toggleAccordion("1")}
+              
                   className={`outline-none ${
                     activeItem === "1" ? "bg-green-200" : ""
                   }`}
