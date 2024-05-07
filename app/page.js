@@ -173,7 +173,7 @@ export default function Home() {
                   into natural assets.
                 </p>
               </div>
-              <div className="get-q-form-home w-[70%]  pt-2 pb-5 mx-auto">
+              <div className="get-q-form-home w-[85%] lg:w-[70%]  pt-2 pb-5 mx-auto">
                 <form className="bg-white rounded-xl  lg:-mt-32 shadow-lg pt-2 pb-6 px-7 mx-auto">
                   <p className="text-lg py-6  text-green">send a message</p>
                   <h1 className="text-2xl font-bold my-3 text-purple">
@@ -265,13 +265,13 @@ export default function Home() {
         </section>
 
         {/* image section  */}
-        <section className="z-50 h-96 w-full mx-auto ">
-          <div className="image-section h-[50vh] w-full flex justify-center">
+        <section className="z-50 w-full mx-auto ">
+          <div className="image-section w-full flex justify-center py-20 lg:py-40 px-10">
             <div
-              className="flex justify-center z-50 container px-10 sm:px-40"
+              className="flex justify-center z-50 container "
               data-aos="fade-up"
             >
-              <p className="text-white text-[40px] font-bold text-center my-auto">
+              <p className="text-white text-[20px] lg:text-[40px] font-bold text-center my-auto">
                 We're indeed committed to leading the charge in tackling
                 environmental challenges through{" "}
                 <span className="text-green">our innovative solutions</span>
@@ -281,9 +281,9 @@ export default function Home() {
         </section>
 
         {/* video section */}
-        <section className="w-full bg-white py-20">
-          <div className="relative container my-auto  mx-auto flex md:flex-col-2 ">
-            <div className="  w-[50%]  my-auto p-2 ">
+        <section className="w-full bg-white">
+          <div className="relative container my-auto mx-auto flex lg:flex-row flex-col p-5">
+            <div className="  w-[100%] lg:w-[50%]  my-auto p-2 ">
               <h3 className="text-xl md:text-2xl font-bold mb-3 text-purple">
                 Get to Know the Heart Behind Organicco
               </h3>
@@ -298,7 +298,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="relative sm:w-[50%] w-[100%]">
+            <div className="relative  w-[100%] lg:w-[50%]">
               <div onClick={togglePlay}>
                 {!isPlaying && <PlayCircleIcon className="play-icon" />}
               </div>
@@ -439,7 +439,7 @@ export default function Home() {
         {/* companies vision  */}
 
         <section className="w-full  md:py-10 bg-grey ">
-          <div className="container flex md:flex-row flex-col justify-center my-auto mx-auto gap-10">
+          <div className="container flex md:flex-row flex-col justify-center my-auto mx-auto gap-5">
             <div className="flex w-[100%] justify-center md:justify-end">
               <Image
                 src="/faq1.jpg"

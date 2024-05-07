@@ -22,7 +22,7 @@ const footer = () => {
             </p>
           </div>
           <div className="flex flex-col gap-y-3">
-            <h2 className="text-lg text-green mt-6 md:mt-0">Product</h2>
+            <h2 className="text-lg text-green-light-link mt-6 md:mt-0">Product</h2>
             <ul className="flex flex-col gap-y-3 ">
               <Link href="/products/ecohero">ECOHero</Link>
               <Link href="/products/ecodryer">ECODryer</Link>
@@ -30,7 +30,7 @@ const footer = () => {
             </ul>
           </div>
           <div className="flex flex-col gap-y-3">
-            <h3 className="text-lg text-green mt-6 md:mt-0">Services</h3>
+            <h3 className="text-lg text-green-light-link mt-6 md:mt-0">Services</h3>
             <ul className="flex flex-col gap-y-3">
               <Link href="/services/odour-control">Odour Control</Link>
               <Link href="/services/automation">Automation</Link>
@@ -39,7 +39,7 @@ const footer = () => {
             </ul>
           </div>
           <div className="flex flex-col gap-y-3">
-            <h3 className="text-lg  text-green mt-6 md:mt-0">Resources</h3>
+            <h3 className="text-lg  text-green-light-link mt-6 md:mt-0">Resources</h3>
             <ul className="flex flex-col gap-y-3">
               <Link href="/products/ecohero">News</Link>
               <Link href="/products/ecohero">Blog</Link>
