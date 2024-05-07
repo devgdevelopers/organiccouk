@@ -46,7 +46,7 @@ export default function page() {
   return (
     <>
     <header className="sticky top-0 left-0 z-40">
-    <Navbar className=" hidden sm:flex flex-col-3 justify-center py-5  absolute top-0 bg-transparent main-nav" shouldHideOnScroll>
+    <Navbar className=" hidden md:flex flex-col-3 justify-center py-5  absolute top-0 bg-transparent main-nav" shouldHideOnScroll>
         <NavbarContent className="text-white  flex justify-start">
           <NavbarBrand className="flex justify-start">
             <Link href="http://localhost:3000/">
@@ -94,7 +94,7 @@ export default function page() {
           </NavbarItem>
         </NavbarContent>
 
-        <NavbarContent className="hidden sm:flex gap-5 justify-end">
+        <NavbarContent className="hidden xl:flex gap-5 justify-end">
           <Link
             href="mailto:enquiry@organicco.uk"
             className="text-white text-sm"
@@ -107,7 +107,7 @@ export default function page() {
         </NavbarContent>
       </Navbar>
 
-      <Navbar className="sticky sm:hidden py-4 flex bg-white justify-end z-[1000] ">
+      <Navbar className="sticky md:hidden py-4 flex bg-white justify-end z-[1000] ">
         <NavbarContent className=" ">
           <NavbarBrand>
             <Image
@@ -140,7 +140,7 @@ export default function page() {
         </NavbarContent>
         </NavbarMenu>
 
-        <NavbarContent className="sm:hidden flex justify-end align-bottom ">
+        <NavbarContent className="md:hidden flex justify-end align-bottom ">
           <NavbarMenuToggle className="flex justify-end me-0" />
         </NavbarContent>
         

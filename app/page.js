@@ -123,7 +123,7 @@ export default function Home() {
         <section className="w-full z-50 bg-grey py-10">
           <div className="w-full mx-auto justify-center z-40">
             <div className="container mx-auto block lg:flex">
-              <div className="p-10 w-[130%] ">
+              <div className="p-10 w-[100%]  lg:w-[130%] ">
                 <p className="text-xl md:text-2xl font-bold mb-4 text-purple">
                   About Us
                 </p>
@@ -282,8 +282,8 @@ export default function Home() {
 
         {/* video section */}
         <section className="w-full bg-white py-20">
-          <div className="relative container my-auto  mx-auto flex flex-col-2 ">
-            <div className=" sm:w-[50%] w-[50%]  my-auto p-2 ">
+          <div className="relative container my-auto  mx-auto flex md:flex-col-2 ">
+            <div className="  w-[50%]  my-auto p-2 ">
               <h3 className="text-xl md:text-2xl font-bold mb-3 text-purple">
                 Get to Know the Heart Behind Organicco
               </h3>
@@ -305,7 +305,7 @@ export default function Home() {
               <ReactPlayer
                 ref={playerRef}
                 className="react-player bg-none rounded-lg my-20 w-full z-20 mx-auto"
-                url="/video.mp4"
+                url="/videoSec.mp4"
                 playing={isPlaying}
                 width="90%"
                 height="auto"
