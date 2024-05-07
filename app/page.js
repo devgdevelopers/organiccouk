@@ -344,10 +344,10 @@ export default function Home() {
         {/* accordian section */}
 
         <section className="py-10 md:py-20 w-full  ">
-          <div className="container mx-auto flex md:flex-row flex-col">
+          <div className="container p-5 mx-auto flex md:flex-row flex-col">
             <div
               data-aos="fade-right"
-              className="p-2 sm:p-5 my-auto w-full lg:w-[80%]"
+              className=" my-auto w-full lg:w-[80%]"
             >
               <h1 className="  text-xl md:text-2xl font-bold mb-4 text-purple">
                 Frequently Asked Questions{" "}
@@ -363,7 +363,7 @@ export default function Home() {
                 Learn More
               </a>
             </div>
-            <div className="p-5 w-full lg:w-[120%]" data-aos="fade-left">
+            <div className=" w-full lg:w-[120%]" data-aos="fade-left">
               <Accordion defaultExpandedKeys={["1"]}>
                 <AccordionItem
                   key="1"
@@ -439,7 +439,7 @@ export default function Home() {
         {/* companies vision  */}
 
         <section className="w-full  md:py-10 bg-grey ">
-          <div className="container flex md:flex-row flex-col justify-center my-auto mx-auto gap-5">
+          <div className="container flex md:flex-row flex-col justify-center my-auto mx-auto gap-0">
             <div className="flex w-[100%] justify-center md:justify-end">
               <Image
                 src="/faq1.jpg"
@@ -450,7 +450,7 @@ export default function Home() {
               ></Image>
             </div>
             <div
-              className="p-5 flex flex-col justify-center w-[100%]"
+              className="px-5 pb-5 flex flex-col justify-center w-[100%]"
               data-aos="flip-right"
             >
               <p className="text-purple">our vision</p>
