@@ -442,7 +442,7 @@ export default function Home() {
 
         <section className="w-full  md:py-10 bg-grey ">
           <div className="container flex md:flex-row flex-col justify-center my-auto mx-auto gap-0">
-            <div className="flex w-[40%] justify-center md:justify-end">
+            <div className="flex lg:w-[40%] w-[100%] justify-center md:justify-end">
               <Image
                 src="/faq1.png"
                 width={100}
