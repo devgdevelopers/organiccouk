@@ -43,7 +43,7 @@ export default function Home() {
   useEffect(() => {
     AOS.init({
       duration: 300,
-      once: false,
+      once: true,
       easing: "ease",
       mirror: true,
     });
@@ -113,6 +113,8 @@ export default function Home() {
                 <div className="container mx-auto flex flex-col justify-center h-full">
                   <h2 className="text-[32px] lg:text-[60px]  text-white">{item.heading}</h2>
                   <p className="text-[15px] lg:text-[20px] text-white">{item.desc}</p>
+              <a href="/" type="submit" className="my-5 p-3 text-center text-sm bg-white text-green inline">Learn More</a>
+
                 </div>
               </div>
             ))}
@@ -287,7 +289,7 @@ export default function Home() {
               <h3 className="text-xl md:text-2xl font-bold mb-3 text-purple">
                 Get to Know the Heart Behind Organicco
               </h3>
-              <p className="text-green text-lg font-semibold">
+              <p className="text-green text-[15px] text-justify">
                 Embark on a visual journey through Organicco's ethos,
                 innovations, and commitment to sustainability with our
                 compelling About Us video. Discover the faces and stories behind
@@ -440,9 +442,9 @@ export default function Home() {
 
         <section className="w-full  md:py-10 bg-grey ">
           <div className="container flex md:flex-row flex-col justify-center my-auto mx-auto gap-0">
-            <div className="flex w-[100%] justify-center md:justify-end">
+            <div className="flex w-[40%] justify-center md:justify-end">
               <Image
-                src="/faq1.jpg"
+                src="/faq1.png"
                 width={100}
                 height={100}
                 className=" w-[471px] h-[500px] rounded-xl"
@@ -450,14 +452,14 @@ export default function Home() {
               ></Image>
             </div>
             <div
-              className="px-5 pb-5 flex flex-col justify-center w-[100%]"
+              className="px-5 pb-5 flex lg:w-[60%] flex-col justify-center w-[100%]"
               data-aos="flip-right"
             >
-              <p className="text-purple">our vision</p>
+              <p className="text-xl md:text-2xl font-bold text-purple mb-4">our vision</p>
               <h1 className="text-3xl font-bold mb-3 text-green">
                 Innovation Driving Sustainable Environmental Solutions.
               </h1>
-              <p className="font-lighter my-4">
+              <p className="font-lighter">
                 By investing in sustainable practices and cutting-edge
                 technologies, we're paving the way for a brighter, cleaner
                 future for generations to come.
