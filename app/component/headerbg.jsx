@@ -64,7 +64,7 @@ const HeaderBg = () => {
           </NavbarBrand>
         </NavbarContent>
 
-        <NavbarContent className="flex text-black gap-5 justify-center link-div-head-bg">
+        <NavbarContent className="flex text-green gap-5 justify-center link-div-head-bg">
           <NavbarItem>
             <Link  href="/">
               Home
@@ -100,11 +100,11 @@ const HeaderBg = () => {
         <NavbarContent className="hidden xl:flex gap-5 justify-end">
           <Link
             href="mailto:enquiry@organicco.uk"
-            className="text-black text-sm font-medium"
+            className="text-purple text-sm font-medium"
           >
             <EmailIcon className="text-sm mr-1" /> enquiry@organicco.uk
           </Link>
-          <Link href="tel:+44 (0)20 8133 3129" className="text-black  font-medium text-sm">
+          <Link href="tel:+44 (0)20 8133 3129" className="text-purple  font-medium text-sm">
             <PhoneIcon className="text-sm " /> +44 (0)20 8133 3129
           </Link>
         </NavbarContent>
@@ -132,11 +132,11 @@ const HeaderBg = () => {
           <NavbarContent className="flex gap-5 justify-end">
           <Link
             href="mailto:enquiry@organicco.uk"
-            className="text-black text-sm"
+            className="text-green text-sm"
           >
             <EmailIcon className="text-sm" /> enquiry@organicco.uk
           </Link>
-          <Link href="tel:+44 (0)20 8133 3129" className="text-black text-sm">
+          <Link href="tel:+44 (0)20 8133 3129" className="text-green text-sm">
             <PhoneIcon className="text-sm" /> +44 (0)20 8133 3129
           </Link>
         </NavbarContent>

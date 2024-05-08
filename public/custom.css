@@ -236,8 +236,11 @@
   color: white;
 }
 .link-div-head-bg a {
-  color: black;
-  font-weight: 500;
+  color: #4e9139;
+  font-weight: 600;
+}
+.link-div-head-bg a:hover{
+  color: #1e1e20;
 }
 .header-bg {
   z-index: 9099 !important;
