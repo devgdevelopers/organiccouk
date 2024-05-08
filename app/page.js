@@ -1,5 +1,8 @@
 "use client";
+import RootLayout from "./layout";
+
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ReactPlayer from "react-player";
@@ -100,6 +103,7 @@ export default function Home() {
 
   return (
     <>
+  
       <main className="flex w-full flex-col items-center bg-white">
         <section className="w-full ">
           <Slider {...settingsSlider} className="flex gap-10 w-full">
@@ -207,8 +211,8 @@ export default function Home() {
                   <div className="mb-6">
                     <input
                       className="shadow appearance-none border  rounded w-full py-5 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
-                      id="password"
-                      type="password"
+                      id="message"
+                      type="text"
                       placeholder="How can we help you ?"
                     />
                   </div>
@@ -220,7 +224,7 @@ export default function Home() {
                       className=""
                     />
                     <label htmlFor="terms-check" className="px-3">
-                      I agree to the terms of service.
+                      I agree to the terms of service. <span><Link href="/privacy-policy" className="text-green text-sm">Privacy Policy</Link></span>
                     </label>
                   </div>
                   <div className="flex justify-center items-center w-full">
@@ -447,6 +451,7 @@ export default function Home() {
                 height={100}
                 className=" w-[471px] h-[500px] rounded-xl"
                 unoptimized
+                alt="picture"
               ></Image>
             </div>
             <div
@@ -520,6 +525,7 @@ export default function Home() {
           </div>
         </section>
       </main>
+    
     </>
   );
 }

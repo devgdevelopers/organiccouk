@@ -44,7 +44,11 @@ h1 {
 h2 {
   font-size: 42px;
 }
-
+/* h3{
+  font-size: 20px;
+  color: #0c0c4c;
+  font-weight: 600;
+} */
 @layer utilities {
   .text-balance {
     text-wrap: balance;

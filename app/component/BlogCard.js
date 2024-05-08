@@ -15,6 +15,7 @@ const BlogCard = ({ title, subtitle, desc, cardImage, cardLink }) => {
             height={200}
             alt="Avatar"
             unoptimized
+          
           ></Image>
         </div>
 
