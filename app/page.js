@@ -278,7 +278,7 @@ export default function Home() {
               <p className="text-white text-[20px] lg:text-[40px] font-bold text-center my-auto">
                 We're indeed committed to leading the charge in tackling
                 environmental challenges through{" "}
-                <span className="text-green">our innovative solutions</span>
+                <span className="text-[#32d900]">our innovative solutions</span>
               </p>
             </div>
           </div>

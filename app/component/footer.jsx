@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const footer = () => {
   return (
-    <section className="w-full bg-white footer-section overflow-hidden">
+    <section className="w-full bg-grey footer-section overflow-hidden">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-4 align-center justify-items-start sm:justify-items-center sm:p-16 p-4 m-auto">
           <div className="">
