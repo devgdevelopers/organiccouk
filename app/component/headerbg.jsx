@@ -52,7 +52,7 @@ const HeaderBg = () => {
         <Navbar isBordered className="hidden  md:flex flex-col-3 justify-center py-5 fixed top-0 bg-white header-bg"  >
         <NavbarContent className="text-white flex justify-start">
           <NavbarBrand className="flex justify-start">
-            <Link href="http://localhost:3000/">
+            <Link href="/">
               <Image
               className="bg-white rounded-xl"
                 src="/assets/Organicco_no_bg.png"

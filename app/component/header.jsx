@@ -49,7 +49,7 @@ export default function page() {
         <Navbar className="hidden md:flex flex-col-3 justify-center py-5  absolute top-0 bg-transparent main-nav">
           <NavbarContent className="text-white  flex justify-start">
             <NavbarBrand className="flex justify-start">
-              <Link href="http://localhost:3000/">
+              <Link href="/">
                 <Image
                   className="bg-white rounded-xl w-[100px] h-[100px]"
                   src="/assets/Organicco_no_bg.png"
