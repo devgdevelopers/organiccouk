@@ -95,9 +95,112 @@ const BannerSlidesData = [
   },
 ];
 
+const TeamData = [
+  {
+    imagePath: "./JonathanUre.jpg",
+    TeamName: "Jonathan Ure",
+    TeamPosition: "Managing Director",
+    TeamDesc:
+      "Jon is from a legal background having successfully managed his own business. He has been actively involved in marketing, accountancy and management. Jon brought these skills to Organicco when it was established.",
+    TeamSocialProfile: [
+      {
+        insta: "lala.com",
+        linkedIn: "lala.com",
+        xTwitter: "lala.com",
+      },
+    ],
+  },
+  {
+    imagePath: "../SergoVashakmadze.jpg",
+    TeamName: "Sergo Vashakmadze",
+    TeamPosition: "Investor Relations",
+    TeamDesc:
+      "Sergo has more than two decades of experience in developing finance/international financial institutions. He has spent some time in London with Bloomberg. Sergo received an MBA from Leipzig Graduate School of Management.",
+    TeamSocialProfile: [
+      {
+        insta: "lala.com",
+        linkedIn: "lala.com",
+        xTwitter: "lala.com",
+      },
+    ],
+  },
+  {
+    imagePath: "../AnupamaNigam.jpg",
+    TeamName: "Anupama Nigam",
+    TeamPosition: "Head of Project Management",
+    TeamDesc:
+      "Anu is self-motivated professional with over 13 years of experience in the insurance industry with management, team building, process set-up and project management skills. She is hardworking, self-motivated with a positive outlook and has brought a great all round ability to the Company.",
+    TeamSocialProfile: [
+      {
+        insta: "lala.com",
+        linkedIn: "lala.com",
+        xTwitter: "lala.com",
+      },
+    ],
+  },
+  {
+    imagePath: "../PaulHerrbach.jpg",
+    TeamName: "Paul Herrbach",
+    TeamPosition: "R&D Consultant",
+    TeamDesc:
+      "Paul has been a very enterprising and successful businessman with over 40 years’ experience in manufacturing. After retiring from the day-to-day business of running his own company he became Mayor of his township and was re-elected several times. His expertise is greatly valued by Organicco.",
+    TeamSocialProfile: [
+      {
+        insta: "lala.com",
+        linkedIn: "lala.com",
+        xTwitter: "lala.com",
+      },
+    ],
+  },
+  {
+    imagePath: "../DrVikramPattarkine.jpg",
+    TeamName: "Dr Vikram Pattarkine",
+    TeamPosition: "Technical Advisor USA",
+    TeamDesc:
+      "Vikram is an expert in environmental engineering, often called to speak on his specialist knowledge in wastewater treatment, nutrient recovery, renewable energy and fuel. He has worked extensively on creating renewable fuel from algae which Organicco intend to introduce in the near future.",
+    TeamSocialProfile: [
+      {
+        insta: "lala.com",
+        linkedIn: "lala.com",
+        xTwitter: "lala.com",
+      },
+    ],
+  },
+  {
+    imagePath: "../KorahAbraham.jpg",
+    TeamName: "Korah Abraham",
+    TeamPosition: "Head of Operations USA",
+    TeamDesc:
+      "Korah has over 30 years experienced in wastewater treatment, renewable energy, environment risk and impact assessments, project planning and engineering design. He has managed and delivered many government and community environmental projects and leads Organicco’s foray into the North American market.",
+    TeamSocialProfile: [
+      {
+        insta: "lala.com",
+        linkedIn: "lala.com",
+        xTwitter: "lala.com",
+      },
+    ],
+  },
+  {
+    imagePath: "../GopalJeyasundra.jpg",
+    TeamName: "Gopal Jeyasundra",
+    TeamPosition: "Senior Consultant",
+    TeamDesc:
+      "Gopal has over 15 years' experience in Sales and Marketing, R&D, EPC projects and has delivered fertiliser plants in six different countries. He is an experienced electrical, mechanical and control engineer.",
+    TeamSocialProfile: [
+      {
+        insta: "lala.com",
+        linkedIn: "lala.com",
+        xTwitter: "lala.com",
+      },
+    ],
+  },
+ 
+];
+
 export {
   productcardDataArray,
   BlogscardDataArray,
   servicescardDataArray,
   BannerSlidesData,
+  TeamData
 };

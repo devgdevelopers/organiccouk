@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
-
 * {
   font-family: "Montserrat", sans-serif;
 }
@@ -132,9 +131,6 @@
 .bg-purple-light {
   background-color: #1969011c;
 }
-.bg-green-light {
-  background-color: #f7fff4;
-}
 .bg-purple {
   background-color: #2e2e85;
 }
@@ -150,7 +146,6 @@
   transform: scale(1.1);
 }
 
-
 .main-hero-slide {
   position: relative;
   top: 0;
@@ -161,7 +156,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 8px;
 }
 
 .main-hero-slide::before {
@@ -173,28 +167,34 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.719);
   opacity: 0.6;
-  border-radius: 8px;
 }
-.main-hero-slide h2{
+.main-hero-slide h2 {
   z-index: 99;
 }
-.main-hero-slide p{
+.main-hero-slide p {
   z-index: 99;
 }
-.main-hero-slide a{
+.main-hero-slide a {
   z-index: 99;
   font-weight: 600;
   width: 150px;
 }
 
+.team-member-img {
+  border: 5px solid #196901;
+}
+.team-main-div {
+  border: 1px solid #196901;
+}
+
 .hero-banner1 {
-  background-image: url("./001.jpg");
+  background-image: url("./assets/001.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 .hero-banner2 {
-  background-image: url("./002.jpg");
+  background-image: url("../assets/002.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -211,22 +211,22 @@
   padding-right: 20px;
   border-radius: 5px;
   transition: 0.5s;
-  
 }
 .news-blog-btn:hover {
   background-color: #2e2e84;
-  
 }
 
 /* .get-q-form-home {
   width: 90%;
 } */
 
-.contact-inputs{
+.contact-inputs {
   width: 100%;
-  border-bottom: 1px solid #196901;
+  border-bottom: 1px solid #2e2e84;
   margin-bottom: 20px;
   outline: none;
+  background: none !important;
+  color: white;
 }
 .main-nav {
   background: none;
@@ -239,12 +239,12 @@
   color: #4e9139;
   font-weight: 600;
 }
-.link-div-head-bg a:hover{
+.link-div-head-bg a:hover {
   color: #1e1e20;
 }
 .header-bg {
   z-index: 9099 !important;
-  background-color: white ;
+  background-color: white;
 }
 header {
   width: 100%;
@@ -303,8 +303,7 @@ ul.z-30.px-6.fixed.flex.max-w-full.top-\[var\(--navbar-height\)\].inset-x-0.bott
   align-items: start;
 }
 
-
-video{
+video {
   border-radius: 20px;
   background-color: none;
   background: none;
@@ -319,24 +318,23 @@ video{
   z-index: 99; /* Ensure the icon is positioned above the React Player */
 }
 
-
-
 .play-icon {
   font-size: 5rem; /* Adjust the size of the play icon as needed */
-  color: #388521 /* White color for the play icon */
+  color: #388521; /* White color for the play icon */
 }
-.play-icon{
+.play-icon {
   z-index: 200;
 }
 
-/* .react-player{
-  position: absolute;
-   top: 0;
-  transform: translate(-50% , -50%);
-} */
-
-
-
-.text-green-light{
+.text-green-light {
   color: #196901;
+}
+
+
+.contact-social-div {
+  background-color: #fff;
+  color: #196901;
+  border-radius: 12px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+
 }
