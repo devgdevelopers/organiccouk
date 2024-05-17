@@ -1,11 +1,10 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
-function page() {
+export default function ContactPage() {
   return (
     <main className="flex w-full flex-col items-center pt-0 md:pt-[6.5rem] bg-green-light">
       <section className="container mx-auto mt-0 md:mt-10 my-auto flex flex-col md:flex-row p-4">
@@ -204,28 +203,3 @@ function page() {
   );
 }
 
-export default page;
-{
-  /* <div className=" flex flex-row  gap-8 ">
-          <div className="flex flex-col justify-center items-start contact-social-div p-4">
-            <div className="flex items-center">
-              <EmailIcon className="text-xl text-purple " /> 
-              <h3 className="text-xl text-purple font-semibold">Email</h3>
-            </div>
-            <div className="flex flex-col mt-0">
-             
-              <p className="text-base font-[500]">enquiry@organicco.uk</p>
-            </div>
-          </div>
-          <div className="flex flex-col justify-center items-start contact-social-div p-4">
-            <div className="flex items-center">
-              <PhoneIphoneIcon className="text-xl text-purple " />
-              <h3 className="text-xl text-purple font-semibold">Phone</h3>
-            </div>
-            <div className="flex flex-col mt-0">
-             
-              <p className="text-base font-[500]">+44 (0)20 8133 3129</p>
-            </div>
-          </div>
-        </div> */
-}
