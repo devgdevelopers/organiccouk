@@ -8,6 +8,7 @@ import Footer from "./component/footer";
 import { NextUIProvider } from "@nextui-org/react";
 import { Analytics } from "@vercel/analytics/react"
 import HeaderBg from "./component/headerbg";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +18,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="stylesheet" href="/custom.css" />
-     
       </head>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning >
       <Analytics/>
         <NextUIProvider>
-
           {pathname === '/' ?  <HomeHeader/> : <HeaderBg/>}
           {children}
           <footer>

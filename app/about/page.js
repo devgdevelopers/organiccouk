@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 
 import { TeamData } from "/public/assets/data.js";

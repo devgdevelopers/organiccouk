@@ -194,13 +194,13 @@
   background-position: center center;
 }
 .hero-banner2 {
-  background-image: url("../assets/002.jpg");
+  background-image: url("./002.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 .hero-banner3 {
-  background-image: url("./001.jpg");
+  background-image: url("./assets/001.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
