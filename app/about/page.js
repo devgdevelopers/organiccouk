@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 
-import { TeamData } from "/public/assets/data.js";
+// import { TeamData } from "/public/assets/data.js";
 import Image from "next/image";
 import Link from "next/link";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -118,7 +118,7 @@ export default function AboutPage() {
             <h3 className="text-xl md:text-2xl font-bold text-purple text-center mb-10">
               Meet Our Organicco Team
             </h3>
-            <div className="grid grid-cols-1  md:grid-cols-2 gap-10 justify-center items-center">
+            {/* <div className="grid grid-cols-1  md:grid-cols-2 gap-10 justify-center items-center">
               {TeamData.map((item) => (
                 <>
                   <div className=" w-[90%] md:w-[100%] flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-10 p-5 mx-auto team-main-div rounded-3xl bg-white">
@@ -157,7 +157,7 @@ export default function AboutPage() {
                   </div>
                 </>
               ))}
-            </div>
+            </div> */}
           </div>
         </section>
         <section className="container mx-auto flex flex-col md:flex-row py-16 gap-5 justify-center p-3">
