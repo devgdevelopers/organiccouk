@@ -24,7 +24,7 @@ const topheader = () => {
         <Link href="/blogs" className="text-white text-sm">
               Blogs
             </Link>
-            <Link href="/contact-us" className="text-white text-sm">
+            <Link href="/contact" className="text-white text-sm">
               Contact Us
             </Link>
         </div>

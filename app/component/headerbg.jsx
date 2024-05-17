@@ -42,7 +42,7 @@ const HeaderBg = () => {
     },
     {
       page: "Contact",
-      link: "/contact-us",
+      link: "/contact",
     },
   ];
 
@@ -91,7 +91,7 @@ const HeaderBg = () => {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link  href="/contact-us">
+            <Link  href="/contact">
               Contact
             </Link>
           </NavbarItem>

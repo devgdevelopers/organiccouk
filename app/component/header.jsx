@@ -39,7 +39,7 @@ export default function page() {
     },
     {
       page: "Contact",
-      link: "/contact-us",
+      link: "/contact",
     },
   ];
 
@@ -78,7 +78,7 @@ export default function page() {
               <Link href="/news">News</Link>
             </NavbarItem>
             <NavbarItem>
-              <Link href="/contact-us">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </NavbarItem>
           </NavbarContent>
 
