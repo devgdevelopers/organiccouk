@@ -152,9 +152,9 @@ function page() {
         </div>
       </section>
 
-      <section className="w-full py-10 bg-white">
-        <div className=" mx-auto flex  gap-10 w-[60%]">
-          <div className="w-[40%]">
+      <section className="w-full p-2 md:py-10 bg-white">
+        <div className=" mx-auto flex flex-col md:flex-row gap-10 w-[100%] lg:w-[60%]">
+          <div className=" w-[100%] lg:w-[40%]">
             <h2 className="text-sm text-purple md:text-2xl font-bold my-3">
               Visit Our Office
             </h2>
@@ -164,7 +164,7 @@ function page() {
               our vision for a greener planet.
             </p>
           </div>
-          <div className=" flex flex-col justify-center items-start gap-5 mx-auto ">
+          <div className=" flex flex-row md:flex-col justify-center items-start gap-5 mx-auto ">
             <div className="flex flex-col justify-center items-start text-green p-4">
               <div className="flex items-center">
                 <EmailIcon className="text-xl text-purple " />

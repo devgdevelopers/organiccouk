@@ -103,7 +103,7 @@ const defaultContent =
 return (
 <>
 
-  <main className="flex w-full flex-col items-center bg-white">
+  <main className="flex w-full flex-col items-center bg-white overflow-x-hidden">
     <section className="w-full ">
       <Slider {...settingsSlider} className="flex gap-10 w-full">
         {BannerSlidesData.map((item, id) => (
