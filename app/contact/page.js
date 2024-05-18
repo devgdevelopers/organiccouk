@@ -152,7 +152,7 @@ export default function Page() {
           </div>
         </section>
 
-        {/* <section className="w-full p-2 md:py-10 bg-white">
+        <section className="w-full p-2 md:py-10 bg-white">
           <div className=" mx-auto flex flex-col md:flex-row gap-10 w-[100%] lg:w-[60%]">
             <div className=" w-[100%] lg:w-[40%] my-auto">
               <h2 className="text-sm text-purple md:text-2xl font-bold my-3">
@@ -199,7 +199,7 @@ export default function Page() {
               </div>
             </div>
           </div>
-        </section> */}
+        </section>
       </div>
     </>
   );
