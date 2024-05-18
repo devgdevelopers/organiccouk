@@ -151,8 +151,6 @@ export default function Page() {
             </form>
           </div>
         </section>
-
-
         <section className="w-full p-2 md:py-10 bg-white">
           <div className="container mx-auto flex flex-col md:flex-row gap-10">
             <div className=" w-[100%] lg:w-[40%] my-auto">
