@@ -12,7 +12,7 @@ export default function Page() {
 return (
 <>
   <main className="bg-white">
-    <section className="flex w-full flex-col items-center bg-white pt-[6.5rem] bg-grey">
+    <section className="flex w-full flex-col items-center bg-white pt-3 md:pt-[6.5rem] bg-grey px-[10px]">
       <div className="container grid grid-cols-1 md:grid-cols-2 about-banner">
         <div className="flex  flex-col my-auto">
           <h2 className="text-xl md:text-2xl font-bold text-purple">
@@ -25,7 +25,7 @@ return (
           </p>
         </div>
         <div className="flex justify-center">
-          <Image src="/about-banner.png" width={100} height={100} alt="about-banner" className="w-[60%]" unoptimized />
+          <Image src="/about-banner.png" width={100} height={100} alt="about-banner" className="w-full sm:w-[60%]" unoptimized />
         </div>
       </div>
     </section>
