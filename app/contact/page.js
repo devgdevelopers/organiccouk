@@ -4,11 +4,11 @@ import EmailIcon from "@mui/icons-material/Email";
 import PhoneIphoneIcon from "@mui/icons-material/PhoneIphone";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
-export default function Contact() {
+export default function Page() {
   return (
     <>
       <div className="flex w-full flex-col items-center pt-0 md:pt-[6.5rem] bg-green-light">
-        {/* <section className="container mx-auto mt-0 md:mt-10 my-auto flex flex-col md:flex-row p-4">
+        <section className="container mx-auto mt-0 md:mt-10 my-auto flex flex-col md:flex-row p-4">
           <div className="rounded-lg p-5 w-[90%] md:w-[50%] justify-start my-auto">
             <h4 className="text-sm md:text-3xl font-bold  text-purple my-5 ">
               Get In Touch
@@ -150,7 +150,7 @@ export default function Contact() {
               </button>
             </form>
           </div>
-        </section> */}
+        </section>
 
         {/* <section className="w-full p-2 md:py-10 bg-white">
           <div className=" mx-auto flex flex-col md:flex-row gap-10 w-[100%] lg:w-[60%]">
