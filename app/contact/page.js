@@ -10,7 +10,7 @@ export default function Page() {
       <main className="flex w-full flex-col items-center pt-0 md:pt-[6.5rem] bg-green-light">
         <section className="container mx-auto mt-0 md:mt-10 my-auto flex flex-col md:flex-row p-4">
           <div className="rounded-lg p-5 w-[90%] md:w-[50%] justify-start my-auto">
-            <h4 className="text-sm md:text-3xl font-bold  text-purple my-5 ">
+            <h4 className="text-3xl font-bold  text-purple my-5 ">
               Get In Touch
             </h4>
             <p className="text-green text-[15px] mt-3  mx-auto">
@@ -30,7 +30,7 @@ export default function Page() {
           </div>
           <div className="p-5 w-[100%] md:w-[40%] mx-auto text-white form-contact-div my-auto">
             <form action="" className="text-white mx-auto p-3 w-[100%] ">
-              <h4 className="text-sm md:text-xl font-bold  text-purple mb-10 ">
+              <h4 className="text-2xl font-bold  text-purple mb-10 ">
                 Send a message
               </h4>
               <div className="w-[50%] inline">
@@ -151,10 +151,12 @@ export default function Page() {
             </form>
           </div>
         </section>
+
+
         <section className="w-full p-2 md:py-10 bg-white">
-          <div className=" mx-auto flex flex-col md:flex-row gap-10 w-[100%] lg:w-[60%]">
+          <div className="container mx-auto flex flex-col md:flex-row gap-10">
             <div className=" w-[100%] lg:w-[40%] my-auto">
-              <h2 className="text-sm text-purple md:text-2xl font-bold my-3">
+              <h2 className="text-xl text-purple md:text-2xl font-bold my-3">
                 Visit Our Office
               </h2>
               <p className="text-justify text-green">
@@ -163,38 +165,29 @@ export default function Page() {
                 sharing our vision for a greener planet.
               </p>
             </div>
-            <div className="flex flex-row md:flex-col justify-center items-start gap-5 mx-auto">
-              <div className="flex flex-col justify-center items-start text-green p-4">
-                <div className="flex items-center">
+            <div className="flex flex-col justify-center items-start gap-6 md:mx-auto text-green">
+              <div className="flex flex-col items-start">
+                <h3 className="text-base text-purple font-semibold">
                   <EmailIcon className="text-xl text-purple" />
-                  <h3 className="text-base text-purple font-semibold">Email</h3>
-                </div>
-                <div className="flex flex-col mt-0">
-                  <p className="text-base font-[500]">enquiry@organicco.uk</p>
-                </div>
+                  Email{" "}
+                </h3>
+                <p className="text-base font-[500]">enquiry@organicco.uk</p>
               </div>
-
-              <div className="flex flex-col justify-center items-start text-green p-4">
-                <div className="flex items-center">
-                  <PhoneIphoneIcon className="text-xl text-purple " />
-                  <h3 className="text-base text-purple font-semibold">Phone</h3>
-                </div>
-                <div className="flex flex-col mt-0">
-                  <p className="text-base font-[500]">+44 (0)20 8133 3129</p>
-                </div>
+              <div className="flex flex-col items-start">
+                <h3 className="text-base text-purple font-semibold">
+              
+                  <PhoneIphoneIcon className="text-xl text-purple " /> Phone
+                </h3>
+                <p className="text-base font-[500]">+44 (0)20 8133 3129</p>
               </div>
-              <div className="flex flex-col justify-center items-start text-green p-4">
-                <div className="flex items-center">
+              <div className="flex flex-col items-start">
+                <h3 className="text-base text-purple font-semibold">
                   <LocationOnIcon className="text-xl text-purple " />
-                  <h3 className="text-base text-purple font-semibold">
-                    Location
-                  </h3>
-                </div>
-                <div className="flex flex-col mt-0">
-                  <p className="text-base font-[500]">
-                    3rd. Floor, 86-90 Paul Street, London EC2A 4NE UK
-                  </p>
-                </div>
+                  Location
+                </h3>
+                <p className="text-base font-[500]">
+                  3rd. Floor, 86-90 Paul Street, London EC2A 4NE UK
+                </p>
               </div>
             </div>
           </div>
