@@ -7,7 +7,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 export default function Page() {
   return (
     <>
-      <div className="flex w-full flex-col items-center pt-0 md:pt-[6.5rem] bg-green-light">
+      <main className="flex w-full flex-col items-center pt-0 md:pt-[6.5rem] bg-green-light">
         <section className="container mx-auto mt-0 md:mt-10 my-auto flex flex-col md:flex-row p-4">
           <div className="rounded-lg p-5 w-[90%] md:w-[50%] justify-start my-auto">
             <h4 className="text-sm md:text-3xl font-bold  text-purple my-5 ">
@@ -151,7 +151,6 @@ export default function Page() {
             </form>
           </div>
         </section>
-
         <section className="w-full p-2 md:py-10 bg-white">
           <div className=" mx-auto flex flex-col md:flex-row gap-10 w-[100%] lg:w-[60%]">
             <div className=" w-[100%] lg:w-[40%] my-auto">
@@ -164,10 +163,10 @@ export default function Page() {
                 sharing our vision for a greener planet.
               </p>
             </div>
-            <div className=" flex flex-row md:flex-col justify-center items-start gap-5 mx-auto ">
+            <div className="flex flex-row md:flex-col justify-center items-start gap-5 mx-auto">
               <div className="flex flex-col justify-center items-start text-green p-4">
                 <div className="flex items-center">
-                  <EmailIcon className="text-xl text-purple " />
+                  <EmailIcon className="text-xl text-purple" />
                   <h3 className="text-base text-purple font-semibold">Email</h3>
                 </div>
                 <div className="flex flex-col mt-0">
@@ -200,7 +199,7 @@ export default function Page() {
             </div>
           </div>
         </section>
-      </div>
+      </main>
     </>
   );
 }
