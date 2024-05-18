@@ -163,7 +163,7 @@ export default function Page() {
                 sharing our vision for a greener planet.
               </p>
             </div>
-            <div className="flex flex-col justify-center items-start gap-6 md:mx-auto text-green">
+            {/* <div className="flex flex-col justify-center items-start gap-6 md:mx-auto text-green">
               <div className="flex flex-col items-start">
                 <h3 className="text-base text-purple font-semibold">
                   <EmailIcon className="text-xl text-purple" />
@@ -173,7 +173,6 @@ export default function Page() {
               </div>
               <div className="flex flex-col items-start">
                 <h3 className="text-base text-purple font-semibold">
-              
                   <PhoneIphoneIcon className="text-xl text-purple " /> Phone
                 </h3>
                 <p className="text-base font-[500]">+44 (0)20 8133 3129</p>
@@ -187,7 +186,7 @@ export default function Page() {
                   3rd. Floor, 86-90 Paul Street, London EC2A 4NE UK
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
       </main>
