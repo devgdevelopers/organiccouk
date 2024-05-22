@@ -21,8 +21,8 @@ return (
       {SinglePageProductsData.map((item, id) => {
       return (
       <>
-        <Card key={id} className="w-full max-w-[90%] flex-col md:flex-row gap-5 mx-auto ">
-          <CardHeader shadow={false} floated={false} className="m-0 w-2/5 shrink-0 rounded-r-none">
+        <Card key={id} className="w-full max-w-[90%] flex-col md:flex-row gap-5 mx-auto p-3 xl:p-0 ">
+          <CardHeader shadow={false} floated={false} className="m-0 w-full md:w-2/5 shrink-0 md:rounded-r-none">
             <Image src={item.productImage} alt="card-image" width={100} height={100}
               className="h-full w-full object-cover" unoptimized />
           </CardHeader>
