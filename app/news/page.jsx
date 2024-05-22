@@ -5,7 +5,7 @@ import Link from "next/link";
 const page = () => {
 return (
 <div className="flex min-h-screen flex-col items-center justify-start md:mt-[8rem]">
-  <h2 className="text-3xl text-purple font-semibold">Blog</h2>
+  <h2 className="text-3xl text-purple font-semibold">News</h2>
   <div className=" my-auto">
     <Link href="/blog" className="text-green">
     Visit our Blog Page
