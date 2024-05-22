@@ -244,7 +244,7 @@
 }
 .header-bg {
   z-index: 9099 !important;
-  background-color: white;
+ 
 }
 header {
   width: 100%;
@@ -337,4 +337,12 @@ video {
   border-radius: 12px;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 
+}
+.newsletter-input{
+  outline: none !important;
+  border: 1px solid #196901;
+  width: 60%;
+}
+.newsletter-input::placeholder{
+color: #0c0c4c;
 }

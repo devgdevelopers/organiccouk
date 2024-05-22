@@ -9,7 +9,7 @@ import { NextUIProvider } from "@nextui-org/react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import HeaderBg from "./component/headerbg";
-import Head from "next/head";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,7 +24,9 @@ export default function RootLayout({ children }) {
       <Analytics/>
       <SpeedInsights />
         <NextUIProvider>
+          <header>
           {pathname === '/' ?  <HomeHeader/> : <HeaderBg/>}
+          </header>
           {children}
           <footer>
             <Footer />

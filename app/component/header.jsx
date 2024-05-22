@@ -45,9 +45,9 @@ export default function page() {
 
   return (
     <>
-      <header className="sticky top-0 left-0 z-50">
-        <Navbar className="hidden md:flex flex-col-3 justify-center py-5  absolute top-0 bg-transparent main-nav">
-          <NavbarContent className="text-white  flex justify-start">
+      <header className="fixed top-0 left-0 z-50">
+        <Navbar className="container mx-auto hidden md:flex flex-col-3 justify-center py-5  absolute top-0 bg-transparent main-nav">
+          <NavbarContent className="text-white  flex justify-center">
             <NavbarBrand className="flex justify-start">
               <Link href="/">
                 <Image
@@ -61,7 +61,7 @@ export default function page() {
             </NavbarBrand>
           </NavbarContent>
 
-          <NavbarContent className="flex text-white gap-5 justify-center link-div-head">
+          <NavbarContent className="flex text-white gap-5 justify-end link-div-head">
             <NavbarItem>
               <Link href="/">Home</Link>
             </NavbarItem>

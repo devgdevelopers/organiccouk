@@ -13,10 +13,6 @@ useEffect(() => {
   const handleScroll = () => {
     const newScrollY = window.scrollY;
     setScrollY(newScrollY);
-
-    if (newScrollY >= 960) {
-      // console.log("Scrolled beyond 960px:", newScrollY);
-    }
   };
 
   // Attach the scroll event listener when the component mounts
@@ -29,19 +25,19 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-  if (scrollY > 960) {
+  if (scrollY > 2) {
     setShowHeaderBg(true);
   } else {
     setShowHeaderBg(false);
   }
 }, [scrollY]);
   return (
-    <div>
+    <>
          {!showHeaderBg && <Header />}
           {showHeaderBg && (
-            <HeaderBg className="header-bg" />
+            <HeaderBg />
           )}
-    </div>
+    </>
   )
 }
 

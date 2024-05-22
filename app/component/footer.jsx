@@ -42,8 +42,8 @@ const footer = () => {
           <div className="flex flex-col gap-y-3">
             <h3 className="text-lg  text-purple mt-6 font-bold  md:mt-0">Resources</h3>
             <ul className="flex flex-col gap-y-3">
-              <Link href="/products/ecohero">News</Link>
-              <Link href="/products/ecohero">Blog</Link>
+              <Link href="/news">News</Link>
+              <Link href="/blog">Blog</Link>
             </ul>
           </div>
         </div>

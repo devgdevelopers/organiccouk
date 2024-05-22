@@ -31,10 +31,10 @@ return (
     </section>
     <section className="container mx-auto flex flex-col md:flex-row gap-0 md:gap-10 pt-5 md:py-16">
       <div className="p-5 w-[100%] md:w-[180%]">
-        <h2 className="text-base md:text-base font-bold text-purple mb-1">
+        <h2 className="text-base uppercase md:text-xl font-bold text-green mb-1">
           Our motivation
         </h2>
-        <div className="text-green text-justify flex flex-col gap-2">
+        <div className="text-dark text-justify flex flex-col gap-2">
           <p>
             Having spent ten years of research and development of
             technologies and market opportunities we, the company, have
@@ -86,36 +86,36 @@ return (
       </div>
       <div className="flex flex-col justify-start gap-5 p-5 pb-0">
         <div className="flex flex-col justify-start">
-          <h2 className="text-base md:text-base font-bold text-purple mb-1">
+          <h2 className="text-base  uppercase md:text-xl font-bold text-green mb-1">
             Our Mission
           </h2>
-          <p className="text-green text-justify">
+          <p className=" text-justify">
             To become the world leader in environment friendly, efficient
             and cost-effective solutions for organic waste to resources
             technology.
           </p>
         </div>
         <div className="flex flex-col justify-end">
-          <h2 className="text-base md:text-base font-bold text-purple mb-1">
+          <h2 className="text-base uppercase md:text-xl font-bold text-green mb-1">
             Our Vision
           </h2>
-          <p className="text-green text-justify">
+          <p className=" text-justify">
             Empowering businesses with the power of innovation by
             transforming by-products into valuable resources.
           </p>
         </div>
       </div>
     </section>
-    <section className="team-section  py-20 bg-grey">
+    <section className="team-section  py-20 bg-green-light ">
       <div className="container mx-auto">
         <h3 className="text-xl md:text-2xl font-bold text-purple text-center mb-10">
           Meet Our Organicco Team
         </h3>
-        <div className="grid grid-cols-1  md:grid-cols-2 gap-10 justify-center items-center">
+        <div className="grid grid-cols-1  md:grid-cols-2 gap-10 justify-center items-center ">
           {TeamData.map((item) => (
           <>
             <div
-              className=" w-[90%] md:w-[100%] flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-10 p-5 mx-auto team-main-div rounded-3xl bg-white">
+              className=" w-[90%] md:w-[100%] flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-10 p-5 mx-auto team-main-div rounded-3xl bg-inherit">
               <div>
                 <Image src={item.imagePath} width={100} height={100} alt="team-member"
                   className="w-[150px] lg:w-[300px] xl:w-[400px] h-[auto]  mx-auto rounded-[50%] z-10 team-member-img"
@@ -133,10 +133,10 @@ return (
                 </div>
               </div>
               <div className="  flex flex-col  gap-2 ">
-                <h2 className="text-lg text-purple text-center lg:text-start font-bold p-0 m-0">
+                <h2 className="text-lg text-green text-center lg:text-start font-semibold p-0 m-0">
                   {item.TeamName}
                 </h2>
-                <p className="text-sm text-green text-center lg:text-start  font-semibold ">
+                <p className="text-sm text-purple text-center lg:text-start font-medium ">
                   {item.TeamPosition}
                 </p>
                 <p className="text-sm text-dark text-justify">

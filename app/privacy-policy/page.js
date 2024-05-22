@@ -2,15 +2,15 @@ import React from "react";
 
 const page = () => {
   return (
-    <div className="flex w-full flex-col items-center bg-white pt-[9rem] pb-20">
+    <div className="flex w-full flex-col items-center bg-white p-4 md:pt-[9rem] pb-20">
      <div className="container mx-auto ">
      <h3 className="text-md font-bold text-green my-2">Privacy policy</h3>
-      <p className=" text-[15px] font-medium ">
+      <p className=" text-[15px] font-medium text-justify ">
         This statement covers the services provided by the Organicco Ltd
         website: organicco.uk and organicco.co.uk. The Data Controller for this
         website is Organicco Ltd.
       </p>
-      <p className=" text-[15px] font-medium">
+      <p className=" text-[15px] font-medium text-justify">
         The purpose of this statement is to inform users of the Organicco
         website, which is managed by Organicco Ltd, about what information is
         collected about them when they visit this site, how this information is
@@ -18,7 +18,7 @@ const page = () => {
         privacy.
       </p>
       <h3 className="text-md font-bold text-green my-2">Confidentiality and security</h3>
-      <p className="-light text-[15px] font-medium">
+      <p className="-light text-[15px] font-medium text-justify">
         Any information you provide will be held securely and in accordance with
         the Data Protection Act 1998. Your personal details will not normally be
         disclosed to third parties. In some circumstances however we may need to
@@ -28,7 +28,7 @@ const page = () => {
         securely by that party, in accordance with the Data Protection Act 1998,
         and used only to provide the services or information you have requested.
       </p>
-      <p className="-light text-[15px] font-medium">
+      <p className="-light text-[15px] font-medium text-justify">
         You have a right to request a copy of your personal details at any time
         to check the accuracy of the information held. If you wish to do this,
         please write (explaining that your interest is in Organicco website) to
@@ -37,7 +37,7 @@ const page = () => {
 
       <h3 className="text-md font-bold text-green my-2">Information we collect from visitors</h3>
 
-      <p className=" text-[15px] font-medium">
+      <p className=" text-[15px] font-medium text-justify">
         We collect information from visitors to organicco.uk and organicco.co.uk
         provided in the enquiry/ comment form on the website, e-mail enquiries,
         e-mail addresses, site usage information and, in a few cases, personal
@@ -46,14 +46,14 @@ const page = () => {
       </p>
       <ol>
         <li className="text-sm font-bold  my-2">1. Feedback</li>
-        <p className=" text-[15px] font-medium">
+        <p className=" text-[15px] font-medium text-justify">
           If you provide feedback on the Organicco website through our email,
           enquiry@organicco.uk or any other contact email, we will only use this
           information to develop and improve the site.
         </p>
 
         <li className="text-sm font-bold  my-2">2. Comments and questions</li>
-        <p className=" text-[15px] font-medium">
+        <p className=" text-[15px] font-medium text-justify">
           If you send an enquiry by e-mail or website enquiry form to Organicco
           Ltd, it may not always be possible for Organicco to provide the
           information requested. We will endeavour to trace such cases to
@@ -62,7 +62,7 @@ const page = () => {
         </p>
 
         <li className="text-sm font-bold  my-2">3. Newsletter sign up</li>
-        <p className=" text-[15px] font-medium">
+        <p className=" text-[15px] font-medium text-justify">
           If you sign up to receive our newsletters, we will use the information
           you give us to provide the service(s) you have requested.
           <br />
@@ -78,7 +78,7 @@ const page = () => {
         <li className="text-sm font-bold my-2" >4. Site usage information</li>
         <div>
           <ul>
-            <li className="-light text-[15px] font-medium">
+            <li className="-light text-[15px] font-medium text-justify ">
               i. Cookies are pieces of data created when you visit a site, and
               contain a unique, anonymous number. They are stored in the cookie
               directory of your hard drive, and do not expire at the end of your
@@ -96,7 +96,7 @@ const page = () => {
               not to accept any cookie.
             </li>
             <br />
-            <li className="-light text-[15px] font-medium">
+            <li className="-light text-[15px] font-medium text-justify">
               ii. Log files allow us to record visitors' use of the site. Organicco
               puts together log file information from all our visitors, which we
               use to make improvements to the layout of the site and to the
@@ -108,7 +108,7 @@ const page = () => {
       </ol>
 
       <h3 className="text-md font-bold  my-2 text-green">Linking to another site from the Organicco website</h3>
-      <p className="-light text-[15px] font-medium">
+      <p className="-light text-[15px] font-medium text-justify">
         Our website contains links to other sites, mainly those of government
         departments, but also to those of other third parties.
         <br />

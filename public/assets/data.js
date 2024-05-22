@@ -1,3 +1,5 @@
+import { title } from "process";
+
 const productcardDataArray = [
   {
     title: "ecoHERO",
@@ -111,39 +113,11 @@ const TeamData = [
     ],
   },
   {
-    imagePath: "../SergoVashakmadze.jpg",
-    TeamName: "Sergo Vashakmadze",
-    TeamPosition: "Investor Relations",
-    TeamDesc:
-      "Sergo has more than two decades of experience in developing finance/international financial institutions. He has spent some time in London with Bloomberg. Sergo received an MBA from Leipzig Graduate School of Management.",
-    TeamSocialProfile: [
-      {
-        insta: "lala.com",
-        linkedIn: "lala.com",
-        xTwitter: "lala.com",
-      },
-    ],
-  },
-  {
     imagePath: "../AnupamaNigam.jpg",
     TeamName: "Anupama Nigam",
     TeamPosition: "Head of Project Management",
     TeamDesc:
       "Anu is self-motivated professional with over 13 years of experience in the insurance industry with management, team building, process set-up and project management skills. She is hardworking, self-motivated with a positive outlook and has brought a great all round ability to the Company.",
-    TeamSocialProfile: [
-      {
-        insta: "lala.com",
-        linkedIn: "lala.com",
-        xTwitter: "lala.com",
-      },
-    ],
-  },
-  {
-    imagePath: "../PaulHerrbach.jpg",
-    TeamName: "Paul Herrbach",
-    TeamPosition: "R&D Consultant",
-    TeamDesc:
-      "Paul has been a very enterprising and successful businessman with over 40 years’ experience in manufacturing. After retiring from the day-to-day business of running his own company he became Mayor of his township and was re-elected several times. His expertise is greatly valued by Organicco.",
     TeamSocialProfile: [
       {
         insta: "lala.com",
@@ -194,7 +168,67 @@ const TeamData = [
       },
     ],
   },
- 
+];
+
+const SinglePageServicesData = [
+  {
+    titleImage: "/assets/odour-control.jpg",
+    title: "Odour Control",
+    subtitle: "Regenerative catalyst and wet scrubbers",
+    servicesDesc:
+      " We have a range of odour control and management systems based on wet scrubbers, venturi scrubbers, carbon filter, regenerative catalyst, centrifugal separators, and plasma systems....",
+  },
+  {
+    titleImage: "/assets/automation.jpg",
+    title: "Automation & IoT",
+    subtitle: "Electrical Control Panels",
+    servicesDesc:
+      "We are mechatronic engineering experts and have more than 15 years of experience of delivering complex electrical control panels, with integrated automation and internet of things (IoT)....",
+  },
+  {
+    titleImage: "/assets/net-zero.jpg",
+    title: "Net-zero",
+    subtitle: "Organic & food waste management",
+    servicesDesc:
+      " In today’s business environment, no company can afford to waste money - or waste the planet! It’s a fact that waste is an essential part of providing food products and services.... ",
+  },
+  {
+    titleImage: "/assets/epc-feed.jpg",
+    title: "Consultancy",
+    subtitle: "FEED and EPC",
+    servicesDesc:
+      " Our project development arm offering Engineering, Procurement, Construction (EPC) and Project Management is a leader in facility design for the refined fuels, renewable fuels, renewable energy, fertiliser ....",
+  },
+];
+
+const SinglePageProductsData = [
+  {
+    productImage:"/assets/ecohero-loctroi-1.jpg",
+    productTitle: "ecoHERO",
+    productSubtitle: "Accelerated Thermophilic Aerobic Digester",
+    productDataPoints: [
+      "Converts organic waste material into quality organic fertiliser in 24h - 72h (depending on feedstocks).",
+      "Modular flexibility and daily throughput capacity ranging from 0.250 to 30 tonnes per day.",
+    ],
+  },
+  {
+    productImage:"/assets/ecodryer.jpg",
+    productTitle: "ecoDRYER",
+    productSubtitle: "Digestate Dryer",
+    productDataPoints: [
+      "Dryer system capable of drying digestate, slurry, sludge, sawdust, and farmyard manure.",
+      "Suitable for various drying applications.",
+    ],
+  },
+  {
+    productImage:"/assets/ecoenergy-banner.jpg",
+    productTitle: "ecoENERGY",
+    productSubtitle: "Waste-to-energy",
+    productDataPoints: [
+      "Transforms waste to energy, electricity and heat, fertiliser.",
+      "Affordable, compact, reliable and sustainable.",
+    ],
+  },
 ];
 
 export {
@@ -202,5 +236,7 @@ export {
   BlogscardDataArray,
   servicescardDataArray,
   BannerSlidesData,
-  TeamData
+  TeamData,
+  SinglePageServicesData,
+  SinglePageProductsData
 };

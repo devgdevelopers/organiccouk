@@ -48,8 +48,9 @@ const HeaderBg = () => {
 
   return (
     <div>
-       <header className="sticky top-0 left-0 z-50">
-        <Navbar isBordered className="hidden  md:flex flex-col-3 justify-center py-5 fixed top-0 bg-white header-bg"  >
+       <header className="sticky top-0 left-0 z-50 bg-[white] w-full">
+      <div className="container mx-auto">
+      <Navbar isBordered className=" hidden  md:flex flex-col-3 justify-center py-5 fixed top-0  header-bg bg-white"  >
         <NavbarContent className="text-white flex justify-start">
           <NavbarBrand className="flex justify-start">
             <Link href="/">
@@ -109,6 +110,7 @@ const HeaderBg = () => {
           </Link>
         </NavbarContent>
       </Navbar>
+      </div>
       <Navbar className="sticky md:hidden py-4 flex bg-white justify-end z-[1000] ">
         <NavbarContent className=" ">
           <NavbarBrand>
