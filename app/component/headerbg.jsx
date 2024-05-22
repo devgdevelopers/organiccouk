@@ -111,35 +111,36 @@ const HeaderBg = () => {
         </NavbarContent>
       </Navbar>
       </div>
-      <Navbar className="sticky md:hidden py-4 flex bg-white justify-end z-[1000] ">
+      <Navbar className="sticky md:hidden py-4 flex bg-white justify-center z-[1000] ">
         <NavbarContent className=" ">
           <NavbarBrand>
+            <Link href="/">
             <Image
               src="/assets/Organicco_no_bg.png"
               width={100}
               height={100}
               alt="logo"
-            />
+            /></Link>
           </NavbarBrand>
         </NavbarContent>
 
-        <NavbarMenu className="pt-36 h-screen bg-white">
+        <NavbarMenu className="pt-20 h-min-screen bg-white">
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <Link className="w-full" href={item.link} size="lg">
+              <Link className="w-full text-green" href={item.link} size="lg">
                 {item.page}
               </Link>
             </NavbarMenuItem>
           ))}
-          <NavbarContent className="flex gap-5 justify-end">
+          <NavbarContent className="flex flex-col gap-5 justify-start align-center">
           <Link
             href="mailto:enquiry@organicco.uk"
-            className="text-green text-sm"
+            className="text-green text-lg"
           >
-            <EmailIcon className="text-sm" /> enquiry@organicco.uk
+            <EmailIcon className="text-4xl" /> enquiry@organicco.uk
           </Link>
-          <Link href="tel:+44 (0)20 8133 3129" className="text-green text-sm">
-            <PhoneIcon className="text-sm" /> +44 (0)20 8133 3129
+          <Link href="tel:+44 (0)20 8133 3129" className="text-green text-lg">
+            <PhoneIcon className="text-4xl" /> +44 (0)20 8133 3129
           </Link>
         </NavbarContent>
         </NavbarMenu>

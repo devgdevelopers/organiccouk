@@ -346,3 +346,13 @@ video {
 .newsletter-input::placeholder{
 color: #0c0c4c;
 }
+ul.h-full.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\[justify\=start\]\:flex-grow.data-\[justify\=start\]\:basis-0.data-\[justify\=center\]\:justify-center.data-\[justify\=end\]\:justify-end.data-\[justify\=end\]\:flex-grow.data-\[justify\=end\]\:basis-0.flex.flex-col.gap-5.justify-start.align-center {
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+/* ul.h-full.flex-row.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\[justify\=start\]\:flex-grow.data-\[justify\=start\]\:basis-0.data-\[justify\=center\]\:justify-center.data-\[justify\=end\]\:justify-end.data-\[justify\=end\]\:flex-grow.data-\[justify\=end\]\:basis-0.flex.gap-5.justify-end {
+  flex-direction: column;
+  align-items: flex-start;
+} */

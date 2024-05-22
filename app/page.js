@@ -121,10 +121,10 @@ return (
     </section>
 
     {/* below banner */}
-    <section className="w-full z-40 bg-green-light py-10">
+    <section className="w-full z-10 bg-green-light py-2 md:py-10">
       <div className="w-full mx-auto justify-center z-40">
         <div className="container mx-auto block lg:flex">
-          <div className="p-10 w-[100%]  lg:w-[130%] ">
+          <div className="p-5 md:p-10 w-[100%]  lg:w-[130%] ">
             <p className="text-xl md:text-2xl font-bold mb-4 text-purple">
               About Us
             </p>
@@ -132,7 +132,7 @@ return (
               The most advanced organic waste and food waste recycling
               solution in the world
             </p>
-            <p className="sm:text-justify mb-4">
+            <p className="text-justify mb-4">
               Organicco is an innovative and modern biotechnology company
               specialising in
               <i className="font-bold ">
@@ -148,13 +148,13 @@ return (
               services.
             </p>
 
-            <p className="m-0 p-0 mb-4">
+            <p className="m-0 p-0 mb-4 text-justify">
               Our business offers affordable technology for solving
               escalating food security problems. The main focus concentrates
               on decarbonisation whilst reducing costs and providing
               environmental benefits for all.
             </p>
-            <p className="mb-4">
+            <p className="mb-4 text-justify">
               This has been achieved with the continuous development of
               Organicco’s closed-loop solution where we waste nothing.
               Depending on the input material our technologies convert
@@ -166,7 +166,7 @@ return (
             <h3 className="text-xl my-4 text-green font-bold">
               Empowering Businesses
             </h3>
-            <p>
+            <p className="text-justify">
               Organicco provides solutions for empowering businesses to
               divert waste away from expensive traditional disposal options
               whilst helping them meet their net-zero targets. Organicco has
