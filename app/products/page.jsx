@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import DoneAllIcon from "@mui/icons-material/DoneAll";
-import { SinglePageProductsData } from "/public/assets/data.js";
+
 import {
 Card,
 CardHeader,
@@ -13,12 +13,31 @@ Button,
 } from "@material-tailwind/react";
 
 export default function Page() {
+
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(null);
+  useEffect(() => {
+    fetch('/api/products')
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return res.json();
+      })
+      .then((data) => setProducts(data))
+      .catch((err) => setError(err.message));
+  }, []);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
 return (
 <>
   <section className="flex min-h-screen flex-col items-center justify-start md:mt-[8rem]">
     <h2 className="text-2xl text-purple font-semibold">Our Products</h2>
     <div className="pt-10 flex flex-col gap-20 container mx-auto">
-      {SinglePageProductsData.map((item, id) => {
+      {products.map((item, id) => {
       return (
       <>
         <Card key={id} className="w-full max-w-[90%] flex-col md:flex-row gap-5 mx-auto p-3 xl:p-0 ">

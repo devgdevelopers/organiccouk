@@ -15,7 +15,7 @@ const page = () => {
           <div className=" pt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-center mx-auto text-black">
             {SinglePageServicesData.map((item, id) => {
               return (
-                <Card key={id} className="py-4 px-3 rounded-none">
+                <Card key={id} className="py-4 px-3 rounded-none w-[85%] md:w-[100%] mx-auto">
                   <CardHeader className="">
                     <Image
                       alt="Card background"
@@ -33,7 +33,7 @@ const page = () => {
                     >
                       {item.title}
                     </Link>
-                    <p className="text-default-500 text-sm text-purple py-2">
+                    <p className="text-default-500 text-sm text-purple ">
                       <em>{item.subtitle}</em>
                     </p>
                     <p className="text-justify text-sm my-3">
