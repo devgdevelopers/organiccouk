@@ -1,4 +1,3 @@
-import { title } from "process";
 
 const productcardDataArray = [
   {
@@ -82,7 +81,7 @@ const BlogscardDataArray = [
 const BannerSlidesData = [
   {
     heading: "Completing the food cycle!",
-    desc: "We specialise in solving the organic & food waste problems by converting waste into valuable resources.",
+    desc: "We specialise in solving organic & food waste problems by converting waste into valuable resources.",
     bgClass: "hero-banner1",
   },
   {
@@ -201,12 +200,11 @@ const SinglePageServicesData = [
   },
 ];
 
-
 export {
   productcardDataArray,
   BlogscardDataArray,
   servicescardDataArray,
   BannerSlidesData,
   TeamData,
-  SinglePageServicesData
+  SinglePageServicesData,
 };

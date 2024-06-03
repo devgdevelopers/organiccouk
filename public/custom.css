@@ -226,7 +226,8 @@
   margin-bottom: 20px;
   outline: none;
   background: none !important;
-  color: white;
+  color: black !important;
+
 }
 .main-nav {
   background: none;

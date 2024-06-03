@@ -10,7 +10,7 @@ return (
         <h4 className="text-3xl font-bold  text-purple my-5 text-center lg:text-start lg:mx-auto">
           Get In Touch
         </h4>
-        <p className="text-green text-[15px] mt-3 text-center lg:text-start  mx-auto">
+        <p className="text-green text-[15px] mt-3 text-center lg:text-start  mx-auto font-medium">
           Ready to take the next step towards sustainability? Reach out to
           us today! Whether you have questions, ideas, or want to explore
           partnership opportunities, our team is here to help.
@@ -45,7 +45,7 @@ return (
             <label htmlFor="PhoneNumber" className="text-green text-base  block mb-3">
               Phone number
             </label>
-            <input type="tel" name="" id="PhoneNumber" className="contact-inputs" required />
+            <input type="number" name="" id="PhoneNumber" className="contact-inputs" required />
           </div>
           <div>
             <label htmlFor="helpMsg" className="text-green text-base  block mb-3">
@@ -82,7 +82,7 @@ return (
           <h2 className="text-xl text-purple md:text-2xl font-bold my-3">
             Visit Our Office
           </h2>
-          <p className="text-justify text-green">
+          <p className="text-justify text-green font-medium">
             Tour our facilities and discover how we're transforming waste
             into valuable resources. We look forward to welcoming you and
             sharing our vision for a greener planet.
@@ -124,7 +124,7 @@ return (
         <h2 className="text-xl font-semibold text-purple lg:text-left text-center">
           Stay Informed with Our Newsletter
         </h2>
-        <p className=" font-normal text-green my-4 lg:text-left text-justify">
+        <p className="text-green my-4 lg:text-left text-justify font-medium">
           Subscribe to our newsletter and be the first to hear about our
           latest innovations, industry insights, and sustainability tips.
           Join our community and stay connected with Organicco's mission to

@@ -33,3 +33,4 @@ const SinglePageProductsData = [
 export async function GET(){
   return NextResponse.json(SinglePageProductsData);
 }
+

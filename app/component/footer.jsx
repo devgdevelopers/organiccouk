@@ -6,7 +6,7 @@ const footer = () => {
   return (
     <section className="w-full bg-grey footer-section overflow-hidden">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-4 align-center justify-items-start sm:justify-items-center sm:p-16 p-4 m-auto">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 align-center justify-center justify-items-start lg:justify-items-center sm:p-16 p-4 m-auto">
           <div className="">
             <Image
               src="/assets/Organicco_no_bg.png"
@@ -25,9 +25,9 @@ const footer = () => {
           <div className="flex flex-col gap-y-3">
             <h2 className="text-lg text-purple font-bold  mt-6 md:mt-0">Product</h2>
             <ul className="flex flex-col gap-y-3 ">
-              <Link href="/products/ecohero">ECOHero</Link>
-              <Link href="/products/ecodryer">ECODryer</Link>
-              <Link href="/products/ecoenergy">ECOEnergy</Link>
+              <Link href="/products/ecohero"><em>eco</em>Hero</Link>
+              <Link href="/products/ecodryer"><em>eco</em>Dryer</Link>
+              <Link href="/products/ecoenergy"><em>eco</em>Energy</Link>
             </ul>
           </div>
           <div className="flex flex-col gap-y-3">
@@ -39,11 +39,12 @@ const footer = () => {
               <Link href="/services/consultancy">Consultancy</Link>
             </ul>
           </div>
-          <div className="flex flex-col gap-y-3">
+          <div className="flex flex-col gap-y-3 ">
             <h3 className="text-lg  text-purple mt-6 font-bold  md:mt-0">Resources</h3>
             <ul className="flex flex-col gap-y-3">
               <Link href="/news">News</Link>
               <Link href="/blog">Blog</Link>
+              <Link href='https://www.bark.com/en/gb/company/organicco-ltd/aMVpo/' target='_blank' class='bark-widget' data-type='pro' data-id='aMVpo' data-image='medium-navy' data-version='3.0'>Organicco Ltd</Link><script type='text/javascript' src='https://d3a1eo0ozlzntn.cloudfront.net/assets/js/frontend-v2/widgets-v2.24a197bed6.v2.js' defer></script>
             </ul>
           </div>
         </div>

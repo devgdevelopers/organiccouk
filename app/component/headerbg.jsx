@@ -33,7 +33,7 @@ const HeaderBg = () => {
       link: "/services",
     },
     {
-      page: "About",
+      page: "About Us",
       link: "/about",
     },
     {
@@ -83,7 +83,7 @@ const HeaderBg = () => {
           </NavbarItem>
           <NavbarItem>
             <Link  href="/about">
-              About
+              About Us
             </Link>
           </NavbarItem>
           <NavbarItem>
@@ -112,7 +112,7 @@ const HeaderBg = () => {
       </Navbar>
       </div>
       <Navbar className="sticky md:hidden py-4 flex bg-white justify-center z-[1000] ">
-        <NavbarContent className=" ">
+        <NavbarContent>
           <NavbarBrand>
             <Link href="/">
             <Image
