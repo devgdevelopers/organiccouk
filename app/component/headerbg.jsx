@@ -14,9 +14,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import Image from "next/image";
 
 const HeaderBg = () => {
-  useEffect(() => {
-    console.log("HeaderBg component is rendered");
-  }, []); 
+ 
   const menuItems = [
     {
       page: "Home",
