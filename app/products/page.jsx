@@ -17,6 +17,7 @@ export default function Page() {
 
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
+  const [isLoading, setisLoading] = useState(true);
   useEffect(() => {
     fetch('/api/products')
       .then((res) => {
@@ -25,7 +26,10 @@ export default function Page() {
         }
         return res.json();
       })
-      .then((data) => setProducts(data))
+      .then((data) => {
+        setProducts(data);
+        setisLoading(false);
+      })
       .catch((err) => setError(err.message));
   }, []);
 

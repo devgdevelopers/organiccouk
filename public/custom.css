@@ -141,6 +141,7 @@
   font-size: 16px;
   color: #196901;
   font-weight: 500;
+  transition: 0.3s;
 }
 .footer-section div ul a:hover {
   transform: scale(1.1);
@@ -226,7 +227,8 @@
   margin-bottom: 20px;
   outline: none;
   background: none !important;
-  color: white;
+  color: black !important;
+
 }
 .main-nav {
   background: none;
@@ -401,4 +403,12 @@ ul.h-full.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\
 .services_link{
   position: absolute;
   bottom: 20px;
+}
+.bark-logo{
+  mix-blend-mode: multiply;
+  transition: 0.3s;
+}
+
+.bark-logo:hover{
+  transform: scale(1.2);
 }
