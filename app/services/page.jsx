@@ -20,7 +20,7 @@ const page = () => {
           <h2 className=" text-center text-2xl text-purple font-semibold">
             Our Services
           </h2>
-          <div className=" pt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-center mx-auto text-black"data-aos="fade-right"data-aos-duration="600">
+          <div className=" pt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-center mx-auto text-black"data-aos="fade-right" data-aos-duration="600">
             {SinglePageServicesData.map((item, id) => {
               return (
                 <Card key={id} className="group overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl h-[500px]">
@@ -36,7 +36,7 @@ const page = () => {
                   </CardHeader>
                   <CardBody className="overflow-visible py-2">
                     <Link
-                      href={`/services/pink`}
+                      href={`/services/?`}
                       className="text-base uppercase font-bold text-green"
                     >
                       {item.title}
@@ -48,7 +48,7 @@ const page = () => {
                       {item.servicesDesc}
                     </p>
                     <Link
-                      href={`/services/pink`}
+                      href={`/services/?`}
                       className="inline-flex items-center rounded-md bg-[#52c42f1f] px-4 py-2 text-sm font-medium text-[#2e2e84] transition-colors duration-300 hover:bg-[#52c42f33] services_link"
                     >
                       Read More

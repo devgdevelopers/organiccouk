@@ -31,6 +31,16 @@ const SinglePageProductsData = [
         "Affordable, compact, reliable and sustainable.",
       ],
     },
+    {
+      link:"/ecoman",
+      productImage:"/assets/ecoenergy-banner.jpg",
+      productTitle: "ecoMan",
+      productSubtitle: "Waste-to-energy",
+      productDataPoints: [
+        "Transforms waste to energy, electricity and heat, fertiliser.",
+        "Affordable, compact, reliable and sustainable.",
+      ],
+    },
   ];
 
 export async function GET(){
