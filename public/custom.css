@@ -141,6 +141,7 @@
   font-size: 16px;
   color: #196901;
   font-weight: 500;
+  transition: 0.3s;
 }
 .footer-section div ul a:hover {
   transform: scale(1.1);
@@ -355,29 +356,9 @@ ul.h-full.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\
 
 .bark-logo{
   mix-blend-mode: multiply;
+  transition: 0.3s;
 }
 
-.bark-widget {
-  font-size: 12px;
-  mix-blend-mode: multiply;
-  width: 110px !important;
-  border: none !important;
-  margin-top: 10px;
-  
-}
-.bark-widget img {
- 
-  margin: auto !important;
-  padding: 2px;
-  margin: 0 !important;
-}
-.bark-review-badge-name {
-  padding: 0 !important;
-  border: none !important;
-}
-.bark-review-badge-name span{
-  font-size: 12px;
-}
-.bark-top-container{
-height: 40px !important;
+.bark-logo:hover{
+  transform: scale(1.2);
 }
