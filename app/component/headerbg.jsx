@@ -8,8 +8,6 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  Button,
-  link,
 } from "@nextui-org/react";
 import EmailIcon from "@mui/icons-material/Email";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -18,7 +16,7 @@ import Image from "next/image";
 const HeaderBg = () => {
   useEffect(() => {
     console.log("HeaderBg component is rendered");
-  }, []); // Empty dependency array means this effect runs only once after the component mounts
+  }, []); 
   const menuItems = [
     {
       page: "Home",
@@ -37,8 +35,8 @@ const HeaderBg = () => {
       link: "/about",
     },
     {
-      page: "News",
-      link: "/news",
+      page: "Blog",
+      link: "/blog",
     },
     {
       page: "Contact",
@@ -87,8 +85,8 @@ const HeaderBg = () => {
             </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link  href="/news">
-              News
+            <Link  href="/blog">
+              Blog
             </Link>
           </NavbarItem>
           <NavbarItem>

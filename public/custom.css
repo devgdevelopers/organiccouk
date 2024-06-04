@@ -353,7 +353,28 @@ ul.h-full.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\
   gap: 15px;
 }
 
-/* ul.h-full.flex-row.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\[justify\=start\]\:flex-grow.data-\[justify\=start\]\:basis-0.data-\[justify\=center\]\:justify-center.data-\[justify\=end\]\:justify-end.data-\[justify\=end\]\:flex-grow.data-\[justify\=end\]\:basis-0.flex.gap-5.justify-end {
-  flex-direction: column;
-  align-items: flex-start;
-} */
+
+.bark-widget {
+  font-size: 12px;
+  mix-blend-mode: multiply;
+  width: 110px !important;
+  border: none !important;
+  margin-top: 10px;
+  
+}
+.bark-widget img {
+ 
+  margin: auto !important;
+  padding: 2px;
+  margin: 0 !important;
+}
+.bark-review-badge-name {
+  padding: 0 !important;
+  border: none !important;
+}
+.bark-review-badge-name span{
+  font-size: 12px;
+}
+.bark-top-container{
+height: 40px !important;
+}
