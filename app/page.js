@@ -280,7 +280,7 @@ export default function Home() {
       <div className="image-section w-full flex justify-center py-20 lg:py-40 px-10">
         <div className="flex justify-center z-50 container " data-aos="fade-up">
           <div className="text-white text-[20px] lg:text-[40px] font-bold text-center my-auto">
-            We're indeed committed to leading the charge in tackling
+            We're committed to leading the charge in tackling
             environmental challenges through{" "}
             <span className="text-[#32d900] text">our innovative solutions</span>
           </div>
