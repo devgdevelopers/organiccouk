@@ -353,6 +353,9 @@ ul.h-full.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\
   gap: 15px;
 }
 
+.bark-logo{
+  mix-blend-mode: multiply;
+}
 
 .bark-widget {
   font-size: 12px;

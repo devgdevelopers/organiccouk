@@ -21,8 +21,14 @@ const footer = () => {
               Empowering businesses with the power of innovation by transforming
               by-products into valuable resources.
             </p>
-            <Link href='https://www.bark.com/en/gb/company/organicco-ltd/aMVpo/' target='_blank' class='bark-widget' data-type='pro' data-id='aMVpo' data-image='medium-navy' data-version='3.0'>Organicco Ltd</Link>
-              <script type='text/javascript' src='https://d3a1eo0ozlzntn.cloudfront.net/assets/js/frontend-v2/widgets-v2.24a197bed6.v2.js' defer></script>
+             
+             <Link href="https://www.bark.com/en/gb/company/organicco-ltd/aMVpo/" target="_blank">
+              <Image src="/assets/bark-pro-medium.png" className="bark-logo my-2" width={120} height={100} alt="bark logo">
+              </Image>
+             </Link>
+        
+            {/* <Link href='https://www.bark.com/en/gb/company/organicco-ltd/aMVpo/' target='_blank' class='bark-widget' data-type='pro' data-id='aMVpo' data-image='medium-navy' data-version='3.0'>Organicco Ltd</Link>
+              <script type='text/javascript' src='https://d3a1eo0ozlzntn.cloudfront.net/assets/js/frontend-v2/widgets-v2.24a197bed6.v2.js' defer></script> */}
           </div>
           <div className="flex flex-col gap-y-3">
             <h2 className="text-lg text-purple font-bold  mt-6 md:mt-0">Product</h2>
