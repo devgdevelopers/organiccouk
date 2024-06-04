@@ -15,7 +15,7 @@ export default function Card({ title, subtitle, desc, bgClass, cardLink }) {
           <p className=" mb-5 text-justify ">
             {desc}
           </p>
-          <a className="bg-green text-white p-2 mt-4 news-blog-btn" href={cardLink} target="_blank" rel="noopener noreferrer">
+          <a className="bg-green text-white p-2 mt-4 news-blog-btn" href={cardLink}  rel="noopener noreferrer">
             Learn More
           </a>
         </div>

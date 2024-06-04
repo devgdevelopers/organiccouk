@@ -233,8 +233,13 @@ return (
         <div data-aos="zoom-in"
           className="flex flex-row container gap-10 flex-wrap align-center justify-center flex-auto">
           {productcardDataArray.map((lala, id) => (
-          <Card key={id} title={lala.title} subtitle={lala.subtitle} desc={lala.desc} bgClass={lala.bgClass}
-            cardLink={lala.cardLink} />
+          <Card 
+          key={id} 
+          title={lala.title} 
+          subtitle={lala.subtitle} 
+          desc={lala.desc} 
+          bgClass={lala.bgClass}
+          cardLink={lala.cardLink} />
           ))}
         </div>
       </div>
@@ -245,7 +250,7 @@ return (
       <div className="image-section w-full flex justify-center py-20 lg:py-40 px-10">
         <div className="flex justify-center z-50 container " data-aos="fade-up">
           <div className="text-white text-[20px] lg:text-[40px] font-bold text-center my-auto">
-            We're indeed committed to leading the charge in tackling
+            We're committed to leading the charge in tackling
             environmental challenges through{" "}
             <span className="text-[#32d900] text">our innovative solutions</span>
           </div>
@@ -320,7 +325,7 @@ return (
           <Accordion defaultExpandedKeys={["1"]}>
             <AccordionItem key="1" aria-label="Accordion 1" title={ <span className={`${ activeItem==="1" ? "text-black"
               : "text-green" }`}>
-              What is organicco?
+              What is Organicco?
               </span>
               }
 
@@ -370,7 +375,7 @@ return (
             alt="picture"></Image>
         </div>
         <div className="px-5 pb-5 flex lg:w-[60%] flex-col justify-center w-[100%]" data-aos="flip-right">
-          <p className="text-xl md:text-2xl font-bold text-purple mb-4">our vision</p>
+          <p className="text-xl md:text-2xl font-bold text-purple mb-4">Our Vision</p>
           <h1 className="text-3xl font-bold mb-3 text-green">
             Innovation Driving Sustainable Environmental Solutions.
           </h1>

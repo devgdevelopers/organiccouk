@@ -1,10 +1,18 @@
-import React from "react";
+"use client"
+
+import React,{ useEffect} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Card, CardHeader, CardBody} from "@nextui-org/react";
 import { SinglePageServicesData } from "/public/assets/data";
+import Aos from 'aos';
+import 'aos/dist/aos.css'
 
 const page = () => {
+
+  useEffect(() => {
+    Aos.init({});
+  }, []);
   return (
     <>
       <section className="flex flex-col  md:mt-[6.5rem] py-10 bg-purple-light">
@@ -12,10 +20,10 @@ const page = () => {
           <h2 className=" text-center text-2xl text-purple font-semibold">
             Our Services
           </h2>
-          <div className=" pt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-center mx-auto text-black">
+          <div className=" pt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-center mx-auto text-black"data-aos="fade-right"data-aos-duration="600">
             {SinglePageServicesData.map((item, id) => {
               return (
-                <Card key={id} className="py-4 px-3 rounded-none w-[85%] md:w-[100%] mx-auto">
+                <Card key={id} className="group overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl h-[500px]">
                   <CardHeader className="">
                     <Image
                       alt="Card background"
@@ -41,7 +49,7 @@ const page = () => {
                     </p>
                     <Link
                       href={`/services/pink`}
-                      className="my-2 py-2 bg-purple text-white inline-block rounded-base text-center"
+                      className="inline-flex items-center rounded-md bg-[#52c42f1f] px-4 py-2 text-sm font-medium text-[#2e2e84] transition-colors duration-300 hover:bg-[#52c42f33] services_link"
                     >
                       Read More
                     </Link>

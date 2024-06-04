@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 
 const SinglePageProductsData = [
     {
+      link:"/ecohero",
       productImage:"/assets/ecohero-loctroi-1.jpg",
       productTitle: "ecoHERO",
       productSubtitle: "Accelerated Thermophilic Aerobic Digester",
@@ -11,6 +12,7 @@ const SinglePageProductsData = [
       ],
     },
     {
+      link:"/ecodryer",
       productImage:"/assets/ecodryer.jpg",
       productTitle: "ecoDRYER",
       productSubtitle: "Digestate Dryer",
@@ -20,6 +22,7 @@ const SinglePageProductsData = [
       ],
     },
     {
+      link:"/ecoenergy",
       productImage:"/assets/ecoenergy-banner.jpg",
       productTitle: "ecoENERGY",
       productSubtitle: "Waste-to-energy",

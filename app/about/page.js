@@ -19,7 +19,7 @@ return (
             About Us
           </h2>
           <p className="text-green">
-            Organicco is dedicated to revolutionizing waste management
+            Organicco is dedicated to revolutionising waste management
             through innovative recycling solutions, turning organic waste
             into valuable resources for a sustainable future.
           </p>
@@ -36,22 +36,19 @@ return (
         </h2>
         <div className="text-dark text-justify flex flex-col gap-2">
           <p>
-            Having spent ten years of research and development of
-            technologies and market opportunities we, the company, have
+            Having spent ten years in research and development of
+            technologies and market opportunities we, have
             environmental, social and governance principles embedded at the
             heart of everything we do. It is in our DNA.
           </p>
           <p>
-            We want to protect the environment by empowering small and
-            medium sized businesses and farmers with the strength of
-            innovation by transforming their by-products into resources
+            We aim to protect the environment by empowering small and
+            medium sized businesses and farmers by transforming their by-products into resources
             e.g., electricity, heat, fertiliser, animal feed, vertical
-            farming to produce food, water recovery, carbon capture and
-            storage. We strive to unlock the potential of companies and
-            farmers and break down barriers in achieving sustainability.
+            farming, water recovery, carbon capture and
+            storage. We strive to unlock their potential and break down barriers in achieving sustainability.
             Through it all we promote diversity, fairness, accountability,
-            responsibility, and transparency in our own operations and those
-            we work with.
+            responsibility, and transparency.
           </p>
 
           <p>
@@ -160,7 +157,7 @@ return (
         </a>
 
         <p className="text-justify">
-          To add to our nimble team, we also collaborate with 149MKM based
+          To add to our team, we also collaborate with 149MKM based
           in Alberta, Canada to deliver renewable energy projects. They
           are experienced in Engineering, Procurement, Construction and
           Management (EPCM). Industry leader in facility design for the
