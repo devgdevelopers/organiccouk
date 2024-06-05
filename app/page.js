@@ -291,7 +291,7 @@ export default function Home() {
 
         {/* video section */}
         <section className="w-full bg-white">
-          <div className="relative container my-auto mx-auto flex lg:flex-row flex-col p-5">
+          <div className="relative container my-auto mx-auto flex lg:flex-row flex-col p-5 gap-8">
             <div className="  w-[100%] lg:w-[50%]  my-auto p-2 ">
               <h3 className="text-xl md:text-2xl font-bold mb-3 text-purple">
                 Get to Know the Heart Behind Organicco
@@ -323,6 +323,9 @@ export default function Home() {
             </div>   */}
 
             <VideoPlayer/>
+
+
+
           </div>  
         </section>  
 
