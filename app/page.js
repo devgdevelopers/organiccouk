@@ -6,7 +6,6 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ReactPlayer from "react-player";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import VideoPlayer from './component/VideoPlayer '
 
 import {
   BlogscardDataArray,
@@ -307,21 +306,20 @@ export default function Home() {
               </p>
             </div>
 
-            {/* <div className="relative  w-[100%] lg:w-[50%]">
+            <div className="relative  w-[100%] lg:w-[50%]">
               <div onClick={togglePlay}>
                 {!isPlaying && <PlayCircleIcon className="play-icon" />}
               </div>
               <ReactPlayer
                 ref={playerRef}
                 className="react-player bg-none rounded-lg my-20 w-full z-20 mx-auto"
-                url="/assets/videoSec.mp4"
+                url="https://organicco.uk/video/Organicco%20presentation-1222.mp4"
                 playing={isPlaying}
                 width="90%"
                 height="auto"
                 onPlay={handlePlay}
               />  
-            </div>   */}
-            <VideoPlayer />
+            </div>  
           </div>  
         </section>  
 
