@@ -15,13 +15,13 @@ const page = () => {
 
     <>
       <section className="flex flex-col items-center justify-start md:mt-[8rem] ">
-        <div className="bg-white dark:bg-gray-800 w-full">
+        <div className="bg-white  w-full">
           <section className="bg-[#52c42f1f] py-12">
             <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
               <h1 className="text-3xl md:text-4xl font-bold text-[#2e2e84] tracking-in-contract-bck">
                 Net-zero
               </h1>
-              <p className="text-[#388521] font-semibold dark:text-gray-400">
+              <p className="text-[#388521] font-semibold ">
                 Organic & food waste management. The most advanced organic waste to resources solution in the world!
               </p>
             </div>
@@ -33,10 +33,10 @@ const page = () => {
                   <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
                     A fantastic opportunity for change
                   </h2>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     You’re certainly in good company. Organicco is an innovative, world class professional organisation which exists to promote best value in your business by turning your waste into useful products.
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     Our
                     '<Link href="/products/ecohero" className="font-semibold text-black hover:underline">
                       <i>eco</i>HERO
@@ -44,7 +44,7 @@ const page = () => {
 
                     range converts organic waste into useful resources, such as fertiliser, animal feed, fish meal and protein meal for farming.
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     In today’s business environment, no company can afford to waste money - or waste the planet! It’s a fact that waste is an essential part of providing food products and services. By working with Organicco you will eliminate sending waste to landfill, waterways or to incineration, while reducing your costs.
                   </p>
 
@@ -78,7 +78,7 @@ const page = () => {
                       <i>eco</i>HERO
                     </Link>' Digester
                   </h2>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     At Organicco, we don’t just focus on reducing your cost and reducing your waste, we are offering you the opportunity and the tools to transform your waste into a commodity - fertiliser - which Organicco offer to purchase back from you. No other company offers you an income from food waste disposal.
                   </p>
                 </div>
@@ -86,19 +86,19 @@ const page = () => {
                   <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
                     Accelerated thermophilic aerobic digester for food waste
                   </h2>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     Our ‘ecoHERO’ Digesters are simple to operate. They require minimal maintenance, they’re quiet, safe, hygienic, sealed and neatly packaged and therefore emit no odours. They have a relatively small footprint, too.
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     Our new range of ‘ecoHERO’s have greater modular flexibility, which allows the front end to be expanded should the demand on the machine’s capacity increase, without the expense of upgrading to a larger model.
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     We have expanded the range of models too - a new mini ‘ecoHERO’ can process from as little as 100kgs a day, at the other end of the scale, we can build ‘ecoHERO’s to process more than 100 tonnes a day.
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     This now allows virtually every business and organisation with a organic waste disposal requirement, a cost effective, alternative to expensive landfill, incineration or waterway disposal. Whilst giving them an income from the fertiliser our Biotech solution offers.
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     Further still our new electrical control system ensures they remain incredibly economical to run.
                   </p>
 
@@ -109,10 +109,10 @@ const page = () => {
                   <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
                   Organicco’s Quality Assurance
                   </h2>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                   Organicco is a highly regarded organisation that has scientifically designed and built its own products from scratch. We have the experience and expertise to offer all customers effective solutions to all organic waste problems whist helping achieve carbon reduction targets. All customers can be assured that Organicco will stand accountable for every product they manufacture. 
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                   By using the Organicco to help achieve your goals, you will receive the best practical and personal support to successfully change to an ecologically sound practice, which will reduce your current spend on organic waste disposal.
                   </p>
 
@@ -123,19 +123,19 @@ const page = () => {
                   <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
                     Features and benefits
                   </h2>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     Separated organic waste is bin lifted into the ‘ecoHERO’, on a continuous feeding cycle, which allows you to input the organic waste at any time and with any volume up to the capacity of the machine. Once bin lifted, it’s shredded and slowly aerobically digested in a homogeniser tank. Afterwards, homogeneous matter is then fed into the rotary bioreactor where it goes through accelerated thermophilic aerobic digestion and finally the microwave drying process occurs, from which the fertiliser granules are produced.
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     Once processed, the organic waste will have reduced by around 70% in both weight and volume, leaving a commodity that is manageable, packageable and easily transportable.
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     Fertiliser is a commodity in demand, so to make life easy, we will buy all the fertiliser you produce at an agreed rate per tonne. We even collect your fertiliser for free from anywhere in the world.
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     The ‘ecoHERO’ Digester offers the best cost-effective solution to recycle food waste. It is a closed-loop system where nothing is wasted, everything is recycled into a useful form. We can even recover the water that is condensed in the process.
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     This system completes the natural process of the food cycle where organic/food waste is converted into a nutrient, carbon rich fertiliser to be applied to the soil to produce a new crop for the cycle to start once more.
                   </p>
 
@@ -160,15 +160,15 @@ const page = () => {
                   <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
                   ecoHERO case study
                   </h2>
-                  <p className="text-[#388521] font-semibold dark:text-gray-400">The Need
+                  <p className="text-[#388521] font-semibold ">The Need
               </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                   Loc Troi Group, formally known as An Giang Plant Protection, are a Vietnamese agricultural company, established in 1993 in the An Giang Province. Growing from a small start-up company of 23 people, Loc Troi is now one of Vietnams leading agricultural distributers, working in fields of crop protection chemicals, seed production, paper packing, tourism and rice processing for export and domestic consumption. Currently, Loc Troi employ in excess of 2,000 people and are working closely with Vietnamese farmers to develop sustainable cultivation techniques. 
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                   Loc Troi pride themselves on both sustainability and their close relationship with Vietnam’s farmers. In 2006 they launched the ‘To the Fields with the Farmers’ campaign, which saw Loc Troi Scientists and Developers live and work among the farmers to gain a true insight into their needs. This commitment was aimed at developing truly sustainable farming methods, to match the group’s philosophy that ‘Farmers are the group’s real owners.
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                   Such commitment to sustainability, however, was found lacking in certain areas of the company. As a producer of sugar, Loc Tori found itself dealing with 700 tonnes of waste sugar cane dust and peat a week. Due to its high moisture content of 40-50%, the use of sugar cane dust as a combustible fuel was problematic, and landfill costs were in the region of 50 USD per tonne. Clearly, a solution was needed to create a sustainable sugar production operation, which maximised efficiency and minimised costs, in line with the value of sustainability that the company advocated.
                   </p>
 
@@ -197,12 +197,12 @@ const page = () => {
               <div className="md:w-1/2 md:pr-4">
                 <div>
 
-                  <p className="text-[#388521] font-semibold dark:text-gray-400">The Benefits
+                  <p className="text-[#388521] font-semibold ">The Benefits
               </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                   Once the system was successfully installed across a 1000m2 area of Loc Troi’s production facility, the benefits soon became apparent. From an operational perspective, the system had to handle waste coming from a range of sites. Incorporating a nearby river into the design allowed waste to be brought to the site via boat and then loaded directly into the ecoHERO, allowing waste to come directly from a wide area. Once loaded, the operator simply pushed a button, initiating the sequence. The rest happens automatically, with the operator collecting the fertiliser at the end of the process, ensuring that maximum waste could be processed with minimal effort. 
                   </p>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                   The 'ecoHERO' also helped Loc Troi achieve a higher level of sustainability. Previously, the sugar cane dust was sent to costly landfills, but now it was a transformed useful resource, one that could be utilised by the company and the farmers. Not only were waste disposal costs reduced, but Loc Troi became a producer of one of agriculture’s most important resources-fertiliser. No longer would they have to spend money sourcing this commodity from elsewhere thus achieving huge savings.
                   </p>
 
@@ -225,7 +225,7 @@ const page = () => {
           <h2 className="text-2xl md:text-3xl font-bold">
             Ready to contact us?
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+          <p className="text-gray-500  max-w-xl mx-auto">
             If so, please complete
             <Link
               href={`/contact`}>

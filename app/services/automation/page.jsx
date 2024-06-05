@@ -24,13 +24,13 @@ const page = () => {
 
 <>
 <section className="flex flex-col items-center justify-start md:mt-[8rem] ">
-  <div className="bg-white dark:bg-gray-800 w-full">
+  <div className="bg-white  w-full">
     <section className="bg-[#52c42f1f] py-12">
       <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
         <h1 className="text-3xl md:text-4xl font-bold text-[#2e2e84] tracking-in-contract-bck">
           Automation & IoT
         </h1>
-        <p className="text-[#388521] font-semibold dark:text-gray-400">
+        <p className="text-[#388521] font-semibold ">
           Design, Build, Commission and Train
         </p>
       </div>
@@ -39,15 +39,15 @@ const page = () => {
       <div className="max-w-6xl mx-auto px-4 md:px-6 md:flex md:justify-center">
         <div className="md:w-1/2 md:pr-4">
           <div>
-            <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+            <p className="text-gray-500  mt-4 leading-relaxed text-justify">
               We are <span className="font-semibold text-black">mechatronic engineering experts</span> and have more than 15 years of experience of delivering <span className="font-semibold text-black">complex electrical control panels</span>, with <span className="font-semibold text-black">automations, internet of things</span> (IoT) and <span className="font-semibold text-black">instrumentations</span>.            </p>
-              <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+              <p className="text-gray-500  mt-4 leading-relaxed text-justify">
               We work directly with Siemens, but are just as comfortable with other major <span className="font-semibold text-black">PLC products</span>. We offer value without compromising on quality. We have engineers who we can deploy around the world for any complex control and automation processes that need our attention and expertise.
               </p>
-              <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+              <p className="text-gray-500  mt-4 leading-relaxed text-justify">
               We design and build panels to meet European and North American standards. We offer a competitively priced fully assembled and programmed control panels.
               </p>
-              <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+              <p className="text-gray-500  mt-4 leading-relaxed text-justify">
               No job is too small or too big. Let us know your engineering problem and we will provide solutions.
             </p>
           </div>
@@ -85,7 +85,7 @@ const page = () => {
         <h2 className="text-2xl md:text-3xl font-bold">
           Ready to contact us?
         </h2>
-        <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+        <p className="text-gray-500  max-w-xl mx-auto">
           If so, please complete
           <Link
            href={`/contact`}>

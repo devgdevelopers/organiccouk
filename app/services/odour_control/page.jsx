@@ -24,17 +24,17 @@ const page = () => {
 
 <>
 <section className="flex  flex-col items-center justify-start md:mt-[8rem]">
-        <div className="bg-white dark:bg-gray-800 w-full">
+        <div className="bg-white  w-full">
           <section className="bg-[#52c42f1f] py-12">
             <div className="max-w-6xl mx-auto px-4 md:px-6">
               <div className="text-center space-y-4">
                 <h1 className="text-3xl md:text-4xl font-bold text-[#2e2e84] tracking-in-contract-bck">
                 Odour Control
                 </h1>
-                <p className="text-[#388521] font-semibold dark:text-gray-400 ">
+                <p className="text-[#388521] font-semibold  ">
                 We have range of odour control and management systems based on wet scrubbers, venturi scrubbers, carbon filters, regenerative catalysts, centrifugal separators, and plasma systems.
                 </p>
-                <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+                <p className="text-gray-500  max-w-xl mx-auto">
                 Wet scrubbers are cost effective and comes in all shapes and sizes whilst regenerative catalyst and plasma systems require much less water and maintenance.
                 </p>
               </div>
@@ -47,7 +47,7 @@ const page = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
         Regenerative catalyst system
         </h2>
-        <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+        <p className="text-gray-500  mt-4 leading-relaxed text-justify">
         A regenerative catalyst system eliminates odorous, gaseous compounds such as reduced sulphur compounds (e.g. hydrogen sulphide and mercaptans), aromatics, ammonia and other types of VOCs. These compounds are formed in for example biogas production, biogas upgrading, sludge holding tanks, sanitisation tanks, sewage pipelines, sewage pumping stations and sewage treatment plants. Typically, this process can achieve odour reduction of 98-99.5%.
         </p>
       </div>
@@ -55,7 +55,7 @@ const page = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
         Impingement plate wet scrubber
         </h2>
-        <p className="text-gray-500 dark:text-gray-400 my-3 leading-relaxed text-justify">
+        <p className="text-gray-500  my-3 leading-relaxed text-justify">
         The wet scrubbers use impingement plate to treat exhaust gases due to their ability to remove solid, liquid and gaseous contaminants with a high degree of efficiency. A single stage impingement plate scrubber would be expected to remove 90% of particles with an average size of 1 micron and a two-stage unit would be expected to remove 99% at this size. Gaseous contaminants are removed with the same degree of efficiency when using the appropriate acid/alkaline scrubbing liquor.
         </p>
       </div>
@@ -93,7 +93,7 @@ const page = () => {
         <h2 className="text-2xl md:text-3xl font-bold">
           Ready to contact us?
         </h2>
-        <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+        <p className="text-gray-500  max-w-xl mx-auto">
           If so, please complete
           <Link
            href={`/contact`}>

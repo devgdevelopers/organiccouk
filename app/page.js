@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ReactPlayer from "react-player";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import VideoPlayer from './component/VideoPlayer '
 
 import {
   BlogscardDataArray,
@@ -306,7 +307,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="relative  w-[100%] lg:w-[50%]">
+            {/* <div className="relative  w-[100%] lg:w-[50%]">
               <div onClick={togglePlay}>
                 {!isPlaying && <PlayCircleIcon className="play-icon" />}
               </div>
@@ -319,7 +320,9 @@ export default function Home() {
                 height="auto"
                 onPlay={handlePlay}
               />  
-            </div>  
+            </div>   */}
+
+            <VideoPlayer/>
           </div>  
         </section>  
 
