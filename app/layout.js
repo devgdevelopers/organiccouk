@@ -24,9 +24,9 @@ export default function RootLayout({ children }) {
       <Analytics/>
       <SpeedInsights />
         <NextUIProvider>
-          <header>
+         
           {pathname === '/' ?  <HomeHeader/> : <HeaderBg/>}
-          </header>
+         
           {children}
           <footer>
             <Footer />
