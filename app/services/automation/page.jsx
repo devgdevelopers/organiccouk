@@ -23,68 +23,63 @@ const page = () => {
   return (
 
 <>
-<section className="flex min-h-screen flex-col items-center justify-start md:mt-[8rem]">
-        <div className="bg-white dark:bg-gray-800">
-          <section className="bg-[#52c42f1f] py-12">
-            <div className="max-w-6xl mx-auto px-4 md:px-6">
-              <div className="text-center space-y-4">
-                <h1 className="text-3xl md:text-4xl font-bold text-[#2e2e84] tracking-in-contract-bck">
-                Automation & IoT
-                </h1>
-                <p className="text-[#388521] font-semibold dark:text-gray-400 ">
-                Design, Build, Commission and Train
-                </p>
-              </div>
+<section className="flex flex-col items-center justify-start md:mt-[8rem] ">
+  <div className="bg-white dark:bg-gray-800 w-full">
+    <section className="bg-[#52c42f1f] py-12">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
+        <h1 className="text-3xl md:text-4xl font-bold text-[#2e2e84] tracking-in-contract-bck">
+          Automation & IoT
+        </h1>
+        <p className="text-[#388521] font-semibold dark:text-gray-400">
+          Design, Build, Commission and Train
+        </p>
+      </div>
+    </section>
+    <section className="py-8 md:py-12">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 md:flex md:justify-center">
+        <div className="md:w-1/2 md:pr-4">
+          <div>
+            <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+              We are <span className="font-semibold text-black">mechatronic engineering experts</span> and have more than 15 years of experience of delivering <span className="font-semibold text-black">complex electrical control panels</span>, with <span className="font-semibold text-black">automations, internet of things</span> (IoT) and <span className="font-semibold text-black">instrumentations</span>.            </p>
+              <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+              We work directly with Siemens, but are just as comfortable with other major <span className="font-semibold text-black">PLC products</span>. We offer value without compromising on quality. We have engineers who we can deploy around the world for any complex control and automation processes that need our attention and expertise.
+              </p>
+              <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+              We design and build panels to meet European and North American standards. We offer a competitively priced fully assembled and programmed control panels.
+              </p>
+              <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+              No job is too small or too big. Let us know your engineering problem and we will provide solutions.
+            </p>
+          </div>
+        </div>
+        <div className="md:w-1/2 md:m-0 m-5">
+          <Slider {...settings}>
+            <div>
+              <Image
+                src="/assets/odour-control-3.jpg"
+                width={600}
+                height={600}
+                alt="Product Image"
+                className="w-full rounded-lg overflow-hidden object-cover transition-all ease-in-out duration-300"
+              />
             </div>
-          </section>
-          <section className="py-12">
-  <div className="max-w-6xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div className="md:col-span-2 space-y-6">
-      <div>
-        <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
-        Regenerative catalyst system
-        </h2>
-        <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
-        A regenerative catalyst system eliminates odorous, gaseous compounds such as reduced sulphur compounds (e.g. hydrogen sulphide and mercaptans), aromatics, ammonia and other types of VOCs. These compounds are formed in for example biogas production, biogas upgrading, sludge holding tanks, sanitisation tanks, sewage pipelines, sewage pumping stations and sewage treatment plants. Typically, this process can achieve odour reduction of 98-99.5%.
-        </p>
-      </div>
-      <div>
-        <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
-        Impingement plate wet scrubber
-        </h2>
-        <p className="text-gray-500 dark:text-gray-400 my-3 leading-relaxed text-justify">
-        The wet scrubbers use impingement plate to treat exhaust gases due to their ability to remove solid, liquid and gaseous contaminants with a high degree of efficiency. A single stage impingement plate scrubber would be expected to remove 90% of particles with an average size of 1 micron and a two-stage unit would be expected to remove 99% at this size. Gaseous contaminants are removed with the same degree of efficiency when using the appropriate acid/alkaline scrubbing liquor.
-        </p>
-      </div>
-    </div>
-    <div className="space-y-6 ">
-      <Slider {...settings}>
-        <div>
-          <Image
-            src="/assets/odour-control-3.jpg"
-            width={600}
-            height={600}
-            alt="Product Image"
-            className="w-full rounded-lg overflow-hidden object-cover transition-all ease-in-out duration-300"
-          />
+            <div>
+              <Image
+                src="/assets/odour-control-4.jpg"
+                width={600}
+                height={600}
+                alt="Product Image"
+                className="w-full rounded-lg overflow-hidden object-cover transition-all ease-in-out duration-300"
+              />
+            </div>
+          </Slider>
         </div>
-        <div>
-          <Image
-            src="/assets/odour-control-4.jpg"
-            width={600}
-            height={600}
-            alt="Product Image"
-            className="w-full rounded-lg overflow-hidden object-cover transition-all ease-in-out duration-300"
-          />
-        </div>
-      </Slider>
-
-    </div>
+      </div>
+    </section>
   </div>
 </section>
-        </div>
 
-      </section>
+
       <section className="  text-[#2e2e84] py-12 section_bg  ">
       <div className="max-w-6xl mx-auto text-center space-y-4 ">
         <h2 className="text-2xl md:text-3xl font-bold">

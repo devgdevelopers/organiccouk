@@ -22,8 +22,8 @@ const page = () => {
 
   return (
     <>
-      <section className="flex min-h-screen flex-col items-center justify-start md:mt-[8rem]">
-        <div className="bg-white dark:bg-gray-800">
+      <section className="flex  flex-col items-center justify-start md:mt-[8rem]">
+        <div className="bg-white dark:bg-gray-800 w-full">
           <section className="bg-[#52c42f1f] py-12 md:py-20">
             <div className="max-w-6xl mx-auto px-4 md:px-6">
               <div className="text-center space-y-4">
