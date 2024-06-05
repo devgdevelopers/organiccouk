@@ -44,7 +44,7 @@ const HeaderBg = () => {
 
   return (
     <div>
-       <header className="sticky top-0 left-0 z-50 bg-[white] w-full">
+       <header className="sticky top-0 left-0 z-50 bg-[white]">
       <div className="container mx-auto">
       <Navbar isBordered className=" hidden  md:flex flex-col-3 justify-center py-5 fixed top-0  header-bg bg-white"  >
         <NavbarContent className="text-white flex justify-start">

@@ -44,11 +44,11 @@ export default function page() {
   ];
 
   return (
-    <>
-      <header className="fixed top-0 left-0 z-50">
-        <Navbar className="container mx-auto hidden md:flex flex-col-3 justify-center py-5  absolute top-0 bg-transparent main-nav">
-          <NavbarContent className="text-white  flex justify-center">
-            <NavbarBrand className="flex justify-start">
+    <>  
+      <header className="fixed top-0 left-0 z-50 w-full">
+        <Navbar className="hidden md:flex mx-auto absolute top-0 bg-transparent container py-5 main-nav">
+          <NavbarContent className="text-white">
+            <NavbarBrand className="">
               <Link href="/">
                 <Image
                   className="bg-white rounded-xl w-[100px] h-[100px]"
@@ -82,7 +82,7 @@ export default function page() {
             </NavbarItem>
           </NavbarContent>
 
-          <NavbarContent className="hidden xl:flex gap-5 justify-end">
+          <NavbarContent className="hidden xl:block gap-5 justify-end">
             <Link
               href="mailto:enquiry@organicco.uk"
               className="text-white text-sm"
@@ -94,6 +94,9 @@ export default function page() {
             </Link>
           </NavbarContent>
         </Navbar>
+
+
+
 
         <Navbar className="sticky md:hidden py-4 h-min-screen flex bg-white justify-end z-[1000] ">
         <NavbarContent className=" ">
@@ -134,6 +137,9 @@ export default function page() {
         </NavbarContent>
         
       </Navbar>
+
+
+
       </header>
     </>
   );

@@ -36,6 +36,7 @@ const footer = () => {
               <Link href="/products/ecohero"><em>eco</em>Hero</Link>
               <Link href="/products/ecodryer"><em>eco</em>Dryer</Link>
               <Link href="/products/ecoenergy"><em>eco</em>Energy</Link>
+              <Link href="/products/ecoman"><em>eco</em>Man</Link>
             </ul>
           </div>
           <div className="flex flex-col gap-y-3">
