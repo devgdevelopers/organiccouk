@@ -66,12 +66,15 @@ export default function Page() {
                         <DoneAllIcon className="text-green" /></span> {item.productDataPoints[1]}
                     </Typography>
                     <Link href={`/products/${item.link}`} className="inline-block">
-                      <Button variant="text" className="flex items-center gap-2 bg-purple text-white">
-                        Learn More
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                          strokeWidth={2} className="h-4 w-4">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                        </svg>
+                      <Button variant="text" className="fbutton">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7B8794" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+  </svg>
+
+  
+  <div className="font-regular text-sm ftext ">
+Learn More
+  </div>
                       </Button>
                     </Link>
                   </CardBody>
