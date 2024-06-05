@@ -178,6 +178,7 @@ const TeamData = [
 
 const SinglePageServicesData = [
   {
+    link:"/odour_control",
     titleImage: "/assets/odour-control.jpg",
     title: "Odour Control",
     subtitle: "Regenerative catalyst and wet scrubbers",
@@ -185,6 +186,7 @@ const SinglePageServicesData = [
       " We have a range of odour control and management systems based on wet scrubbers, venturi scrubbers, carbon filter, regenerative catalyst, centrifugal separators, and plasma systems....",
   },
   {
+    link:"/automation",
     titleImage: "/assets/automation.jpg",
     title: "Automation & IoT",
     subtitle: "Electrical Control Panels",
@@ -192,6 +194,7 @@ const SinglePageServicesData = [
       "We are mechatronic engineering experts and have more than 15 years of experience of delivering complex electrical control panels, with integrated automation and internet of things (IoT)....",
   },
   {
+    link:"/net_zero",
     titleImage: "/assets/net-zero.jpg",
     title: "Net-zero",
     subtitle: "Organic & food waste management",
@@ -199,6 +202,7 @@ const SinglePageServicesData = [
       " In today’s business environment, no company can afford to waste money - or waste the planet! It’s a fact that waste is an essential part of providing food products and services.... ",
   },
   {
+    link:"/consultancy",
     titleImage: "/assets/epc-feed.jpg",
     title: "Consultancy",
     subtitle: "FEED and EPC",
