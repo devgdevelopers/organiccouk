@@ -267,10 +267,10 @@ export default function Home() {
           </h1>
         </div>
         <div data-aos="zoom-in"
-          className="flex flex-row container gap-10 flex-wrap align-center justify-center flex-auto">
+          className="flex flex-row container gap-10 flex-wrap align-center justify-center flex-auto ">
           {productcardDataArray.map((lala, id) => (
           <Card key={id} title={lala.title} subtitle={lala.subtitle} desc={lala.desc} bgClass={lala.bgClass}
-            cardLink={lala.cardLink} />
+            cardLink={lala.cardLink}  />
           ))}
         </div>
       </div>
@@ -359,7 +359,7 @@ export default function Home() {
 
     <section className="py-10 md:py-20 w-full  ">
       <div className="container p-5 mx-auto flex md:flex-row flex-col">
-        <div data-aos="fade-right" className=" my-auto w-full lg:w-[80%]">
+        <div data-aos="fade-right"  className=" my-auto w-full lg:w-[80%]">
           <h1 className="  text-xl md:text-2xl font-bold mb-4 text-purple">
             Frequently Asked Questions{" "}
           </h1>

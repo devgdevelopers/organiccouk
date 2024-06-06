@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Aos from "aos";
@@ -8,8 +8,17 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const page = () => {
 
+const page = () => {
+  const [isEnlarged, setIsEnlarged] = useState(false);
+
+  const handleEnlarge = () => {
+    setIsEnlarged(true);
+  };
+
+  const handleClose = () => {
+    setIsEnlarged(false);
+  };
 
   return (
 
@@ -107,13 +116,13 @@ const page = () => {
                 <div>
 
                   <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
-                  Organicco’s Quality Assurance
+                    Organicco’s Quality Assurance
                   </h2>
                   <p className="text-gray-500  mt-4 leading-relaxed text-justify">
-                  Organicco is a highly regarded organisation that has scientifically designed and built its own products from scratch. We have the experience and expertise to offer all customers effective solutions to all organic waste problems whist helping achieve carbon reduction targets. All customers can be assured that Organicco will stand accountable for every product they manufacture. 
+                    Organicco is a highly regarded organisation that has scientifically designed and built its own products from scratch. We have the experience and expertise to offer all customers effective solutions to all organic waste problems whist helping achieve carbon reduction targets. All customers can be assured that Organicco will stand accountable for every product they manufacture.
                   </p>
                   <p className="text-gray-500  mt-4 leading-relaxed text-justify">
-                  By using the Organicco to help achieve your goals, you will receive the best practical and personal support to successfully change to an ecologically sound practice, which will reduce your current spend on organic waste disposal.
+                    By using the Organicco to help achieve your goals, you will receive the best practical and personal support to successfully change to an ecologically sound practice, which will reduce your current spend on organic waste disposal.
                   </p>
 
 
@@ -146,30 +155,82 @@ const page = () => {
 
               </div>
               <div className="md:flex md:items-center md:justify-center bg-[#e9ecef]">
-                <div className="w-full max-w-md mx-auto h-[170vh] ">
+                <div className="flex flex-col p-5 w-full max-w-md mx-auto md:h-[170vh] h-[120vh]  gap-5 ">
+                  <div>
 
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
+                      The Technology
+                    </h2>
+                    <p className="text-gray-500  mt-4 leading-relaxed text-justify">
+                      Organicco’s patented ‘ecoHERO’ Digester is the first of its kind anywhere in the world, it makes recycling organic waste easy and profitable. The system is based on accelerated thermophilic aerobic digestion (ATAD) which breaks down organic materials very quickly. So quickly, in fact, that the ‘ecoHERO’ will shred and digest the waste material and produce a non-toxic, stable fertiliser pellet in less than a day in some cases, without the need for expensive enzymes or chemical additives.
+                    </p>
+
+                  </div>
+                  <div>
+
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
+                      About the Fertiliser
+                    </h2>
+                    <p className="text-gray-500  mt-4 leading-relaxed text-justify">
+                      Numerous tests have been carried out on the fertiliser pellets and show that it has good soil nutrient properties. It is stable and slow releasing, thus usable for farming. The stability test of fertiliser shown by blue trace outperforms PAS100 material shown by black trace. (See graph on CO2 production)
+                    </p>
+
+                  </div>
+                  <div className="flex flex-col gap-3 items-center justify-center">
+                    <Image
+                      src="/assets/net-zero-fertiliser-1.jpg"
+                      width={500}
+                      height={100}
+                      alt="Product Image"
+                    />
+                    <button
+                      onClick={handleEnlarge}
+                      className="inline-flex items-center justify-center rounded-md bg-[#52c42f1f] px-4 py-2 text-sm font-medium text-[#2e2e84] transition-colors duration-300 hover:bg-[#52c42f33]"
+                    >
+                      Enlarge Image
+                    </button>
+
+                    {isEnlarged && (
+                      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75">
+                        <div className="relative">
+                          <Image
+                            src="/assets/net-zero-fertiliser-1.jpg"
+                            width={1000}
+                            height={200}
+                            alt="Product Image Enlarged"
+                          />
+                          <button
+                            onClick={handleClose}
+                            className="absolute top-2 right-2 inline-flex items-center justify-center rounded-full bg-red-500 p-2 px-4 hover:bg-[#2e2e84] text-white transition-all ease-soft-spring duration-100 "
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           </section>
-          <hr/>
+          <hr />
           <section className="py-8 md:py-12">
             <div className="max-w-6xl mx-auto px-4 md:px-6 md:flex md:justify-center">
               <div className="md:w-1/2 md:pr-4">
                 <div>
                   <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
-                  ecoHERO case study
+                    ecoHERO case study
                   </h2>
                   <p className="text-[#388521] font-semibold ">The Need
-              </p>
-                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
-                  Loc Troi Group, formally known as An Giang Plant Protection, are a Vietnamese agricultural company, established in 1993 in the An Giang Province. Growing from a small start-up company of 23 people, Loc Troi is now one of Vietnams leading agricultural distributers, working in fields of crop protection chemicals, seed production, paper packing, tourism and rice processing for export and domestic consumption. Currently, Loc Troi employ in excess of 2,000 people and are working closely with Vietnamese farmers to develop sustainable cultivation techniques. 
                   </p>
                   <p className="text-gray-500  mt-4 leading-relaxed text-justify">
-                  Loc Troi pride themselves on both sustainability and their close relationship with Vietnam’s farmers. In 2006 they launched the ‘To the Fields with the Farmers’ campaign, which saw Loc Troi Scientists and Developers live and work among the farmers to gain a true insight into their needs. This commitment was aimed at developing truly sustainable farming methods, to match the group’s philosophy that ‘Farmers are the group’s real owners.
+                    Loc Troi Group, formally known as An Giang Plant Protection, are a Vietnamese agricultural company, established in 1993 in the An Giang Province. Growing from a small start-up company of 23 people, Loc Troi is now one of Vietnams leading agricultural distributers, working in fields of crop protection chemicals, seed production, paper packing, tourism and rice processing for export and domestic consumption. Currently, Loc Troi employ in excess of 2,000 people and are working closely with Vietnamese farmers to develop sustainable cultivation techniques.
                   </p>
                   <p className="text-gray-500  mt-4 leading-relaxed text-justify">
-                  Such commitment to sustainability, however, was found lacking in certain areas of the company. As a producer of sugar, Loc Tori found itself dealing with 700 tonnes of waste sugar cane dust and peat a week. Due to its high moisture content of 40-50%, the use of sugar cane dust as a combustible fuel was problematic, and landfill costs were in the region of 50 USD per tonne. Clearly, a solution was needed to create a sustainable sugar production operation, which maximised efficiency and minimised costs, in line with the value of sustainability that the company advocated.
+                    Loc Troi pride themselves on both sustainability and their close relationship with Vietnam’s farmers. In 2006 they launched the ‘To the Fields with the Farmers’ campaign, which saw Loc Troi Scientists and Developers live and work among the farmers to gain a true insight into their needs. This commitment was aimed at developing truly sustainable farming methods, to match the group’s philosophy that ‘Farmers are the group’s real owners.
+                  </p>
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
+                    Such commitment to sustainability, however, was found lacking in certain areas of the company. As a producer of sugar, Loc Tori found itself dealing with 700 tonnes of waste sugar cane dust and peat a week. Due to its high moisture content of 40-50%, the use of sugar cane dust as a combustible fuel was problematic, and landfill costs were in the region of 50 USD per tonne. Clearly, a solution was needed to create a sustainable sugar production operation, which maximised efficiency and minimised costs, in line with the value of sustainability that the company advocated.
                   </p>
 
                 </div>
@@ -185,7 +246,7 @@ const page = () => {
           </section>
           <section className="py-8 ">
             <div className="max-w-6xl mx-auto px-4 md:px-6 md:flex md:justify-center gap-4">
-  
+
               <div className="md:w-1/2 md:m-0 m-5 bg-[#e9ecef]">
 
 
@@ -198,12 +259,12 @@ const page = () => {
                 <div>
 
                   <p className="text-[#388521] font-semibold ">The Benefits
-              </p>
-                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
-                  Once the system was successfully installed across a 1000m2 area of Loc Troi’s production facility, the benefits soon became apparent. From an operational perspective, the system had to handle waste coming from a range of sites. Incorporating a nearby river into the design allowed waste to be brought to the site via boat and then loaded directly into the ecoHERO, allowing waste to come directly from a wide area. Once loaded, the operator simply pushed a button, initiating the sequence. The rest happens automatically, with the operator collecting the fertiliser at the end of the process, ensuring that maximum waste could be processed with minimal effort. 
                   </p>
                   <p className="text-gray-500  mt-4 leading-relaxed text-justify">
-                  The 'ecoHERO' also helped Loc Troi achieve a higher level of sustainability. Previously, the sugar cane dust was sent to costly landfills, but now it was a transformed useful resource, one that could be utilised by the company and the farmers. Not only were waste disposal costs reduced, but Loc Troi became a producer of one of agriculture’s most important resources-fertiliser. No longer would they have to spend money sourcing this commodity from elsewhere thus achieving huge savings.
+                    Once the system was successfully installed across a 1000m2 area of Loc Troi’s production facility, the benefits soon became apparent. From an operational perspective, the system had to handle waste coming from a range of sites. Incorporating a nearby river into the design allowed waste to be brought to the site via boat and then loaded directly into the ecoHERO, allowing waste to come directly from a wide area. Once loaded, the operator simply pushed a button, initiating the sequence. The rest happens automatically, with the operator collecting the fertiliser at the end of the process, ensuring that maximum waste could be processed with minimal effort.
+                  </p>
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
+                    The 'ecoHERO' also helped Loc Troi achieve a higher level of sustainability. Previously, the sugar cane dust was sent to costly landfills, but now it was a transformed useful resource, one that could be utilised by the company and the farmers. Not only were waste disposal costs reduced, but Loc Troi became a producer of one of agriculture’s most important resources-fertiliser. No longer would they have to spend money sourcing this commodity from elsewhere thus achieving huge savings.
                   </p>
 
 
@@ -235,6 +296,9 @@ const page = () => {
           </p>
         </div>
       </section>
+
+
+
     </>
 
   );

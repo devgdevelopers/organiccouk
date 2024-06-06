@@ -51,8 +51,8 @@ export default function Page() {
                       className="h-full w-full object-cover transition-all ease-in-out duration-300 hover:scale-105" unoptimized />
                   </CardHeader>
                   <CardBody className="my-auto">
-                    <Typography variant="h5" color="gray" className="mb-4 uppercase text-green">
-                      {item.productTitle}
+                    <Typography variant="h5" color="gray" className="mb-4 uppercase text-green " >
+                    <span dangerouslySetInnerHTML={{ __html: item.productTitle}} className="normal-case" />
                     </Typography>
                     <Typography variant="h6" color="blue-gray" className="mb-2 font-normal text-purple">
                       <em> {item.productSubtitle}</em>
