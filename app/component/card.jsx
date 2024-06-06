@@ -11,7 +11,7 @@ export default function Card({ title, subtitle, desc, bgClass, cardLink }) {
           <p>{subtitle}</p>
         
         </div>
-        <div className="flip-card-back rounded-xl p-5">
+        <div className="flip-card-back rounded-xl p-5  news-blog-card">
           <p className=" mb-5 text-justify ">
             {desc}
           </p>

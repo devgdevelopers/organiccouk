@@ -4,7 +4,7 @@ const SinglePageProductsData = [
     {
       link:"/ecohero",
       productImage:"/assets/ecohero-loctroi-1.jpg",
-      productTitle: "ecoHERO",
+      productTitle: "<i>eco</i>HERO",
       productSubtitle: "Accelerated Thermophilic Aerobic Digester",
       productDataPoints: [
         "Converts organic waste material into quality organic fertiliser in 24h - 72h (depending on feedstocks).",
@@ -14,7 +14,7 @@ const SinglePageProductsData = [
     {
       link:"/ecodryer",
       productImage:"/assets/ecodryer.jpg",
-      productTitle: "ecoDRYER",
+      productTitle: "<i>eco</i>DRYER",
       productSubtitle: "Digestate Dryer",
       productDataPoints: [
         "Dryer system capable of drying digestate, slurry, sludge, sawdust, and farmyard manure.",
@@ -24,7 +24,7 @@ const SinglePageProductsData = [
     {
       link:"/ecoenergy",
       productImage:"/assets/ecoenergy-banner.jpg",
-      productTitle: "ecoENERGY",
+      productTitle: "<i>eco</i>ENERGY",
       productSubtitle: "Waste-to-energy",
       productDataPoints: [
         "Transforms waste to energy, electricity and heat, fertiliser.",
@@ -34,7 +34,7 @@ const SinglePageProductsData = [
     {
       link:"/ecoman",
       productImage:"/assets/ecoenergy-banner.jpg",
-      productTitle: "ecoMan",
+      productTitle: "<i>eco</i>Man",
       productSubtitle: "Waste-to-energy",
       productDataPoints: [
         "Transforms waste to energy, electricity and heat, fertiliser.",

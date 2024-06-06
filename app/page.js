@@ -42,7 +42,7 @@ export default function Home() {
   useEffect(() => {
     AOS.init({
       duration: 500,
-      once: true,
+      once: false,
       easing: "ease",
       mirror: true,
       delay: "0",
