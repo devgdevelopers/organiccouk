@@ -39,15 +39,7 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    AOS.init({
-      duration: 500,
-      once: false,
-      easing: "ease",
-      mirror: true,
-      delay: "0",
-    });
-  }, []);
+
 
   const settingsSlider = {
     dots: false,
@@ -186,7 +178,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="get-q-form-home w-[85%] lg:w-[70%]  pt-2 pb-5 mx-auto">
-                <form className="bg-white rounded-xl  lg:-mt-32 shadow-lg pt-2 pb-6 px-7 mx-auto" data-aos="zoom-in"> 
+                <form className="bg-white rounded-xl  lg:-mt-32 shadow-lg pt-2 pb-6 px-7 mx-auto"> 
                   <p className="text-lg py-6  text-green">send a message</p>
                   <h1 className="text-2xl font-bold my-3 text-purple">
                     Request a call back
@@ -266,7 +258,7 @@ export default function Home() {
             Featured Products
           </h1>
         </div>
-        <div data-aos="zoom-in"
+        <div
           className="flex flex-row container gap-10 flex-wrap align-center justify-center flex-auto">
           {productcardDataArray.map((lala, id) => (
           <Card key={id} title={lala.title} subtitle={lala.subtitle} desc={lala.desc} bgClass={lala.bgClass}
@@ -279,7 +271,7 @@ export default function Home() {
     {/* image section */}
     <section className="z-40 w-full mx-auto ">
       <div className="image-section w-full flex justify-center py-20 lg:py-40 px-10">
-        <div className="flex justify-center z-50 container " data-aos="fade-up">
+        <div className="flex justify-center z-50 container " >
           <div className="text-white text-[20px] lg:text-[40px] font-bold text-center my-auto">
             We're committed to leading the charge in tackling
             environmental challenges through{" "}
@@ -331,7 +323,7 @@ export default function Home() {
 
         {/* featured services */}
         <section
-          data-aos="fade-in"
+          
           className="w-full py-20 px-4  mx-auto bg-grey flex justify-center "
         >
           <div className="container mx-auto my-auto flex flex-col gap-6">
@@ -357,7 +349,7 @@ export default function Home() {
 
         {/* accordian section */}
 
-    <section className="py-10 md:py-20 w-full" data-aos="zoom-in">
+    <section className="py-10 md:py-20 w-full" >
       <div className="container p-5 mx-auto flex md:flex-row flex-col">
         <div className=" my-auto w-full lg:w-[80%]">
           <h1 className="  text-xl md:text-2xl font-bold mb-4 text-purple">
@@ -420,7 +412,7 @@ export default function Home() {
         {/* companies vision */}
 
         <section className="w-full  md:py-10 bg-grey "
-          data-aos="zoom-in">
+         >
           <div className="container flex md:flex-row flex-col justify-center my-auto mx-auto gap-0">
             <div className="flex lg:w-[40%] w-[100%] justify-center md:justify-end">
               <Image
@@ -489,8 +481,7 @@ export default function Home() {
               <Slider {...settings} className="flex gap-15 justify-center">
                 {BlogscardDataArray.map((lala, id) => (
                   <div
-                  data-aos-duration="300"
-                  data-aos="zoom-in"
+               
                     key={id}
                     className="carousel-item p-[10px] news-car-inner-div flex justify-center my-auto "
                   >
