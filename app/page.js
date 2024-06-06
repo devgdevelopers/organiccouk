@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ReactPlayer from "react-player";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import VideoPlayer from './component/VideoPlayer '
 
 import {
   BlogscardDataArray,
@@ -185,7 +186,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="get-q-form-home w-[85%] lg:w-[70%]  pt-2 pb-5 mx-auto">
-                <form className="bg-white rounded-xl  lg:-mt-32 shadow-lg pt-2 pb-6 px-7 mx-auto">
+                <form className="bg-white rounded-xl  lg:-mt-32 shadow-lg pt-2 pb-6 px-7 mx-auto" data-aos="zoom-in"> 
                   <p className="text-lg py-6  text-green">send a message</p>
                   <h1 className="text-2xl font-bold my-3 text-purple">
                     Request a call back
@@ -290,7 +291,7 @@ export default function Home() {
 
         {/* video section */}
         <section className="w-full bg-white">
-          <div className="relative container my-auto mx-auto flex lg:flex-row flex-col p-5">
+          <div className="relative container my-auto mx-auto flex lg:flex-row flex-col p-5 gap-8">
             <div className="  w-[100%] lg:w-[50%]  my-auto p-2 ">
               <h3 className="text-xl md:text-2xl font-bold mb-3 text-purple">
                 Get to Know the Heart Behind Organicco
@@ -306,20 +307,25 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="relative  w-[100%] lg:w-[50%]">
+            {/* <div className="relative  w-[100%] lg:w-[50%]">
               <div onClick={togglePlay}>
                 {!isPlaying && <PlayCircleIcon className="play-icon" />}
               </div>
               <ReactPlayer
                 ref={playerRef}
                 className="react-player bg-none rounded-lg my-20 w-full z-20 mx-auto"
-                url="/videoSec.mp4"
+                url="https://organicco.uk/video/Organicco%20presentation-1222.mp4"
                 playing={isPlaying}
                 width="90%"
                 height="auto"
                 onPlay={handlePlay}
               />  
-            </div>  
+            </div>   */}
+
+            <VideoPlayer/>
+
+
+
           </div>  
         </section>  
 
@@ -351,9 +357,9 @@ export default function Home() {
 
         {/* accordian section */}
 
-    <section className="py-10 md:py-20 w-full  ">
+    <section className="py-10 md:py-20 w-full" data-aos="zoom-in">
       <div className="container p-5 mx-auto flex md:flex-row flex-col">
-        <div data-aos="fade-right" className=" my-auto w-full lg:w-[80%]">
+        <div className=" my-auto w-full lg:w-[80%]">
           <h1 className="  text-xl md:text-2xl font-bold mb-4 text-purple">
             Frequently Asked Questions{" "}
           </h1>
@@ -366,7 +372,7 @@ export default function Home() {
             Learn More
           </a>
         </div>
-        <div className=" w-full lg:w-[120%]" data-aos="fade-left">
+        <div className=" w-full lg:w-[120%]">
           <Accordion defaultExpandedKeys={["1"]}>
             <AccordionItem key="1" aria-label="Accordion 1" title={ <span className={`${ activeItem==="1" ? "text-black"
               : "text-green" }`}>
@@ -413,7 +419,8 @@ export default function Home() {
 
         {/* companies vision */}
 
-        <section className="w-full  md:py-10 bg-grey ">
+        <section className="w-full  md:py-10 bg-grey "
+          data-aos="zoom-in">
           <div className="container flex md:flex-row flex-col justify-center my-auto mx-auto gap-0">
             <div className="flex lg:w-[40%] w-[100%] justify-center md:justify-end">
               <Image
@@ -427,7 +434,7 @@ export default function Home() {
             </div>
             <div
               className="px-5 pb-5 flex lg:w-[60%] flex-col justify-center w-[100%]"
-              data-aos="flip-right"
+              
             >
               <p className="text-xl md:text-2xl font-bold text-purple mb-4">
                 Our Vision
@@ -463,9 +470,9 @@ export default function Home() {
         {/* news and blog */}
 
         <section
+       
           className="w-full my-auto flex justify-center pb-10 pt-20"
-          data-aos-duration="300"
-          data-aos="fade-down"
+        
         >
           <div className="w-100 container mx-auto gap-5 md:gap-20 news-main-div  my-auto">
             <div className="mx-auto text-center">
@@ -482,6 +489,8 @@ export default function Home() {
               <Slider {...settings} className="flex gap-15 justify-center">
                 {BlogscardDataArray.map((lala, id) => (
                   <div
+                  data-aos-duration="300"
+                  data-aos="zoom-in"
                     key={id}
                     className="carousel-item p-[10px] news-car-inner-div flex justify-center my-auto "
                   >

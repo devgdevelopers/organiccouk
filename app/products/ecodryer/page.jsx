@@ -23,14 +23,14 @@ const page = () => {
   return (
     <>
       <section className="flex  flex-col items-center justify-start md:mt-[8rem]">
-        <div className="bg-white dark:bg-gray-800 w-full">
+        <div className="bg-white  w-full">
           <section className="bg-[#52c42f1f] py-12 md:py-20">
             <div className="max-w-6xl mx-auto px-4 md:px-6">
               <div className="text-center space-y-4">
                 <h1 className="text-3xl md:text-4xl font-bold text-[#2e2e84] tracking-in-contract-bck">
                   <i>eco</i>DRYER Digestate Dryer
                 </h1>
-                <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto">
+                <p className="text-gray-500  max-w-xl mx-auto">
                   Anaerobic digestion (AD) is a great way to enhance the value
                   of a business by extracting biogas from leftover organic
                   matter. The value of this process can be further enhanced by
@@ -68,7 +68,7 @@ const page = () => {
                     <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
                       Typical Applications
                     </h2>
-                    <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                    <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                       The application of the ‘ecoDRYER’ is not limited to AD
                       operators; many other businesses can benefit from what the
                       ‘ecoDRYER’ offers. The system can dry a variety of
@@ -83,7 +83,7 @@ const page = () => {
                   <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
                     Product Description
                   </h2>
-                  <p className="text-gray-500 dark:text-gray-400 mt-4 leading-relaxed text-justify">
+                  <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     Organicco’s ‘ecoDRYER’ harnesses the surplus thermal energy
                     left unused by AD plants and uses this to heat and dry the
                     digestate. This ensures that running costs are minimal, as
@@ -105,7 +105,7 @@ const page = () => {
                   <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
                     Custom Configuration
                   </h2>
-                  <p className="text-gray-500 dark:text-gray-400 my-3 leading-relaxed text-justify ">
+                  <p className="text-gray-500  my-3 leading-relaxed text-justify ">
                     Our dryer interacts with AD plant on all levels, from
                     feeding to utilisation of thermal energy. Therefore,
                     understanding the current operation is the first priority
@@ -121,7 +121,7 @@ const page = () => {
                   <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
                     Any size
                   </h2>
-                  <p className="text-gray-500 dark:text-gray-400 my-3 leading-relaxed text-justify">
+                  <p className="text-gray-500  my-3 leading-relaxed text-justify">
                     Volume is not a problem. Organicco’s systems process daily
                     from as little as 5 tonnes per day up to 30 tonnes per day.
                     In addition, the modular design ensures that increasing the
@@ -130,7 +130,7 @@ const page = () => {
                   <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
                     Superior Design
                   </h2>
-                  <p className="text-gray-500 dark:text-gray-400 my-3 leading-relaxed text-justify">
+                  <p className="text-gray-500  my-3 leading-relaxed text-justify">
                     All systems are manufactured using only the finest materials
                     and workmanship. The design and manufacture of all our
                     systems is carried out in high-tech facilities using the

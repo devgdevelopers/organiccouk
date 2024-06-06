@@ -133,6 +133,48 @@ const TeamData = [
     ],
   },
   {
+    imagePath: "../grahame.png",
+    TeamName: "Grahame Davey",
+    TeamPosition: "Business Development Manager",
+    TeamDesc:
+      "Hi there! I'm Grahame Davey, and I bring my deep-rooted farming background and extensive experience in aerobic and anaerobic digester systems to the table. As the lead for our market research initiatives, my mission is to assess the demand for waste management services and explore the feasibility of marketing recovered products. My insights provide invaluable understanding of market dynamics and potential entry barriers, ensuring we stay ahead of the curve. When I'm not immersed in market research, you might find me enjoying the great outdoors or tinkering with new farming techniques.",
+    TeamSocialProfile: [
+      {
+        insta: "lala.com",
+        linkedIn: "lala.com",
+        xTwitter: "lala.com",
+      },
+    ],
+  },
+  {
+    imagePath: "",
+    TeamName: "Madhvi",
+    TeamPosition: "lorem lorem",
+    TeamDesc:
+      "lorem lorem  lore immutable et Lore m ab illum dum et magn notation et dolor lore m ea commodo consequ velit lorem eu fugiat null null null null    null null null null null null null null null null null null null null null null   null null null null null null null null null null null null null null null null",
+    TeamSocialProfile: [
+      {
+        insta: "lala.com",
+        linkedIn: "lala.com",
+        xTwitter: "lala.com",
+      },
+    ],
+  },
+  {
+    imagePath: "../divya.png",
+    TeamName: "Divya Lakkimsetti",
+    TeamPosition: "CAD Engineer",
+    TeamDesc:
+      "Hello there! I'm Divya Lakkimsetti, an enthusiastic architectural assistant and interior designer with a knack for crafting beautiful and functional spaces. My background in architecture, coupled with my strong software skills, allows me to bring a unique blend of creativity and technical expertise to every project I tackle. When I'm not busy designing, you'll likely find me shaking it up in a Zumba class, sketching new ideas, or diving into a good book. I believe that a balance of passion, skill, and fun is the secret to truly great design",
+    TeamSocialProfile: [
+      {
+        insta: "lala.com",
+        linkedIn: "lala.com",
+        xTwitter: "lala.com",
+      },
+    ],
+  },
+  {
     imagePath: "../DrVikramPattarkine.jpg",
     TeamName: "Dr Vikram Pattarkine",
     TeamPosition: "Technical Advisor USA",
@@ -174,34 +216,8 @@ const TeamData = [
       },
     ],
   },
-  {
-    imagePath: "../divya.png",
-    TeamName: "Divya Lakkimsetti",
-    TeamPosition: "CAD Engineer",
-    TeamDesc:
-      "Hello there! I'm Divya Lakkimsetti, an enthusiastic architectural assistant and interior designer with a knack for crafting beautiful and functional spaces. My background in architecture, coupled with my strong software skills, allows me to bring a unique blend of creativity and technical expertise to every project I tackle. When I'm not busy designing, you'll likely find me shaking it up in a Zumba class, sketching new ideas, or diving into a good book. I believe that a balance of passion, skill, and fun is the secret to truly great design",
-    TeamSocialProfile: [
-      {
-        insta: "lala.com",
-        linkedIn: "lala.com",
-        xTwitter: "lala.com",
-      },
-    ],
-  },
-  {
-    imagePath: "../grahame.png",
-    TeamName: "Grahame Davey",
-    TeamPosition: "Business Development Manager",
-    TeamDesc:
-      "Hi there! I'm Grahame Davey, and I bring my deep-rooted farming background and extensive experience in aerobic and anaerobic digester systems to the table. As the lead for our market research initiatives, my mission is to assess the demand for waste management services and explore the feasibility of marketing recovered products. My insights provide invaluable understanding of market dynamics and potential entry barriers, ensuring we stay ahead of the curve. When I'm not immersed in market research, you might find me enjoying the great outdoors or tinkering with new farming techniques.",
-    TeamSocialProfile: [
-      {
-        insta: "lala.com",
-        linkedIn: "lala.com",
-        xTwitter: "lala.com",
-      },
-    ],
-  },
+ 
+ 
 ];
 
 const SinglePageServicesData = [
