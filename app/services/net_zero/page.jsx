@@ -155,7 +155,7 @@ const page = () => {
 
               </div>
               <div className="md:flex md:items-center md:justify-center bg-[#e9ecef]">
-                <div className="flex flex-col p-5 w-full max-w-md mx-auto md:h-[170vh] h-[120vh]  gap-5 ">
+                <div className="flex flex-col p-5 w-full max-w-md mx-auto md:h-[170vh] h-[130vh]  gap-5 ">
                   <div>
 
                     <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]">
@@ -201,7 +201,7 @@ const page = () => {
                           />
                           <button
                             onClick={handleClose}
-                            className="absolute top-2 right-2 inline-flex items-center justify-center rounded-full bg-red-500 p-2 px-4 hover:bg-[#2e2e84] text-white transition-all ease-soft-spring duration-100 "
+                            className="absolute top-2 right-2 inline-flex items-center justify-center rounded-full bg-red-500 sm:p-2 sm:px-4 p-1 px-3 hover:bg-[#2e2e84] text-white transition-all ease-soft-spring duration-100 "
                           >
                             Close
                           </button>
