@@ -34,7 +34,6 @@ return (
                 type="submit"
                 className="newsletter-btn bg-green rounded-lg text-white px-10"
               >
-                {" "}
                 Send
               </button>
             </form>
