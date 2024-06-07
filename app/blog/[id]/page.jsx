@@ -38,7 +38,7 @@ const BlogPost = () => {
         </div>
 
         {/* Image */}
-        <div className="md:w-1/4 md:pl-4">
+        <div className="md:w-1/4 md:pl-4 ">
             <img src={blog.img} alt={blog.title} height={300} width={300} />
         </div>
 
