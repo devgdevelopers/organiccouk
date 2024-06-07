@@ -42,9 +42,9 @@ const footer = () => {
           <div className="flex flex-col gap-y-3">
             <h3 className="text-lg text-purple font-bold mt-6 md:mt-0">Services</h3>
             <ul className="flex flex-col gap-y-3">
-              <Link href="/services/odour-control">Odour Control</Link>
+              <Link href="/services/odour_control">Odour Control</Link>
               <Link href="/services/automation">Automation</Link>
-              <Link href="/services/net-zero">Net Zero</Link>
+              <Link href="/services/net_zero">Net Zero</Link>
               <Link href="/services/consultancy">Consultancy</Link>
             </ul>
           </div>

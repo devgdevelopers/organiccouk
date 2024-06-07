@@ -109,46 +109,47 @@ export default function Page() {
             <h3 className="text-xl md:text-2xl font-bold text-purple text-center mb-10">
               Meet Our Organicco Team
             </h3>
-            <div className="grid grid-cols-1  md:grid-cols-2 gap-10 justify-center items-center ">
-              {TeamData.map((item) => (
-                <>
-                  <div className=" w-[90%] md:w-[100%] flex flex-col lg:flex-row justify-center items-center gap-2 lg:gap-10 p-5 mx-auto team-main-div rounded-3xl bg-inherit">
-                    <div>
-                      <Image
-                        src={item.imagePath}
-                        width={100}
-                        height={100}
-                        alt="team-member"
-                        className="w-[150px] lg:w-[300px] xl:w-[400px] h-[auto]  mx-auto rounded-[50%] z-10 team-member-img"
-                        unoptimized
-                      ></Image>
-                      <div className="flex justify-center text-base mt-2 gap-3">
-                        <Link href={item.TeamSocialProfile[0].insta}>
-                          <InstagramIcon className=" font-bold text-green" />
-                        </Link>
-                        <Link href={item.TeamSocialProfile[0].linkedIn}>
-                          <LinkedInIcon className="font-bold text-green" />
-                        </Link>
-                        <Link href={item.TeamSocialProfile[0].xTwitter}>
-                          <XIcon className="font-bold text-green" />
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="  flex flex-col  gap-2 ">
-                      <h2 className="text-lg text-green text-center lg:text-start font-semibold p-0 m-0">
-                        {item.TeamName}
-                      </h2>
-                      <p className="text-sm text-purple text-center lg:text-start font-medium ">
-                        {item.TeamPosition}
-                      </p>
-                      <p className="text-sm text-dark text-justify">
-                        {item.TeamDesc}
-                      </p>
-                    </div>
-                  </div>
-                </>
-              ))}
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-10 justify-center items-stretch">
+  {TeamData.map((item) => (
+    <div
+      key={item.TeamName}
+      className="relative group flex flex-col justify-between h-full w-[300px] p-5 mx-auto team-main-div rounded-3xl bg-inherit transform transition-transform duration-300 group-hover:scale-150"
+    >
+      <div className="flex flex-col items-center">
+        <Image
+          src={item.imagePath}
+          width={100}
+          height={100}
+          alt="team-member"
+          className="w-[150px] h-[auto] mx-auto rounded-[50%] z-10 team-member-img group-hover:hidden transition-opacity duration-300"
+          unoptimized
+        />
+        <h2 className="text-lg text-green text-center font-semibold p-0 m-0 mt-2">
+          {item.TeamName}
+        </h2>
+        <p className="text-sm text-purple text-center font-medium">
+          {item.TeamPosition}
+        </p>
+      </div>
+
+      <div className="flex justify-center text-base mt-2 gap-3">
+        <Link href={item.TeamSocialProfile[0].insta}>
+          <InstagramIcon className="font-bold text-green" />
+        </Link>
+        <Link href={item.TeamSocialProfile[0].linkedIn}>
+          <LinkedInIcon className="font-bold text-green" />
+        </Link>
+        <Link href={item.TeamSocialProfile[0].xTwitter}>
+          <XIcon className="font-bold text-green" />
+        </Link>
+      </div>
+      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl">
+        <p className="text-white text-justify ">{item.TeamDesc}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
           </div>
         </section>
         <section className="container mx-auto flex flex-col md:flex-row py-16 gap-5 justify-center p-3">

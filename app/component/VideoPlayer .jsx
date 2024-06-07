@@ -1,9 +1,45 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 
 const VideoPlayer = () => {
     const videoRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(true);
+
+    useEffect(() => {
+        const videoElement = videoRef.current;
+
+        if (videoElement) {
+            videoElement.play();
+        }
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        videoElement.pause();
+                        setIsPlaying(false);
+                    } else {
+                        if (isPlaying) {
+                            videoElement.play();
+                        }
+                    }
+                });
+            },
+            {
+                threshold: 0.5, // Adjust this value as needed
+            }
+        );
+
+        if (videoElement) {
+            observer.observe(videoElement);
+        }
+
+        return () => {
+            if (videoElement) {
+                observer.unobserve(videoElement);
+            }
+        };
+    }, [isPlaying]);
 
     const togglePlay = () => {
         if (isPlaying) {
@@ -33,6 +69,8 @@ const VideoPlayer = () => {
                 height="auto"
                 onPlay={handlePlay}
                 controls
+                autoPlay
+                muted // Mute the video to allow autoplay
             />
         </div>
     );
