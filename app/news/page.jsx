@@ -27,7 +27,6 @@ return (
         <form action="" className="flex my-3 gap-3">
           <input type="email" placeholder="Your Email" className="p-3 text-purple w-full newsletter-input rounded-lg" />
           <button type="submit" className="newsletter-btn bg-green rounded-lg text-white px-10">
-            {" "}
             Send
           </button>
         </form>
