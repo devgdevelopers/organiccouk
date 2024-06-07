@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import ReactPlayer from "react-player";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
 import VideoPlayer from './component/VideoPlayer '
 
 import {
@@ -96,91 +97,33 @@ export default function Home() {
     <>
       <main className="flex w-full flex-col items-center bg-white overflow-x-hidden">
         <section className="w-full ">
-          <Slider {...settingsSlider} className="flex gap-10 w-full">
+          <Slider {...settingsSlider} className="flex gap-10 ">
             {BannerSlidesData.map((item, id) => (
               <div
                 key={id}
-                className={`w-full h-[65vh] md:h-[100vh] main-hero-slide flex justify-center align-center p-12
+                className={`w-full h-screen main-hero-slide 
           ${item.bgClass}`}
               >
-                <div className="container mx-auto flex flex-col justify-center h-full">
-                  <h2 className="text-[32px] lg:text-[60px]  text-white">
+                <div className=" min-h-screen min-w-full flex justify-around container mx-auto my-auto">
+                 <div className="my-auto w-[50%]">
+                 <h2 className="text-[32px] lg:text-[70px]  text-white ">
                     {item.heading}
                   </h2>
-                  <p className="text-[15px] lg:text-[20px] text-white">
+                  <p className="text-[15px] lg:text-[20px] text-white my-5">
                     {item.desc}
                   </p>
                   <a
                     href="/about"
                     type="submit"
-                    className="my-5 p-3 text-center text-sm bg-white text-green inline"
+                    className=" p-3 text-center text-sm bg-white text-green inline"
                   >
                     Learn More
                   </a>
-                </div>
-              </div>
-            ))}
-          </Slider>
-        </section>
-
-        {/* below banner */}
-        <section className="w-full z-10 bg-green-light py-2 md:py-10">
-          <div className="w-full mx-auto justify-center z-40">
-            <div className="container mx-auto block lg:flex">
-              <div className="p-5 md:p-10 w-[100%]  lg:w-[130%] ">
-                <p className="text-xl md:text-2xl font-bold mb-4 text-purple">
-                  About Us
-                </p>
-                <p className=" text-xl pb-4 text-purple font-semibold mb-2">
-                  The most advanced organic waste and food waste recycling
-                  solution in the world
-                </p>
-                <p className="text-justify mb-4">
-                  Organicco is an innovative and modern biotechnology company
-                  specialising in
-                  <i className="font-bold ">
-                    {" "}
-                    organic and food waste recycling
-                  </i>
-                  ,<i className="font-bold "> waste to energy</i>,
-                  <i className="font-bold "> organic fertiliser</i>, and
-                  <i className="font-bold ">
-                    {" "}
-                    sustainable engineering consultancy{" "}
-                  </i>
-                  services.
-                </p>
-
-                <p className="m-0 p-0 mb-4 text-justify">
-                  Our business offers affordable technology for solving
-                  escalating food security problems. The main focus concentrates
-                  on decarbonisation whilst reducing costs and providing
-                  environmental benefits for all.
-                </p>
-                <p className="mb-4 text-justify">
-                  This has been achieved with the continuous development of
-                  Organicco’s closed-loop solution where we waste nothing.
-                  Depending on the input material our technologies convert
-                  organic waste into other useful resources, such as fertiliser,
-                  animal feed, animal protein meal, electricity, heat, steam,
-                  grey water, fuel, and compressed CO2 i.e., the input material
-                  is recycled into a commodity with financial value.
-                </p>
-                <h3 className="text-xl my-4 text-green font-bold">
-                  Empowering Businesses
-                </h3>
-                <p className="text-justify">
-                  Organicco provides solutions for empowering businesses to
-                  divert waste away from expensive traditional disposal options
-                  whilst helping them meet their net-zero targets. Organicco has
-                  specifically designed a range of products to convert waste
-                  into natural assets.
-                </p>
-              </div>
-              <div className="get-q-form-home w-[85%] lg:w-[70%]  pt-2 pb-5 mx-auto">
-                <form className="bg-white rounded-xl  lg:-mt-32 shadow-lg pt-2 pb-6 px-7 mx-auto"> 
-                  <p className="text-lg py-6  text-green">send a message</p>
-                  <h1 className="text-2xl font-bold my-3 text-purple">
+                 </div>
+                 <div className="my-auto ">
+                 <form className="bg-white   lg:-mt-32 shadow-lg pt-2 pb-6 px-7 mx-auto"> 
+                  <p className="text-xl mt-5 text-green">send a message</p>
+                  <h1 className="text-3xl mb-6 font-bold text-purple">
                     Request a call back
                   </h1>
 
@@ -223,7 +166,7 @@ export default function Home() {
                       id="TermsCheck"
                       className=""
                     />
-                    <label htmlFor="terms-check" className="px-3">
+                    <label htmlFor="terms-check " className="px-3 text-black">
                       I agree to the terms of service.{" "}
                       <span>
                         <Link
@@ -244,7 +187,85 @@ export default function Home() {
                     </button>
                   </div>
                 </form>
+                 </div>
+                </div>
+               
               </div>
+            ))}
+          </Slider>
+        </section>
+
+        {/* below banner */}
+        <section className="w-full z-10 py-2 md:py-10">
+          <div className="w-full mx-auto justify-center z-40">
+            <div className="container mx-auto block lg:flex">
+              <div className="p-5  w-1/2 ">
+                <p className="text-base md:text-lg font-bold  text-green mb-3 ">
+                Our Introduction
+                </p>
+                <p className=" text-5xl  text-purple font-semibold mb-4 ">
+                  The most advanced organic waste and food waste recycling
+                  solution in the world
+                </p>
+                <p className="text-justify my-auto text-xl about-text">
+                  Organicco is an innovative and modern biotechnology company
+                  specialising in 
+</p>
+                  <ul className="grid grid-cols-2 my-4">
+                    <li className="text-xl"> <span><CheckCircleRoundedIcon className="text-green hover:text-white  mr-2" /></span>
+                    <i>
+                    organic and food waste recycling
+                    </i>
+                    </li>
+                    <li className="text-xl">
+                    <span><CheckCircleRoundedIcon className="text-green mr-2" /></span> <i>waste to energy</i>
+                    </li>
+                    <li  className="text-xl" >
+                    <span><CheckCircleRoundedIcon className="text-green mr-2" /></span> <i>organic fertiliser</i>
+                    </li>
+                    <li  className="text-xl">
+                    <span><CheckCircleRoundedIcon className="text-green mr-2" /></span> <i>sustainable engineering consultancy services.</i>
+                    </li>
+                  </ul>
+               
+                  
+                
+
+                <p className="m-0 p-0 mb-4 text-justify">
+                 <i>
+                 Our business offers affordable technology for solving
+                  escalating food security problems. The main focus concentrates
+                  on decarbonisation whilst reducing costs and providing
+                  environmental benefits for all.
+                 </i>
+                </p>
+                <p className="mb-4 text-justify">
+                  <i>
+                  This has been achieved with the continuous development of
+                  Organicco’s closed-loop solution where we waste nothing.
+                  Depending on the input material our technologies convert
+                  organic waste into other useful resources, such as fertiliser,
+                  animal feed, animal protein meal, electricity, heat, steam,
+                  grey water, fuel, and compressed CO2 i.e., the input material
+                  is recycled into a commodity with financial value.
+                  </i>
+                </p>
+                <h3 className="text-xl my-4 text-green font-bold">
+                  Empowering Businesses
+                </h3>
+                <p className="text-justify">
+                  Organicco provides solutions for empowering businesses to
+                  divert waste away from expensive traditional disposal options
+                  whilst helping them meet their net-zero targets. Organicco has
+                  specifically designed a range of products to convert waste
+                  into natural assets.
+                </p>
+              </div>
+
+              <div className="w-1/2">
+                
+              </div>
+            
             </div>
           </div>
         </section>
@@ -428,7 +449,7 @@ export default function Home() {
               className="px-5 pb-5 flex lg:w-[60%] flex-col justify-center w-[100%]"
               
             >
-              <p className="text-xl md:text-2xl font-bold text-purple mb-4">
+              <p className="text-xl md:text-2xl font-bold text-purple mb-4 tracking-in-contract-bck-top">
                 Our Vision
               </p>
               <h1 className="text-3xl font-bold mb-3 text-green">

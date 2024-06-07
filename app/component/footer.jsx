@@ -6,7 +6,7 @@ const footer = () => {
   return (
     <section className="w-full bg-grey footer-section overflow-hidden">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 align-center justify-center justify-items-start lg:justify-items-center sm:p-16 p-4 m-auto">
+        <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 align-center justify-center justify-items-start lg:justify-items-center sm:p-6 p-4 m-auto">
           <div className="">
             <Image
               src="/assets/Organicco_no_bg.png"

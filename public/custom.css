@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 * {
- font-family: "Raleway", sans-serif;
+ font-family: "lato", sans-serif;
 }
 .flip-card {
   background-color: transparent;
@@ -50,7 +50,9 @@
   align-items: center;
   border-radius: 8px;
 }
-
+/* .about-text{
+border-left: 6px solid #196901;
+} */
 .product-card1 {
   background-image: url("./assets/ecohero-loctroi-1.jpg");
   background-position: center center;
@@ -172,17 +174,11 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.719);
   opacity: 0.6;
+  z-index: 12;
 }
-.main-hero-slide h2 {
+
+.main-hero-slide div {
   z-index: 99;
-}
-.main-hero-slide p {
-  z-index: 99;
-}
-.main-hero-slide a {
-  z-index: 99;
-  font-weight: 600;
-  width: 150px;
 }
 
 .team-member-img {
@@ -228,9 +224,7 @@
   border: 1px solid #388521;
   transition: border-color 0.5s; /* Optional: Add transition for smooth border color change */
 }
-/* .get-q-form-home {
-  width: 90%;
-} */
+
 
 .contact-inputs {
   width: 100%;
@@ -358,11 +352,11 @@ video {
 color: #0c0c4c;
 }
 
-/* ul.h-full.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\[justify\=start\]\:flex-grow.data-\[justify\=start\]\:basis-0.data-\[justify\=center\]\:justify-center.data-\[justify\=end\]\:justify-end.data-\[justify\=end\]\:flex-grow.data-\[justify\=end\]\:basis-0.flex.flex-col.gap-5.justify-start.align-center {
+ul.h-full.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\[justify\=start\]\:flex-grow.data-\[justify\=start\]\:basis-0.data-\[justify\=center\]\:justify-center.data-\[justify\=end\]\:justify-end.data-\[justify\=end\]\:flex-grow.data-\[justify\=end\]\:basis-0.flex.flex-col.gap-5.justify-start.align-center {
   justify-content: flex-start;
   align-items: flex-start;
   gap: 15px;
-} */
+}
 
 /* ul.h-full.flex-row.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\[justify\=start\]\:flex-grow.data-\[justify\=start\]\:basis-0.data-\[justify\=center\]\:justify-center.data-\[justify\=end\]\:justify-end.data-\[justify\=end\]\:flex-grow.data-\[justify\=end\]\:basis-0.flex.gap-5.justify-end {
   flex-direction: column;
@@ -531,6 +525,43 @@ header.sticky nav header {
             transform: translateZ(12px);
     -webkit-filter: blur(0);
             filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.tracking-in-contract-bck-top {
+	-webkit-animation: tracking-in-contract-bck-top 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract-bck-top 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+@-webkit-keyframes tracking-in-contract-bck-top {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px) translateY(-300px);
+            transform: translateZ(400px) translateY(-300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+            transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract-bck-top {
+  0% {
+    letter-spacing: 1em;
+    -webkit-transform: translateZ(400px) translateY(-300px);
+            transform: translateZ(400px) translateY(-300px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+            transform: translateZ(0) translateY(0);
     opacity: 1;
   }
 }
