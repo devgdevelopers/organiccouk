@@ -45,10 +45,10 @@ export default function Page() {
           {products.map((item, id) => {
             return (
               <>
-                <Card key={id} className="w-full max-w-[90%] flex-col md:flex-row gap-5 mx-auto p-3 xl:p-0 ">
+                <Card key={id} className="w-full max-w-[90%] flex-col md:flex-row gap-5 mx-auto p-3 xl:p-0 group ">
                   <CardHeader shadow={false} floated={false} className="m-0 w-full md:w-2/5 shrink-0 md:rounded-r-none">
                     <Image src={item.productImage} alt="card-image" width={100} height={100}
-                      className="h-full w-full object-cover transition-all ease-in-out duration-300 hover:scale-105" unoptimized />
+                      className="h-full w-full object-cover transition-all ease-in-out duration-300 group-hover:scale-105" unoptimized />
                   </CardHeader>
                   <CardBody className="my-auto">
                     <Typography variant="h5" color="gray" className="mb-4 uppercase text-green " >
