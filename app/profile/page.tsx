@@ -23,6 +23,8 @@ export default function ProfilePage() {
     const [activeSection, setActiveSection] = useState("profile");
     const { logout } = useAuth();
     const [isBlogsOpen, setIsBlogsOpen] = useState(false);
+    const [isProductOpen, setIsProductOpen] = useState(false);
+    const [isServicesOpen, setIsServicesOpen] = useState(false);
 
     const update = async () => {
         router.push('/blog');
@@ -52,6 +54,12 @@ export default function ProfilePage() {
     };
     const toggleBlogsMenu = () => {
         setIsBlogsOpen(!isBlogsOpen);
+    };
+    const toggleProductMenu = () => {
+        setIsProductOpen(!isProductOpen);
+    };
+    const toggleServicesMenu = () => {
+        setIsServicesOpen(!isServicesOpen);
     };
 
     return (
@@ -104,6 +112,78 @@ export default function ProfilePage() {
                     </div>
                 )}
 
+
+                <button
+                    onClick={toggleProductMenu}
+                    className={`flex justify-between items-center  hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
+                >
+                    <div className="flex items-center gap-3">
+                        <TiDocumentText />
+                        Products
+                    </div>
+                    {isProductOpen  ? <FaAngleDown /> : <FaAngleRight />}
+                </button>
+                {isProductOpen  && (
+                    <div className="ml-6">
+                        <button
+                            onClick={() => setActiveSection("addProducts")}
+                            className={`flex justify-between items-center ${activeSection === "addProducts" ? 'bg-[#52c42f1f]' : ''} hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
+                        >
+                            <div className="flex items-center gap-3">
+                                <MdOutlineAddComment />
+                                Add Products
+                            </div>
+                            <FaAngleRight />
+                        </button>
+                        <button
+                            onClick={() => setActiveSection("updateProducts")}
+                            className={`flex justify-between items-center ${activeSection === "updateProducts" ? 'bg-[#52c42f1f]' : ''} hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
+                        >
+                            <div className="flex items-center gap-3">
+                                <VscGitPullRequestGoToChanges />
+                                Update Products
+                            </div>
+                            <FaAngleRight />
+                        </button>
+                    </div>
+                )}
+
+
+                <button
+                    onClick={toggleServicesMenu}
+                    className={`flex justify-between items-center  hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
+                >
+                    <div className="flex items-center gap-3">
+                        <TiDocumentText />
+                        Services
+                    </div>
+                    {isServicesOpen  ? <FaAngleDown /> : <FaAngleRight />}
+                </button>
+                {isServicesOpen  && (
+                    <div className="ml-6">
+                        <button
+                            onClick={() => setActiveSection("addService")}
+                            className={`flex justify-between items-center ${activeSection === "addService" ? 'bg-[#52c42f1f]' : ''} hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
+                        >
+                            <div className="flex items-center gap-3">
+                                <MdOutlineAddComment />
+                                Add Service
+                            </div>
+                            <FaAngleRight />
+                        </button>
+                        <button
+                            onClick={() => setActiveSection("updateService")}
+                            className={`flex justify-between items-center ${activeSection === "updateService" ? 'bg-[#52c42f1f]' : ''} hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
+                        >
+                            <div className="flex items-center gap-3">
+                                <VscGitPullRequestGoToChanges />
+                                Update Service
+                            </div>
+                            <FaAngleRight />
+                        </button>
+                    </div>
+                )}
+
                 <button
                     onClick={getUserDetails}
                     className={`flex justify-between items-center ${activeSection === "userDetails" ? 'bg-[#52c42f1f]' : ''} hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
@@ -142,6 +222,26 @@ export default function ProfilePage() {
                 )}
                 {activeSection === "adminPanel" && (
                     <Admin />
+                )}
+                {activeSection === "addProducts" && (
+                    <div className="flex flex-col items-center justify-center">
+                    <h1 className="text-3xl mb-4">Add Product</h1>
+                </div>
+                )}
+                {activeSection === "updateProducts" && (
+                                        <div className="flex flex-col items-center justify-center">
+                                        <h1 className="text-3xl mb-4">Update Product</h1>
+                                    </div>
+                )}
+                {activeSection === "addService" && (
+                                        <div className="flex flex-col items-center justify-center">
+                                        <h1 className="text-3xl mb-4">Add Service</h1>
+                                    </div>
+                )}
+                {activeSection === "updateService" && (
+                                        <div className="flex flex-col items-center justify-center">
+                                        <h1 className="text-3xl mb-4">Update Service</h1>
+                                    </div>
                 )}
             </main>
         </div>
