@@ -43,19 +43,13 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
-<<<<<<< HEAD
     "react-intersection-observer": "^9.10.3",
-=======
     "react-icons": "^5.2.1",
->>>>>>> bf16b7f601886f9916c6d55ce4b1905aeb0164bf
     "react-player": "^2.16.0",
     "react-quill": "^2.0.0",
     "react-slick": "^0.30.2",
-<<<<<<< HEAD
     "react-type-animation": "^3.2.0",
-=======
     "react-toastify": "^10.0.5",
->>>>>>> bf16b7f601886f9916c6d55ce4b1905aeb0164bf
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

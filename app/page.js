@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import VideoPlayer from "./component/VideoPlayer ";
+
 import { TypeAnimation } from "react-type-animation";
 import CardTwo from './component/cardtwo'
 
