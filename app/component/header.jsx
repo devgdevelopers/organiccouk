@@ -46,7 +46,7 @@ export default function page() {
   return (
     <>  
       <header className="fixed top-0 left-0 z-50 w-full">
-        <Navbar className="hidden md:flex mx-auto absolute top-0 bg-transparent container py-5 main-nav">
+        <Navbar className="hidden md:flex mx-auto  absolute top-0  container py-5 main-nav">
           <NavbarContent className="text-white">
             <NavbarBrand className="">
               <Link href="/">
@@ -61,9 +61,9 @@ export default function page() {
             </NavbarBrand>
           </NavbarContent>
 
-          <NavbarContent className="flex text-white gap-5 justify-end link-div-head">
+          <NavbarContent className="flex gap-5 justify-end link-div-head">
             <NavbarItem>
-              <Link href="/">Home</Link>
+              <Link href="/" className=""><i>Home</i></Link>
             </NavbarItem>
             <NavbarItem>
               <Link href="/products">Products</Link>
@@ -85,12 +85,12 @@ export default function page() {
           <NavbarContent className="hidden xl:block gap-5 justify-end">
             <Link
               href="mailto:enquiry@organicco.uk"
-              className="text-white text-sm"
+              className="text-green bg-white p-2 my-auto rounded-full font-semibold mx-2 border-none"
             >
-              <EmailIcon className="text-sm" /> enquiry@organicco.uk
+              <EmailIcon className="text-xl text-purple bg-white" />
             </Link>
-            <Link href="tel:+44 (0)20 8133 3129" className="text-white text-sm">
-              <PhoneIcon className="text-sm" /> +44 (0)20 8133 3129
+            <Link href="tel:+44 (0)20 8133 3129" className="text-purple  bg-white px-3 py-2 my-auto rounded-full font-bold">
+              <PhoneIcon className="text-xl text-purple bg-white" /> +44 (0)20 8133 3129
             </Link>
           </NavbarContent>
         </Navbar>

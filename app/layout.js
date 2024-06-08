@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation'
 import HomeHeader from './component/homeheader'
 import { Inter } from "next/font/google";
 import "./globals.css";
+// import "./styles/cardstyle.css"
 import Footer from "./component/footer";
 import { NextUIProvider } from "@nextui-org/react";
 import { Analytics } from "@vercel/analytics/react";

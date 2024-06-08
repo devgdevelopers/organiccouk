@@ -1,14 +1,16 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
 
 const VideoPlayer = () => {
     const videoRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(true);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
     useEffect(() => {
         const videoElement = videoRef.current;
 
-        if (videoElement) {
+        if (videoElement && isPlaying) {
             videoElement.play();
         }
 
@@ -42,12 +44,13 @@ const VideoPlayer = () => {
     }, [isPlaying]);
 
     const togglePlay = () => {
-        if (isPlaying) {
+        if (isOpen) {
+            onOpenChange(false);
             videoRef.current.pause();
         } else {
-            videoRef.current.play();
+            onOpen();
         }
-        setIsPlaying(!isPlaying);
+        setIsPlaying(!isOpen);
     };
 
     const handlePlay = () => {
@@ -61,17 +64,29 @@ const VideoPlayer = () => {
             <div onClick={togglePlay}>
                 {!isPlaying && <PlayCircleIcon className="play-icon" />}
             </div>
-            <video
-                ref={videoRef}
-                className="react-player bg-none rounded-lg my-20 w-full z-20 mx-auto"
-                src="https://organicco.uk/video/Organicco%20presentation-1222.mp4"
-                width="90%"
-                height="auto"
-                onPlay={handlePlay}
-                controls
-                autoPlay
-                muted // Mute the video to allow autoplay
-            />
+            <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="3xl" backdrop="blur">
+                <ModalContent>
+                    {(onClose) => (
+                        <>
+                           
+                            <ModalBody >
+                                <video
+                                    ref={videoRef}
+                                    className="react-player bg-none rounded-lg w-full z-20 mx-auto"
+                                    src="https://organicco.uk/video/Organicco%20presentation-1222.mp4"
+                                    width="100%"
+                                    height="auto"
+                                    onPlay={handlePlay}
+                                    controls
+                                    autoPlay
+                                    muted // Mute the video to allow autoplay
+                                />
+                            </ModalBody>
+                            
+                        </>
+                    )}
+                </ModalContent>
+            </Modal>
         </div>
     );
 };

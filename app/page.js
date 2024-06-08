@@ -4,10 +4,13 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import ReactPlayer from "react-player";
-import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
-import VideoPlayer from './component/VideoPlayer '
+
+import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import VideoPlayer from "./component/VideoPlayer ";
+import { TypeAnimation } from "react-type-animation";
+import CardTwo from './component/cardtwo'
 
 import {
   BlogscardDataArray,
@@ -27,9 +30,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default function Home() {
   const [activeItem, setActiveItem] = useState(null);
   const playerRef = useRef(null);
-
   const [isPlaying, setIsPlaying] = useState(false);
-
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
   };
@@ -39,8 +40,10 @@ export default function Home() {
       playerRef.current.seekTo(11);
     }
   };
-
-
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger animation once
+    threshold: 0.5, // Trigger animation when 50% of element is in view
+  });
 
   const settingsSlider = {
     dots: false,
@@ -88,6 +91,7 @@ export default function Home() {
     ],
   };
 
+
   const defaultContent =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
@@ -104,150 +108,217 @@ export default function Home() {
                 className={`w-full h-screen main-hero-slide 
           ${item.bgClass}`}
               >
-                <div className=" min-h-screen min-w-full flex justify-around container mx-auto my-auto">
-                 <div className="my-auto w-[50%]">
-                 <h2 className="text-[32px] lg:text-[70px]  text-white ">
-                    {item.heading}
-                  </h2>
-                  <p className="text-[15px] lg:text-[20px] text-white my-5">
-                    {item.desc}
-                  </p>
-                  <a
-                    href="/about"
-                    type="submit"
-                    className=" p-3 text-center text-sm bg-white text-green inline"
-                  >
-                    Learn More
-                  </a>
-                 </div>
-                 <div className="my-auto ">
-                 <form className="bg-white   lg:-mt-32 shadow-lg pt-2 pb-6 px-7 mx-auto"> 
-                  <p className="text-xl mt-5 text-green">send a message</p>
-                  <h1 className="text-3xl mb-6 font-bold text-purple">
-                    Request a call back
-                  </h1>
-
-                  <div className="mb-4">
-                    <input
-                      className="shadow appearance-none border rounded w-full py-5 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      id="Name"
-                      type="text"
-                      placeholder="Name"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <input
-                      className="shadow appearance-none border rounded w-full py-5 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      id="Email"
-                      type="email"
-                      placeholder="Email"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <input
-                      className="shadow appearance-none border rounded w-full py-5 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                      id="Phone"
-                      type="tel"
-                      placeholder="Phone Number"
-                    />
-                  </div>
-                  <div className="mb-6">
-                    <input
-                      className="shadow appearance-none border  rounded w-full py-5 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
-                      id="message"
-                      type="text"
-                      placeholder="How can we help you ?"
-                    />
-                  </div>
-                  <div className="flex">
-                    <input
-                      type="checkbox"
-                      name="terms-check "
-                      id="TermsCheck"
-                      className=""
-                    />
-                    <label htmlFor="terms-check " className="px-3 text-black">
-                      I agree to the terms of service.{" "}
-                      <span>
-                        <Link
-                          href="/privacy-policy"
-                          className="text-green text-sm"
-                        >
-                          Privacy Policy
-                        </Link>
-                      </span>
-                    </label>
-                  </div>
-                  <div className="flex justify-center items-center w-full">
-                    <button
-                      className="w-full news-blog-btn mt-5  bg-green text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline news-blog-btn"
-                      type="button"
+                <div className=" min-h-screen container flex justify-around mx-auto my-auto">
+                  <div className="my-auto w-full lg:w-[60%]">
+                    <h2 className="text-[32px] lg:text-[70px] text-white">
+                      <TypeAnimation
+                        sequence={[
+                          item.heading, // Type the heading
+                          500,
+                          "", // Clear the text
+                          300, // Wait for 1 second before restarting
+                        ]}
+                        speed={30} // Adjust typing speed
+                        deletionSpeed={50} // Adjust deletion speed
+                        wrapper="span"
+                        cursor={false}
+                        repeat={Infinity}
+                        style={{
+                          display: "inline-block",
+                          transition: "all 0.3s ease-in-out",
+                        }}
+                      />
+                    </h2>
+                    <p className="text-[15px] lg:text-[20px] text-white my-5">
+                      {item.desc}
+                    </p>
+                    <a
+                      href="/about"
+                      type="submit"
+                      className=" p-3 text-center text-sm bg-white text-green inline"
                     >
-                      Get A Quote
-                    </button>
+                      Learn More
+                    </a>
                   </div>
-                </form>
-                 </div>
+                  <div className="my-auto w-full lg:w-[40%] flex justify-end ">
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <form className="bg-white shadow-lg pt-2 pb-6 px-7 ">
+                        <p className="text-xl mt-5 text-green">send a message</p>
+                        <h1 className="text-3xl mb-6 font-bold text-purple">
+                          Request a call back
+                        </h1>
+
+                        <div className="mb-4">
+                          <input
+                            className="shadow appearance-none border rounded w-full py-5 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-xl text-green"
+                            id="Name"
+                            type="text"
+                            placeholder="Name"
+                          />
+                        </div>
+                        <div className="mb-4">
+                          <input
+                            className="shadow appearance-none border rounded w-full py-5 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="Email"
+                            type="email"
+                            placeholder="Email"
+                          />
+                        </div>
+                        <div className="mb-4">
+                          <input
+                            className="shadow appearance-none border rounded w-full py-5 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                            id="Phone"
+                            type="tel"
+                            placeholder="Phone Number"
+                          />
+                        </div>
+                        <div className="mb-6">
+                          <input
+                            className="shadow appearance-none border  rounded w-full py-5 px-3 text-gray-700  leading-tight focus:outline-none focus:shadow-outline"
+                            id="message"
+                            type="text"
+                            placeholder="How can we help you ?"
+                          />
+                        </div>
+                        <div className="flex">
+                          <input
+                            type="checkbox"
+                            name="terms-check "
+                            id="TermsCheck"
+                            className=""
+                          />
+                          <label
+                            htmlFor="terms-check "
+                            className="px-3 text-black"
+                          >
+                            I agree to the terms of service.{" "}
+                            <span>
+                              <Link
+                                href="/privacy-policy"
+                                className="text-green text-sm"
+                              >
+                                Privacy Policy
+                              </Link>
+                            </span>
+                          </label>
+                        </div>
+                        <div className="flex justify-center items-center w-full">
+                          <button
+                            className="w-full news-blog-btn mt-5  bg-green text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline news-blog-btn"
+                            type="button"
+                          >
+                            Get A Quote
+                          </button>
+                        </div>
+                      </form>
+                    </motion.div>
+
+                  </div>
                 </div>
-               
               </div>
             ))}
           </Slider>
         </section>
 
         {/* below banner */}
-        <section className="w-full z-10 py-2 md:py-10">
+        <section className="w-full z-10 py-2 md:py-20 bg-grey-texture">
           <div className="w-full mx-auto justify-center z-40">
-            <div className="container mx-auto block lg:flex">
-              <div className="p-5  w-1/2 ">
+            <div className="container mx-auto grid md:grid-cols-2 grid-cols-1">
+              <div className="p-5 flex flex-col justify-between">
                 <p className="text-base md:text-lg font-bold  text-green mb-3 ">
-                Our Introduction
+                  Our Introduction
                 </p>
-                <p className=" text-5xl  text-purple font-semibold mb-4 ">
-                  The most advanced organic waste and food waste recycling
-                  solution in the world
+                <p className="text-5xl text-purple font-semibold mb-4  block">
+                  <i>
+                    <TypeAnimation
+                      sequence={[
+                        "The Most Advanced Organic Waste And Food Waste Recycling Solution In The World !",
+                        4000, // Waits 1s
+                        "",
+                        500
+                        ,
+                        () => {
+                          console.log("Done typing!");
+                        },
+                      ]}
+                      wrapper="span"
+                      cursor={false}
+                      repeat={Infinity}
+                      style={{ display: "block", height: "150px" }}
+                    />
+                  </i>
                 </p>
                 <p className="text-justify my-auto text-xl about-text">
                   Organicco is an innovative and modern biotechnology company
-                  specialising in 
-</p>
-                  <ul className="grid grid-cols-2 my-4">
-                    <li className="text-xl"> <span><CheckCircleRoundedIcon className="text-green hover:text-white  mr-2" /></span>
-                    <i>
-                    organic and food waste recycling
-                    </i>
-                    </li>
-                    <li className="text-xl">
-                    <span><CheckCircleRoundedIcon className="text-green mr-2" /></span> <i>waste to energy</i>
-                    </li>
-                    <li  className="text-xl" >
-                    <span><CheckCircleRoundedIcon className="text-green mr-2" /></span> <i>organic fertiliser</i>
-                    </li>
-                    <li  className="text-xl">
-                    <span><CheckCircleRoundedIcon className="text-green mr-2" /></span> <i>sustainable engineering consultancy services.</i>
-                    </li>
-                  </ul>
-               
-                  
-                
+                  specialising in
+                </p>
+                <ul className="grid grid-cols-2 my-4">
+                  <li className="text-xl intro-links">
+                    <span>
+                      <CheckCircleRoundedIcon className="text-green hover:text-white rounded-full  mr-2 circle-icon" />
+                    </span>
+                    <i>organic and food waste recycling</i>
+                  </li>
+                  <li className="text-xl intro-links">
+                    <span>
+                      <CheckCircleRoundedIcon className="text-green hover:text-white rounded-full  mr-2 circle-icon" />
+                    </span>
+                    <i>waste to energy</i>
+                  </li>
+                  <li className="text-xl intro-links">
+                    <span>
+                      <CheckCircleRoundedIcon className="text-green hover:text-white rounded-full  mr-2 circle-icon" />
+                    </span>
+                    <i>organic fertiliser</i>
+                  </li>
+                  <li className="text-xl intro-links">
+                    <span>
+                      <CheckCircleRoundedIcon className="text-green hover:text-white rounded-full  mr-2 circle-icon" />
+                    </span>
+                    <i>sustainable engineering consultancy</i>
+                  </li>
+                </ul>
+              </div>
 
+              <div className=" relative">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src="/uk-house-solar.webp"
+                    width={100}
+                    height={100}
+                    alt="home-below-banner"
+                    className="w-3/4 md:absolute right-0"
+                    unoptimized
+                  ></Image>
+                </motion.div>
+              </div>
+              <div className="p-5 ">
                 <p className="m-0 p-0 mb-4 text-justify">
-                 <i>
-                 Our business offers affordable technology for solving
-                  escalating food security problems. The main focus concentrates
-                  on decarbonisation whilst reducing costs and providing
-                  environmental benefits for all.
-                 </i>
+                  <i>
+                    Our business offers affordable technology for solving
+                    escalating food security problems. The main focus
+                    concentrates on decarbonisation whilst reducing costs and
+                    providing environmental benefits for all.
+                  </i>
                 </p>
                 <p className="mb-4 text-justify">
                   <i>
-                  This has been achieved with the continuous development of
-                  Organicco’s closed-loop solution where we waste nothing.
-                  Depending on the input material our technologies convert
-                  organic waste into other useful resources, such as fertiliser,
-                  animal feed, animal protein meal, electricity, heat, steam,
-                  grey water, fuel, and compressed CO2 i.e., the input material
-                  is recycled into a commodity with financial value.
+                    This has been achieved with the continuous development of
+                    Organicco’s closed-loop solution where we waste nothing.
+                    Depending on the input material our technologies convert
+                    organic waste into other useful resources, such as
+                    fertiliser, animal feed, animal protein meal, electricity,
+                    heat, steam, grey water, fuel, and compressed CO2 i.e., the
+                    input material is recycled into a commodity with financial
+                    value.
                   </i>
                 </p>
                 <h3 className="text-xl my-4 text-green font-bold">
@@ -261,55 +332,105 @@ export default function Home() {
                   into natural assets.
                 </p>
               </div>
+              <div className="relative ">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src="/uk-house-solar1.jpg"
+                    width={100}
+                    height={100}
+                    alt="home-below-banner "
+                    className="w-[60%] md:absolute home-abt-img left-10"
+                    unoptimized
+                  ></Image>
+                </motion.div>
 
-              <div className="w-1/2">
-                
               </div>
-            
             </div>
           </div>
         </section>
 
         {/* featured products */}
 
-    <section className="w-full  py-20">
-      <div className="container mx-auto flex gap-10 flex-col">
-        <div>
-          <h1 className="text-xl md:text-2xl font-bold  text-center text-purple">
-            Featured Products
-          </h1>
-        </div>
-        <div
-          className="flex flex-row container gap-10 flex-wrap align-center justify-center flex-auto">
-          {productcardDataArray.map((lala, id) => (
-          <Card key={id} title={lala.title} subtitle={lala.subtitle} desc={lala.desc} bgClass={lala.bgClass}
-            cardLink={lala.cardLink} />
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* image section */}
-    <section className="z-40 w-full mx-auto ">
-      <div className="image-section w-full flex justify-center py-20 lg:py-40 px-10">
-        <div className="flex justify-center z-50 container " >
-          <div className="text-white text-[20px] lg:text-[40px] font-bold text-center my-auto">
-            We're committed to leading the charge in tackling
-            environmental challenges through{" "}
-            <span className="text-[#32d900] text">our innovative solutions</span>
+        <section className="w-full py-20">
+          <div className="container mx-auto flex gap-10 flex-col">
+            <div>
+              <h1 className="text-3xl font-bold  text-center text-purple">
+                <i>Featured Products</i>
+              </h1>
+            </div>
+            <div className="flex flex-row container gap-10 flex-wrap align-center justify-center flex-auto">
+              {productcardDataArray.map((lala, id) => (
+                <Card
+                  key={id}
+                  title={lala.title}
+                  subtitle={lala.subtitle}
+                  desc={lala.desc}
+                  bgClass={lala.bgClass}
+                  cardLink={lala.cardLink}
+                />
+              ))}
+            </div>
+            {/* <div className="flex flex-row container gap-10 flex-wrap align-center justify-center flex-auto">
+              {productcardDataArray.map((lala, id) => (
+                <CardTwo
+                  key={id}
+                  title={lala.title}
+                  subtitle={lala.subtitle}
+                  desc={lala.desc}
+                  bgClass={lala.bgClass}
+                  cardLink={lala.cardLink}
+                />
+              ))}
+            </div> */}
+            {/* <section className="grid grid-cols-3 gap-5 py-10">
+        <CardTwo
+        title="Mountain"
+        description="Lorem Ipsum is simply dummy text from the printing and typesetting industry"
+        imageUrl="/assets/epc-feed.jpg"
+      />
+      <CardTwo
+        title="Road"
+        description="Lorem Ipsum is simply dummy text from the printing and typesetting industry"
+        imageUrl="/assets/epc-feed.jpg"
+      />
+      <CardTwo
+        title="Protester"
+        description="Lorem Ipsum is simply dummy text from the printing and typesetting industry"
+        imageUrl="/assets/epc-feed.jpg"
+      />
+        </section> */}
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+
+        {/* image section */}
+        <section className="z-40 w-full mx-auto ">
+          <div className="image-section w-full flex justify-center py-20 lg:py-40 px-10">
+            <div className="flex justify-center z-50 container ">
+              <div className="text-white text-[20px] lg:text-[40px] font-bold text-center my-auto">
+                We're committed to leading the charge in tackling environmental
+                challenges through{" "}
+                <span className="text-[#79db52] text">
+                  our innovative solutions
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* video section */}
-        <section className="w-full bg-white">
+        <section className="w-full bg-white bg-grey-texture">
           <div className="relative container my-auto mx-auto flex lg:flex-row flex-col p-5 gap-8">
             <div className="  w-[100%] lg:w-[50%]  my-auto p-2 ">
-              <h3 className="text-xl md:text-2xl font-bold mb-3 text-purple">
+              <h3 className="text-xl md:text-4xl font-bold mb-3 text-purple">
+
                 Get to Know the Heart Behind Organicco
+
               </h3>
-              <p className="text-green text-[15px] text-justify">
+              <p className="text-green text-[20px] text-justify">
                 Embark on a visual journey through Organicco's ethos,
                 innovations, and commitment to sustainability with our
                 compelling About Us video. Discover the faces and stories behind
@@ -320,33 +441,12 @@ export default function Home() {
               </p>
             </div>
 
-            {/* <div className="relative  w-[100%] lg:w-[50%]">
-              <div onClick={togglePlay}>
-                {!isPlaying && <PlayCircleIcon className="play-icon" />}
-              </div>
-              <ReactPlayer
-                ref={playerRef}
-                className="react-player bg-none rounded-lg my-20 w-full z-20 mx-auto"
-                url="https://organicco.uk/video/Organicco%20presentation-1222.mp4"
-                playing={isPlaying}
-                width="90%"
-                height="auto"
-                onPlay={handlePlay}
-              />  
-            </div>   */}
-
-            <VideoPlayer/>
-
-
-
-          </div>  
-        </section>  
+            <VideoPlayer />
+          </div>
+        </section>
 
         {/* featured services */}
-        <section
-          
-          className="w-full py-20 px-4  mx-auto bg-grey flex justify-center "
-        >
+        <section className="w-full py-20 px-4  mx-auto bg-grey flex justify-center ">
           <div className="container mx-auto my-auto flex flex-col gap-6">
             <div>
               <h1 className="text-xl md:text-2xl font-bold mb-10 text-center text-purple">
@@ -370,70 +470,93 @@ export default function Home() {
 
         {/* accordian section */}
 
-    <section className="py-10 md:py-20 w-full" >
-      <div className="container p-5 mx-auto flex md:flex-row flex-col">
-        <div className=" my-auto w-full lg:w-[80%]">
-          <h1 className="  text-xl md:text-2xl font-bold mb-4 text-purple">
-            Frequently Asked Questions{" "}
-          </h1>
-          <p className="text-sm sm:text-sm mb-5">
-            Find quick solutions to your questions about our services,
-            operations, and sustainability efforts.
-          </p>
-          <a href="tel:950248458"
-            className=" bg-green text-white news-blog-btn font-bold  py-3 px-4 my-5 rounded focus:outline-none focus:shadow-outline">
-            Learn More
-          </a>
-        </div>
-        <div className=" w-full lg:w-[120%]">
-          <Accordion defaultExpandedKeys={["1"]}>
-            <AccordionItem key="1" aria-label="Accordion 1" title={ <span className={`${ activeItem==="1" ? "text-black"
-              : "text-green" }`}>
-              What is organicco?
-              </span>
-              }
-
-              className={`outline-none ${
-              activeItem === "1" ? "bg-green-200" : ""
-              }`}
+        <section className="py-10 md:py-20 w-full">
+          <div className="container p-5 mx-auto flex md:flex-row flex-col">
+            <div className=" my-auto w-full lg:w-[80%]">
+              <h1 className="  text-xl md:text-2xl font-bold mb-4 text-purple">
+                Frequently Asked Questions{" "}
+              </h1>
+              <p className="text-sm sm:text-sm mb-5">
+                Find quick solutions to your questions about our services,
+                operations, and sustainability efforts.
+              </p>
+              <a
+                href="tel:950248458"
+                className=" bg-green text-white news-blog-btn font-bold  py-3 px-4 my-5 rounded focus:outline-none focus:shadow-outline"
               >
-              {defaultContent}
-            </AccordionItem>
-            <AccordionItem key="2" aria-label="Accordion 2" title={ <span className={`${ activeItem==="2" ? "text-black"
-              : "text-green" }`}>
-              Who we Are?
-              </span>
-              }
-              onClick={() => toggleAccordion("2")}
-              >
-              {defaultContent}
-            </AccordionItem>
-            <AccordionItem key="3" aria-label="Accordion 3" title={ <span className={`${ activeItem==="3" ? "text-black"
-              : "text-green" }`}>
-              What we Do?
-              </span>
-              }
-              onClick={() => toggleAccordion("3")}
-              >
-              {defaultContent}
-            </AccordionItem>
-            <AccordionItem key="4" aria-label="Accordion 4" title={ <span className={`${ activeItem==="4" ? "text-black"
-              : "text-green" }`}>
-              How we Do?
-              </span>
-              }
-              >
-              {defaultContent}
-            </AccordionItem>
-          </Accordion>
-        </div>
-      </div>
-    </section>
+                Learn More
+              </a>
+            </div>
+            <div className=" w-full lg:w-[120%]">
+              <Accordion defaultExpandedKeys={["1"]}>
+                <AccordionItem
+                  key="1"
+                  aria-label="Accordion 1"
+                  title={
+                    <span
+                      className={`${activeItem === "1" ? "text-black" : "text-green"
+                        }`}
+                    >
+                      What is organicco?
+                    </span>
+                  }
+                  className={`outline-none ${activeItem === "1" ? "bg-green " : ""
+                    }`}
+                >
+                  {defaultContent}
+                </AccordionItem>
+                <AccordionItem
+                  key="2"
+                  aria-label="Accordion 2"
+                  title={
+                    <span
+                      className={`${activeItem === "2" ? "text-black" : "text-green"
+                        }`}
+                    >
+                      Who we Are?
+                    </span>
+                  }
+                  onClick={() => toggleAccordion("2")}
+                >
+                  {defaultContent}
+                </AccordionItem>
+                <AccordionItem
+                  key="3"
+                  aria-label="Accordion 3"
+                  title={
+                    <span
+                      className={`${activeItem === "3" ? "text-black" : "text-green"
+                        }`}
+                    >
+                      What we Do?
+                    </span>
+                  }
+                  onClick={() => toggleAccordion("3")}
+                >
+                  {defaultContent}
+                </AccordionItem>
+                <AccordionItem
+                  key="4"
+                  aria-label="Accordion 4"
+                  title={
+                    <span
+                      className={`${activeItem === "4" ? "text-black" : "text-green"
+                        }`}
+                    >
+                      How we Do?
+                    </span>
+                  }
+                >
+                  {defaultContent}
+                </AccordionItem>
+              </Accordion>
+            </div>
+          </div>
+        </section>
 
         {/* companies vision */}
 
-        <section className="w-full  md:py-10 bg-grey "
-         >
+        <section className="w-full  md:py-10 bg-grey ">
           <div className="container flex md:flex-row flex-col justify-center my-auto mx-auto gap-0">
             <div className="flex lg:w-[40%] w-[100%] justify-center md:justify-end">
               <Image
@@ -445,10 +568,7 @@ export default function Home() {
                 alt="picture"
               ></Image>
             </div>
-            <div
-              className="px-5 pb-5 flex lg:w-[60%] flex-col justify-center w-[100%]"
-              
-            >
+            <div className="px-5 pb-5 flex lg:w-[60%] flex-col justify-center w-[100%]">
               <p className="text-xl md:text-2xl font-bold text-purple mb-4 tracking-in-contract-bck-top">
                 Our Vision
               </p>
@@ -482,11 +602,7 @@ export default function Home() {
 
         {/* news and blog */}
 
-        <section
-       
-          className="w-full my-auto flex justify-center pb-10 pt-20"
-        
-        >
+        <section className="w-full my-auto flex justify-center pb-10 pt-20">
           <div className="w-100 container mx-auto gap-5 md:gap-20 news-main-div  my-auto">
             <div className="mx-auto text-center">
               <h1 className="text-xl md:text-2xl font-bold mb-4 text-center text-purple">
@@ -502,7 +618,6 @@ export default function Home() {
               <Slider {...settings} className="flex gap-15 justify-center">
                 {BlogscardDataArray.map((lala, id) => (
                   <div
-               
                     key={id}
                     className="carousel-item p-[10px] news-car-inner-div flex justify-center my-auto "
                   >
@@ -518,6 +633,11 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+
+
+
+       
       </main>
     </>
   );

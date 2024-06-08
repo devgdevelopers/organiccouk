@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function Card({ title, subtitle, desc, bgClass, cardLink }) {
   return (
-    <div className="flip-card rounded-xl w">
-      <div className="flip-card-inner rounded-xl bg-white">
-        <div className={`flip-card-front rounded-xl bg-white ${bgClass}`}>
+    <div className="flip-card w">
+      <div className="flip-card-inner  bg-white">
+        <div className={`flip-card-front bg-white ${bgClass}`}>
         
           <h1 className="text-xl ">{title}</h1>
           <p>{subtitle}</p>
