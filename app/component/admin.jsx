@@ -50,8 +50,8 @@ export default function Admin() {
     }
 
     return (
-        <div className="bg-gray-100 p-8 min-h-screen">
-            <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow">
+        <div className="bg-white p-8 min-h-screen">
+            <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg ">
                 <h1 className="text-2xl font-bold text-gray-900 mb-6">Add blogs</h1>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
@@ -108,3 +108,6 @@ export default function Admin() {
         </div>
     );
 }
+
+
+
