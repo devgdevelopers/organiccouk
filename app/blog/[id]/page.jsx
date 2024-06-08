@@ -27,18 +27,22 @@ const BlogPost = () => {
     }, []); 
 
 
-    return (
+
+return (
+
+
 <div className="flex min-h-auto flex-col  justify-start md:mt-[8rem]">
     <div className="md:px-48 md:py-10 py-4 px-4 flex flex-col md:flex-row ">
 
         {/* Title and Content */}
-        <div className="md:w-3/4 md:pr-4 flex flex-col justify-start gap-4 ">
+        <div className="md:w-3/5 md:pr-4 flex flex-col justify-start gap-4 ">
             <h2 className="text-2xl font-semibold text-[#2e2e84] ">{blog.title}</h2>
-            <p className="leading-relaxed text-gray-700">{blog.content}</p>
+            <p className="leading-relaxed text-gray-700"    dangerouslySetInnerHTML={{ __html: blog.content }}></p>
+
         </div>
 
         {/* Image */}
-        <div className="md:w-1/4 md:pl-4 ">
+        <div className="md:w-2/5 md:pl-4  mx-auto ">
             <img src={blog.img} alt={blog.title} height={300} width={300} />
         </div>
 

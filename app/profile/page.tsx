@@ -9,12 +9,20 @@ import { useRouter } from "next/navigation";
 import { useAuth } from '../../helpers/AuthContext';
 import Admin from '../component/admin';
 import Blog from '../component/blog';
+import { MdOutlineAddComment } from "react-icons/md";
+import { FaAngleRight, FaAngleDown } from "react-icons/fa6";
+import { VscGitPullRequestGoToChanges } from "react-icons/vsc";
+import { MdWidgets } from "react-icons/md";
+import { RiLogoutBoxLine } from "react-icons/ri";
+import { TiDocumentText } from "react-icons/ti";
+import { CgProfile } from "react-icons/cg";
 
 export default function ProfilePage() {
     const router = useRouter();
     const [data, setData] = useState("nothing");
     const [activeSection, setActiveSection] = useState("profile");
     const { logout } = useAuth();
+    const [isBlogsOpen, setIsBlogsOpen] = useState(false);
 
     const update = async () => {
         router.push('/blog');
@@ -42,32 +50,82 @@ export default function ProfilePage() {
             toast.error(error.response?.data?.message || "Logout failed");
         }
     };
+    const toggleBlogsMenu = () => {
+        setIsBlogsOpen(!isBlogsOpen);
+    };
 
     return (
         <div className="flex min-h-screen pt-28">
-            <aside className="w-1/5 bg-gray-800 text-white flex flex-col p-4 ">
-                <h1 className="text-2xl mb-4 text-center">Admin Dashboard</h1>
+            <aside className="w-1/5 bg-white text-white flex flex-col p-4 fixed h-[100vh] shadow-xl z-10">
+                <h1 className="text-2xl mb-4 text-center text-black">Admin</h1>
                 <button
-                    onClick={() => setActiveSection("adminPanel")}
-                    className="bg-cyan-500 my-2 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded"
-                >Add Blogs</button>
+                    onClick={() => setActiveSection("profile")}
+                    className={`flex justify-between items-center ${activeSection === "profile" ? 'bg-[#52c42f1f]' : ''} hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
+                >
+                    <div className="flex items-center gap-3">
+                        <CgProfile />
+                        Profile
+                    </div>
+                    <FaAngleRight />
+                </button>
 
                 <button
-                    onClick={() => setActiveSection("updateBlogs")}
-                    className="bg-blue-500 my-2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                >Update Blogs</button>
+                    onClick={toggleBlogsMenu}
+                    className={`flex justify-between items-center  hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
+                >
+                    <div className="flex items-center gap-3">
+                        <TiDocumentText />
+                        Blogs
+                    </div>
+                    {isBlogsOpen ? <FaAngleDown /> : <FaAngleRight />}
+                </button>
+                {isBlogsOpen && (
+                    <div className="ml-6">
+                        <button
+                            onClick={() => setActiveSection("adminPanel")}
+                            className={`flex justify-between items-center ${activeSection === "adminPanel" ? 'bg-[#52c42f1f]' : ''} hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
+                        >
+                            <div className="flex items-center gap-3">
+                                <MdOutlineAddComment />
+                                Add Blogs
+                            </div>
+                            <FaAngleRight />
+                        </button>
+                        <button
+                            onClick={() => setActiveSection("updateBlogs")}
+                            className={`flex justify-between items-center ${activeSection === "updateBlogs" ? 'bg-[#52c42f1f]' : ''} hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
+                        >
+                            <div className="flex items-center gap-3">
+                                <VscGitPullRequestGoToChanges />
+                                Update Blogs
+                            </div>
+                            <FaAngleRight />
+                        </button>
+                    </div>
+                )}
 
                 <button
                     onClick={getUserDetails}
-                    className="bg-green-500 my-2 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-                >Get User Details</button>
+                    className={`flex justify-between items-center ${activeSection === "userDetails" ? 'bg-[#52c42f1f]' : ''} hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
+                >
+                    <div className="flex items-center gap-3">
+                        <MdWidgets />
+                        Get User Details
+                    </div>
+                    <FaAngleRight />
+                </button>
 
                 <button
                     onClick={handleLogout}
-                    className="bg-amber-500 my-2 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded"
-                >Logout</button>
+                    className="flex justify-between items-center hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full"
+                >
+                    <div className="flex items-center gap-3">
+                        <RiLogoutBoxLine />
+                        Logout
+                    </div>
+                </button>
             </aside>
-            <main className="w-4/5 bg-gray-100 p-4">
+            <main className="w-full bg-white p-4  pl-[22rem]">
                 {activeSection === "profile" && (
                     <div className="flex flex-col items-center justify-center">
                         <h1 className="text-3xl mb-4">Hello Admin!</h1>

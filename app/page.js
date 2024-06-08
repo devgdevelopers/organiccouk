@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import AOS from "aos";
+import Aos from 'aos';
 import "aos/dist/aos.css";
 
 import CheckCircleRoundedIcon from "@mui/icons-material/CheckCircleRounded";
@@ -12,6 +12,9 @@ import VideoPlayer from "./component/VideoPlayer ";
 import { TypeAnimation } from "react-type-animation";
 import CardTwo from './component/cardtwo'
 
+import ReactPlayer from "react-player";
+import PlayCircleIcon from "@mui/icons-material/PlayCircle";
+import VideoPlayer from './component/VideoPlayer '
 import {
   BlogscardDataArray,
   servicescardDataArray,
@@ -51,9 +54,10 @@ export default function Home() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     centerPadding: "20px",
+    pauseOnHover: false,
   };
 
   const settings = {

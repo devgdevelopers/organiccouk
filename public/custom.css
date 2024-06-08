@@ -94,7 +94,8 @@ border-left: 6px solid #196901;
 }
 
 .flip-card-back {
-  background-color: white;
+  background: linear-gradient(to bottom, #52c42f1f, white);
+
   color: black;
   transform: rotateY(180deg);
 }
@@ -221,7 +222,7 @@ border-left: 6px solid #196901;
 }
 
 .news-blog-card {
-  border: 1px solid #388521;
+  /* border: 1px solid #388521; */
   transition: border-color 0.5s; /* Optional: Add transition for smooth border color change */
 }
 
@@ -528,6 +529,114 @@ header.sticky nav header {
             filter: blur(0);
     opacity: 1;
   }
+}
+
+
+/* src/components/AdminDashboard.css */
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: white;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-item:hover {
+  background-color: #52c42f1f;
+}
+
+.menu-icon {
+  margin-right: 10px;
+}
+
+.arrow-icon {
+  margin-left: auto;
+  transition: color 0.3s;
+}
+
+.menu-item:hover .arrow-icon {
+  color: #2e2e84;
+}
+
+.menu-item:hover .menu-text {
+  color: #2e2e84;
+}
+
+.menu-text {
+  flex-grow: 1;
+}
+
+.sub-menu {
+  padding-left: 20px;
+  margin-bottom: 10px;
+  transition: max-height 0.3s ease;
+}
+
+.sub-menu-item {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.content {
+  margin-left: 250px;
+  padding: 20px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+/* QuillEditor.css */
+
+.ql-container {
+  height: 150px; /* Adjust height as needed */
+  overflow-y: auto;
+}
+
+.ql-editor {
+  height: 250px; /* Adjust height as needed */
+}
+/* TinyMCEEditor.css */
+
+.tox .tox-editor-container {
+  height: 300px; /* Adjust height as needed */
+  max-height: 100%; /* Ensure it doesn't overflow */
+}
+
+.tox .tox-editor-header {
+  background: #f5f5f5; /* Customize header background */
+}
+
+.tox .tox-statusbar {
+  background: #f5f5f5; /* Customize status bar background */
+}
+
+.tox .tox-toolbar__primary {
+  background: #f5f5f5; /* Customize toolbar background */
+}
+.blg_card:hover{
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+.blg_card:hover{
+  box-shadow: 0px 0px 30px 1px #52c42f1f;
 }
 
 .tracking-in-contract-bck-top {
