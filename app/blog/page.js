@@ -38,7 +38,7 @@ export default function Page() {
         <div className="flex flex-wrap m-4 ">
           {blogs.map(blog => (
             <div key={blog._id} className="p-4">
-              <div className="h-full border-2  border-opacity-60 rounded-lg overflow-hidden shadow-md hover:scale-95 hover:border-  transition-all ease-in-out duration-300">
+              <div className="h-full border-2  border-opacity-60 rounded-lg overflow-hidden shadow-md blg_card  transition-all ease-in-out duration-300">
                 <div className="p-6 flex flex-col gap-2  ">
                   <img src={blog.img} alt="" height={300} width={300} className=" transition-all ease-in-out duration-300"/>
                   <h2 className="text-2xl font-semibold text-[#2e2e84]">{blog.title}</h2>

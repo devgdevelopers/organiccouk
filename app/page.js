@@ -2,12 +2,11 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import AOS from "aos";
+import Aos from 'aos';
 import "aos/dist/aos.css";
 import ReactPlayer from "react-player";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import VideoPlayer from './component/VideoPlayer '
-
 import {
   BlogscardDataArray,
   servicescardDataArray,
@@ -47,9 +46,10 @@ export default function Home() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 2000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     centerPadding: "20px",
+    pauseOnHover: false,
   };
 
   const settings = {
@@ -87,6 +87,10 @@ export default function Home() {
     ],
   };
 
+  useEffect(() => {
+    Aos.init({});
+  }, []);
+
   const defaultContent =
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
@@ -95,25 +99,26 @@ export default function Home() {
   return (
     <>
       <main className="flex w-full flex-col items-center bg-white overflow-x-hidden">
-        <section className="w-full ">
-          <Slider {...settingsSlider} className="flex gap-10 w-full">
+        <section className="w-[100vw] ">
+          <Slider {...settingsSlider} className="flex gap-10 w-[100vw]">
             {BannerSlidesData.map((item, id) => (
               <div
                 key={id}
-                className={`w-full h-[65vh] md:h-[100vh] main-hero-slide flex justify-center align-center p-12
+                className={`w-full h-[65vh] md:h-[100vh] main-hero-slide flex justify-center align-center p-12 w-[100vw] 
           ${item.bgClass}`}
               >
                 <div className="container mx-auto flex flex-col justify-center h-full">
-                  <h2 className="text-[32px] lg:text-[60px]  text-white">
+                  <h2 className="text-[32px] lg:text-[60px]  text-white " data-aos="fade-right" data-aos-duration="300">
                     {item.heading}
                   </h2>
-                  <p className="text-[15px] lg:text-[20px] text-white">
+                  <p className="text-[15px] lg:text-[20px] text-white" data-aos="fade-right" data-aos-duration="500">
                     {item.desc}
                   </p>
                   <a
                     href="/about"
                     type="submit"
-                    className="my-5 p-3 text-center text-sm bg-white text-green inline"
+                    className="my-5 p-3 text-center text-sm  text-green inline rounded gradient_btn transition-all ease-in-out duration-300 bg-white"
+                    data-aos="fade-right" data-aos-duration="700"
                   >
                     Learn More
                   </a>
@@ -284,8 +289,8 @@ export default function Home() {
         {/* video section */}
         <section className="w-full bg-white">
           <div className="relative container my-auto mx-auto flex lg:flex-row flex-col p-5 gap-8">
-            <div className="  w-[100%] lg:w-[50%]  my-auto p-2 ">
-              <h3 className="text-xl md:text-2xl font-bold mb-3 text-purple">
+            <div className="  w-[100%] lg:w-[50%]  my-auto p-2 "data-aos="fade-right" data-aos-duration="500">
+              <h3 className="text-xl md:text-2xl font-bold mb-3 text-purple" >
                 Get to Know the Heart Behind Organicco
               </h3>
               <p className="text-green text-[15px] text-justify">
@@ -383,7 +388,7 @@ export default function Home() {
               Who we Are?
               </span>
               }
-              onClick={() => toggleAccordion("2")}
+              // onPress={() => toggleAccordion("2")}
               >
               {defaultContent}
             </AccordionItem>
@@ -392,7 +397,7 @@ export default function Home() {
               What we Do?
               </span>
               }
-              onClick={() => toggleAccordion("3")}
+              // onPress={() => toggleAccordion("3")}
               >
               {defaultContent}
             </AccordionItem>

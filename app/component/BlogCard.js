@@ -27,7 +27,7 @@ const BlogCard = ({ title, subtitle, desc, cardImage, cardLink }) => {
             <p className="text-left text-md text-green ">{subtitle}</p>
             <p className="text-justify text-black my-4 font-light">{desc}</p>
           </div>
-          <div className="flex justify-start align-center">
+          <div className="flex justify-start align-center  ">
             <HorizontalRuleIcon className="my-auto text-3xl straight-line-icon" />
             <a
               className=" text-purple p-2 hover:scale-100 read-con-btn"
@@ -39,6 +39,10 @@ const BlogCard = ({ title, subtitle, desc, cardImage, cardLink }) => {
             </a>
             <TrendingFlatIcon className="my-auto text-3xl arrow-right-icon hidden " />
           </div>
+
+
+
+
         </div>
       </div>
     </>

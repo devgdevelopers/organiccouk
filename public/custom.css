@@ -92,7 +92,8 @@
 }
 
 .flip-card-back {
-  background-color: white;
+  background: linear-gradient(to bottom, #52c42f1f, white);
+
   color: black;
   transform: rotateY(180deg);
 }
@@ -225,7 +226,7 @@
 }
 
 .news-blog-card {
-  border: 1px solid #388521;
+  /* border: 1px solid #388521; */
   transition: border-color 0.5s; /* Optional: Add transition for smooth border color change */
 }
 /* .get-q-form-home {
@@ -634,4 +635,11 @@ header.sticky nav header {
 
 .tox .tox-toolbar__primary {
   background: #f5f5f5; /* Customize toolbar background */
+}
+.blg_card:hover{
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+.blg_card:hover{
+  box-shadow: 0px 0px 30px 1px #52c42f1f;
 }
