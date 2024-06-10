@@ -11,6 +11,8 @@ import Admin from '../component/admin';
 import Blog from '../component/blog';
 import AddProduct from '../component/addProduct';
 import UpdateProducts from '../component/updateProduct';
+import AddService from '../component/addService';
+import UpdateServices from '../component/updateService';
 import { MdOutlineAddComment } from "react-icons/md";
 import { FaAngleRight, FaAngleDown } from "react-icons/fa6";
 import { VscGitPullRequestGoToChanges } from "react-icons/vsc";
@@ -248,11 +250,13 @@ export default function ProfilePage() {
                 {activeSection === "addService" && (
                                         <div className="flex flex-col items-center justify-center">
                                         <h1 className="text-3xl mb-4">Add Service</h1>
+                                        <AddService/>
                                     </div>
                 )}
                 {activeSection === "updateService" && (
                                         <div className="flex flex-col items-center justify-center">
                                         <h1 className="text-3xl mb-4">Update Service</h1>
+                                        <UpdateServices />
                                     </div>
                 )}
             </main>

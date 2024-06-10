@@ -1,4 +1,3 @@
-"use client";
 import { useState } from "react";
 import QuillEditor from "./QuillEditor";
 
@@ -15,10 +14,10 @@ function convertToBase64(file) {
     });
 }
 
-export default function AddProduct() {
+export default function AddService() {
     const [cardHeading, setCardHeading] = useState("");
     const [cardSubHeading, setCardSubHeading] = useState("");
-    const [cardFeatures, setCardFeatures] = useState(["", ""]);
+    const [cardDesc, setCardDesc] = useState("");
     const [shortDesc, setShortDesc] = useState("");
     const [cardImg, setCardImg] = useState("");
     const [images, setImages] = useState(["", ""]);
@@ -26,7 +25,7 @@ export default function AddProduct() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const res = await fetch("/api/products", {
+        const res = await fetch("/api/services", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -34,7 +33,7 @@ export default function AddProduct() {
             body: JSON.stringify({
                 cardHeading,
                 cardSubHeading,
-                cardFeatures,
+                cardDesc,
                 shortDesc,
                 content,
                 cardImg,
@@ -43,23 +42,23 @@ export default function AddProduct() {
         });
 
         if (res.ok) {
-            alert("Product added successfully!");
+            alert("Service added successfully!");
             setCardHeading("");
             setCardSubHeading("");
-            setCardFeatures(["", ""]);
+            setCardDesc("");
             setContent("");
             setShortDesc("");
             setCardImg("");
             setImages(["", ""]);
         } else {
-            alert("Failed to add Product.");
+            alert("Failed to add Service.");
         }
     };
 
-    const handleFileUpload = async (e, setImageState) => {
+    const handleFileUpload = async (e, setImageState, index) => {
         const file = e.target.files[0];
         const base64 = await convertToBase64(file);
-        setImageState(base64);
+        setImageState(base64, index);
     };
 
     return (
@@ -70,8 +69,7 @@ export default function AddProduct() {
                         <label htmlFor="cardHeading" className="block text-sm font-medium text-gray-700">
                             Card Heading:
                         </label>
-
-                                                <QuillEditor value={cardHeading} onChange={setCardHeading}  />
+                        <QuillEditor value={cardHeading} onChange={setCardHeading} />
                     </div>
                     <div>
                         <label htmlFor="cardSubHeading" className="block text-sm font-medium text-gray-700">
@@ -87,37 +85,24 @@ export default function AddProduct() {
                         />
                     </div>
                     <div>
-                        <label htmlFor="cardFeatures" className="block text-sm font-medium text-gray-700">
-                            Card Features:
+                        <label htmlFor="cardDesc" className="block text-sm font-medium text-gray-700">
+                            Card Description:
                         </label>
-                        {cardFeatures.map((feature, index) => (
-                            <input
-                                key={index}
-                                id={`cardFeature${index}`}
-                                type="text"
-                                value={feature}
-                                onChange={(e) => {
-                                    const newFeatures = [...cardFeatures];
-                                    newFeatures[index] = e.target.value;
-                                    setCardFeatures(newFeatures);
-                                }}
-                                required
-                                className="text-black mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                            />
-                        ))}
+                        <input
+                            id="cardDesc"
+                            type="text"
+                            value={cardDesc}
+                            onChange={(e) => setCardDesc(e.target.value)}
+                            required
+                            className="text-black mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        />
                     </div>
                     <div>
                         <label htmlFor="shortDesc" className="block text-sm font-medium text-gray-700">
                             Short Description:
                         </label>
-                        <textarea
-                            id="shortDesc"
-                            type="text"
-                            value={shortDesc}
-                            onChange={(e) => setShortDesc(e.target.value)}
-                            required
-                            className="text-black mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                        />
+
+                                                <QuillEditor value={shortDesc} onChange={setShortDesc} />
                     </div>
                     <div>
                         <label htmlFor="content" className="block text-sm font-medium text-gray-700">
@@ -152,7 +137,7 @@ export default function AddProduct() {
                                     const newImages = [...images];
                                     newImages[index] = base64;
                                     setImages(newImages);
-                                })}
+                                }, index)}
                                 required
                                 className="text-black mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                             />
@@ -162,7 +147,7 @@ export default function AddProduct() {
                         type="submit"
                         className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
-                        Add Product
+                        Add Service
                     </button>
                 </form>
             </div>

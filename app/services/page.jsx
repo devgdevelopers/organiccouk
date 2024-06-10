@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect } from "react";
+import React, { useEffect, useState  } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
@@ -9,6 +9,24 @@ import Aos from 'aos';
 import 'aos/dist/aos.css'
 
 const page = () => {
+
+  const [products_, setProducts_] = useState([]);
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  const fetchBlogs = async () => {
+    try {
+      const response = await fetch('/api/services');
+      const data = await response.json();
+      setProducts_(data.data);
+    } catch (error) {
+      console.error('Fetch error:', error);
+    }
+  };
+
+
 
   useEffect(() => {
     Aos.init({});
@@ -49,6 +67,45 @@ const page = () => {
                     </p>
                     <Link
                       href={`/services/${item.link}`}
+                      className="inline-flex items-center rounded-md bg-[#52c42f1f] px-4 py-2 text-sm font-medium text-[#2e2e84] transition-colors duration-300 hover:bg-[#52c42f33] services_link"
+                    >
+                      Read More
+                    </Link>
+                  </CardBody>
+                </Card>
+              );
+            })}
+
+
+
+            {products_.map((item) => {
+              return (
+                <Card key={item._id} className="group overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl sm:h-[450px] h-[500px]">
+                  <CardHeader className="">
+                    <Image
+                      alt="Card background"
+                      className="w-full"
+                      src={item.cardImg}
+                      width={100}
+                      height={100}
+                      unoptimized
+                    />
+                  </CardHeader>
+                  <CardBody className="overflow-visible py-2">
+                    <Link
+                      href={`/services/${item._id}`}
+                      className="text-base uppercase font-bold text-green"
+                      dangerouslySetInnerHTML={{ __html: item.cardHeading}} 
+                    >
+                    </Link>
+                    <p className="text-default-500 text-sm text-purple ">
+                      <em>{item.cardSubHeading}</em>
+                    </p>
+                    <p className="text-justify text-sm my-3">
+                      {item.cardDesc}
+                    </p>
+                    <Link
+                      href={`/services/${item._id}`}
                       className="inline-flex items-center rounded-md bg-[#52c42f1f] px-4 py-2 text-sm font-medium text-[#2e2e84] transition-colors duration-300 hover:bg-[#52c42f33] services_link"
                     >
                       Read More
