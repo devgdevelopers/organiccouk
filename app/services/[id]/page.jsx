@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from 'next/image';
+import Link from 'next/link';
 
 const ProductPost = () => {
     const router = useRouter();
@@ -52,7 +53,7 @@ const ProductPost = () => {
                             <div className="text-center space-y-4">
                                 <h1 className="text-3xl md:text-4xl font-bold text-[#2e2e84] tracking-in-contract-bck"
                                     dangerouslySetInnerHTML={{ __html: product.cardHeading }} ></h1>
-                                <p className="text-gray-500 max-w-xl mx-auto"dangerouslySetInnerHTML={{ __html: product.shortDesc}} >
+                                <p className="text-gray-500 max-w-xl mx-auto" dangerouslySetInnerHTML={{ __html: product.shortDesc }} >
                                 </p>
                             </div>
                         </div>
@@ -60,7 +61,7 @@ const ProductPost = () => {
                     <section className="py-12">
                         <div className="max-w-6xl mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
                             <div className="col-span-2">
-                            <Slider {...settings}>
+                                <Slider {...settings}>
                                     {product.images && product.images.map((image, index) => (
                                         <div key={index}>
                                             <Image
@@ -82,6 +83,23 @@ const ProductPost = () => {
                             </div>
                         </div>
                     </section>
+                </div>
+            </section>
+
+
+            <section className="  text-[#2e2e84] py-12 section_bg  ">
+                <div className="max-w-6xl mx-auto text-center space-y-4 ">
+                    <h2 className="text-2xl md:text-3xl font-bold">
+                        Ready to contact us?
+                    </h2>
+                    <p className="text-gray-500  max-w-xl mx-auto">
+                        If so, please complete
+                        <Link
+                            href={`/contact`}>
+                            <span className="text-[#2e2e84] font-medium"> the form </span>
+                        </Link>
+                        and we will endeavour to provide you with a competitive quote.
+                    </p>
                 </div>
             </section>
         </>

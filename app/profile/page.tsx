@@ -3,7 +3,7 @@
 "use client";
 import axios from "axios";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { useAuth } from '../../helpers/AuthContext';
@@ -66,12 +66,67 @@ export default function ProfilePage() {
         setIsServicesOpen(!isServicesOpen);
     };
 
+    const [blogCount, setBlogCount] = useState(0);
+
+    const fetchBlogCount = async () => {
+        try {
+            const response = await fetch('/api/blogs'); // Adjust the URL to match your API route
+            const data = await response.json();
+            setBlogCount(data.count);
+        } catch (error) {
+            console.error('Error fetching blog count:', error);
+        }
+    };
+
+    useEffect(() => {
+        fetchBlogCount();
+    }, []);
+
+
+    const [productCount, setProductCount] = useState(0);
+
+    const fetchProductCount = async () => {
+        try {
+            const response = await fetch('/api/products'); // Adjust the URL to match your API route
+            const data = await response.json();
+            setProductCount(data.count);
+        } catch (error) {
+            console.error('Error fetching blog count:', error);
+        }
+    };
+
+    useEffect(() => {
+        fetchProductCount();
+    }, []);
+
+
+
+    const [serviceCount, setServiceCount] = useState(0);
+
+    const fetchServiceCount = async () => {
+        try {
+            const response = await fetch('/api/services'); // Adjust the URL to match your API route
+            const data = await response.json();
+            setServiceCount(data.count);
+        } catch (error) {
+            console.error('Error fetching blog count:', error);
+        }
+    };
+
+    useEffect(() => {
+        fetchServiceCount();
+    }, []);
     return (
         <div className="flex min-h-screen pt-28">
             <aside className="w-1/5 bg-white text-white flex flex-col p-4 fixed h-[100vh] shadow-xl z-10">
                 <h1 className="text-2xl mb-4 text-center text-black">Admin</h1>
                 <button
-                    onClick={() => setActiveSection("profile")}
+                                    onClick={() => {
+                                        setActiveSection("profile");
+                                        fetchBlogCount();
+                                        fetchProductCount();
+                                        fetchServiceCount() // Refresh the count
+                                    }}
                     className={`flex justify-between items-center ${activeSection === "profile" ? 'bg-[#52c42f1f]' : ''} hover:bg-[#52c42f1f] text-gray-500 font-semibold py-2 px-4 rounded mt-3 w-full`}
                 >
                     <div className="flex items-center gap-3">
@@ -125,9 +180,9 @@ export default function ProfilePage() {
                         <TiDocumentText />
                         Products
                     </div>
-                    {isProductOpen  ? <FaAngleDown /> : <FaAngleRight />}
+                    {isProductOpen ? <FaAngleDown /> : <FaAngleRight />}
                 </button>
-                {isProductOpen  && (
+                {isProductOpen && (
                     <div className="ml-6">
                         <button
                             onClick={() => setActiveSection("addProducts")}
@@ -161,9 +216,9 @@ export default function ProfilePage() {
                         <TiDocumentText />
                         Services
                     </div>
-                    {isServicesOpen  ? <FaAngleDown /> : <FaAngleRight />}
+                    {isServicesOpen ? <FaAngleDown /> : <FaAngleRight />}
                 </button>
-                {isServicesOpen  && (
+                {isServicesOpen && (
                     <div className="ml-6">
                         <button
                             onClick={() => setActiveSection("addService")}
@@ -212,15 +267,33 @@ export default function ProfilePage() {
             <main className="w-full bg-white p-4  pl-[22rem]">
                 {activeSection === "profile" && (
                     <div className="flex flex-col items-center justify-center">
-                        <h1 className="text-3xl mb-4">Hello Admin!</h1>
+                            <h1 className="text-3xl mb-8 font-bold">Hello Admin!</h1>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
+                                <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center">
+                                    <h2 className="text-xl font-semibold mb-2">Services</h2>
+                                    <p className="text-3xl font-bold text-blue-500">{serviceCount + 4}</p>
+                                    <p className="text-gray-600">Total Services</p>
+                                </div>
+                                <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center">
+                                    <h2 className="text-xl font-semibold mb-2">Blogs</h2>
+                                    <p className="text-3xl font-bold text-green-500">{blogCount}</p>
+                                    <p className="text-gray-600">Total Blogs</p>
+                                </div>
+                                <div className="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center">
+                                    <h2 className="text-xl font-semibold mb-2">Products</h2>
+                                    <p className="text-3xl font-bold text-red-500">{productCount + 4}</p>
+                                    <p className="text-gray-600">Total Products</p>
+                                </div>
+                            </div>
+
                     </div>
                 )}
                 {activeSection === "updateBlogs" && (
 
                     <div className="flex flex-col items-center justify-center">
-                    <h1 className="text-3xl mb-4">Update Blog</h1>
-                    <Blog />
-                </div>
+                        <h1 className="text-3xl mb-4">Update Blog</h1>
+                        <Blog />
+                    </div>
                 )}
                 {activeSection === "userDetails" && (
                     <div className="flex flex-col items-center justify-center">
@@ -229,35 +302,35 @@ export default function ProfilePage() {
                     </div>
                 )}
                 {activeSection === "adminPanel" && (
-                                        <div className="flex flex-col items-center justify-center">
-                                        <h1 className="text-3xl mb-4">Add Blog</h1>
-                                        <Admin />
-                                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                        <h1 className="text-3xl mb-4">Add Blog</h1>
+                        <Admin />
+                    </div>
 
                 )}
                 {activeSection === "addProducts" && (
                     <div className="flex flex-col items-center justify-center">
-                    <h1 className="text-3xl mb-4">Add Product</h1>
-                    <AddProduct />
-                </div>
+                        <h1 className="text-3xl mb-4">Add Product</h1>
+                        <AddProduct />
+                    </div>
                 )}
                 {activeSection === "updateProducts" && (
-                                        <div className="flex flex-col items-center justify-center">
-                                        <h1 className="text-3xl mb-4">Update Product</h1>
-                                        <UpdateProducts />
-                                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                        <h1 className="text-3xl mb-4">Update Product</h1>
+                        <UpdateProducts />
+                    </div>
                 )}
                 {activeSection === "addService" && (
-                                        <div className="flex flex-col items-center justify-center">
-                                        <h1 className="text-3xl mb-4">Add Service</h1>
-                                        <AddService/>
-                                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                        <h1 className="text-3xl mb-4">Add Service</h1>
+                        <AddService />
+                    </div>
                 )}
                 {activeSection === "updateService" && (
-                                        <div className="flex flex-col items-center justify-center">
-                                        <h1 className="text-3xl mb-4">Update Service</h1>
-                                        <UpdateServices />
-                                    </div>
+                    <div className="flex flex-col items-center justify-center">
+                        <h1 className="text-3xl mb-4">Update Service</h1>
+                        <UpdateServices />
+                    </div>
                 )}
             </main>
         </div>
