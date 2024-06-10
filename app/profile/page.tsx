@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 import { useAuth } from '../../helpers/AuthContext';
 import Admin from '../component/admin';
 import Blog from '../component/blog';
+import AddProduct from '../component/addProduct';
+import UpdateProducts from '../component/updateProduct';
 import { MdOutlineAddComment } from "react-icons/md";
 import { FaAngleRight, FaAngleDown } from "react-icons/fa6";
 import { VscGitPullRequestGoToChanges } from "react-icons/vsc";
@@ -212,7 +214,11 @@ export default function ProfilePage() {
                     </div>
                 )}
                 {activeSection === "updateBlogs" && (
+
+                    <div className="flex flex-col items-center justify-center">
+                    <h1 className="text-3xl mb-4">Update Blog</h1>
                     <Blog />
+                </div>
                 )}
                 {activeSection === "userDetails" && (
                     <div className="flex flex-col items-center justify-center">
@@ -221,16 +227,22 @@ export default function ProfilePage() {
                     </div>
                 )}
                 {activeSection === "adminPanel" && (
-                    <Admin />
+                                        <div className="flex flex-col items-center justify-center">
+                                        <h1 className="text-3xl mb-4">Add Blog</h1>
+                                        <Admin />
+                                    </div>
+
                 )}
                 {activeSection === "addProducts" && (
                     <div className="flex flex-col items-center justify-center">
                     <h1 className="text-3xl mb-4">Add Product</h1>
+                    <AddProduct />
                 </div>
                 )}
                 {activeSection === "updateProducts" && (
                                         <div className="flex flex-col items-center justify-center">
                                         <h1 className="text-3xl mb-4">Update Product</h1>
+                                        <UpdateProducts />
                                     </div>
                 )}
                 {activeSection === "addService" && (

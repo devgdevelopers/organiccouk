@@ -15,11 +15,31 @@ import {
 export default function Page() {
 
 
+
+  const [products_, setProducts_] = useState([]);
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  const fetchBlogs = async () => {
+    try {
+      const response = await fetch('/api/products');
+      const data = await response.json();
+      setProducts_(data.data);
+    } catch (error) {
+      console.error('Fetch error:', error);
+    }
+  };
+
+
+
+
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
   const [isLoading, setisLoading] = useState(true);
   useEffect(() => {
-    fetch('/api/products')
+    fetch('/api/productsStatic')
       .then((res) => {
         if (!res.ok) {
           throw new Error('Network response was not ok');
@@ -66,6 +86,50 @@ export default function Page() {
                         <DoneAllIcon className="text-green" /></span> {item.productDataPoints[1]}
                     </Typography>
                     <Link href={`/products/${item.link}`} className="inline-block">
+                      <Button variant="text" className="fbutton">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7B8794" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
+  </svg>
+
+  
+  <div className="font-regular text-sm ftext ">
+Learn More
+  </div>
+                      </Button>
+                    </Link>
+                  </CardBody>
+                </Card>
+              </>
+            );
+          })}
+
+
+
+
+          {products_.map((item) => {
+            return (
+              <>
+                <Card key={item._id} className="w-full max-w-[90%] flex-col md:flex-row gap-5 mx-auto p-3 xl:p-0 group ">
+                  <CardHeader shadow={false} floated={false} className="m-0 w-full md:w-2/5 shrink-0 md:rounded-r-none">
+                    <Image src={item.cardImg} alt="card-image" width={100} height={100}
+                      className="h-full w-full object-cover transition-all ease-in-out duration-300 group-hover:scale-105" unoptimized />
+                  </CardHeader>
+                  <CardBody className="my-auto">
+                    <Typography variant="h5" color="gray" className="mb-4 uppercase text-green " >
+                    <span dangerouslySetInnerHTML={{ __html: item.cardHeading}} className="normal-case" />
+                    </Typography>
+                    <Typography variant="h6" color="blue-gray" className="mb-2 font-normal text-purple">
+                      <em> {item.cardSubHeading}</em>
+                    </Typography>
+                    <Typography color="gray" className="font-normal">
+                      <span>
+                        <DoneAllIcon className="text-green" /></span> {item.cardFeatures[0]}
+                    </Typography>
+                    <Typography color="gray" className="font-normal mb-4">
+                      <span>
+                        <DoneAllIcon className="text-green" /></span> {item.cardFeatures[1]}
+                    </Typography>
+                    <Link href={`/products/${item._id}`} className="inline-block">
                       <Button variant="text" className="fbutton">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="#7B8794" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"></path>
