@@ -253,7 +253,7 @@ export default function Page() {
                 </span>
               </div>
               <button type="submit" className="bg-green text-white text-sm py-2 px-4 my-2 mt-5">
-                Submit Now
+              {loading ? "Submitting..." : "Submit Now"}
               </button>
               {contactSuccess && (
                 <p className="success-message text-[green]">Message sent successfully!</p>

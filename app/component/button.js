@@ -4,7 +4,7 @@ import Link from "next/link";
 const button = ({text}) => {
   return (
     <>
-      <button class="button-29" role="button" >
+      <button className="button-29" role="button" >
         {text}
       </button>
     </>
