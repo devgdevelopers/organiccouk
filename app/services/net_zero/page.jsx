@@ -19,9 +19,7 @@ const page = () => {
   const handleClose = () => {
     setIsEnlarged(false);
   };
-  useEffect(() => {
-    Aos.init({});
-  }, []);
+
   return (
 
     <>
@@ -160,7 +158,7 @@ const page = () => {
                 <div className="flex flex-col p-5 w-full max-w-md mx-auto md:h-[170vh] h-[130vh]  gap-5 ">
                   <div>
 
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]" data-aos="fade-left" data-aos-duration="600" data-aos-ofset="50">
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]" >
                       The Technology
                     </h2>
                     <p className="text-gray-500  mt-4 leading-relaxed text-justify">
@@ -170,7 +168,7 @@ const page = () => {
                   </div>
                   <div>
 
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]" data-aos="fade-left" data-aos-duration="600" data-aos-ofset="50">
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]" >
                       About the Fertiliser
                     </h2>
                     <p className="text-gray-500  mt-4 leading-relaxed text-justify">
@@ -220,12 +218,12 @@ const page = () => {
             <div className="max-w-6xl mx-auto px-4 md:px-6 md:flex md:justify-center">
               <div className="md:w-1/2 md:pr-4">
                 <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]" data-aos="fade-right" data-aos-duration="600" data-aos-ofset="50" >
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#2e2e84]"  >
                     ecoHERO case study
                   </h2>
-                  <p className="text-[#388521] font-semibold " data-aos="fade-right" data-aos-duration="600" data-aos-ofset="50" data-aos-delay="200">The Need
+                  <p className="text-[#388521] font-semibold "  >The Need
                   </p>
-                  <hr className="font-bold my-4 bg-black h-[1.5px]" data-aos="fade-right" data-aos-duration="600" data-aos-ofset="50" data-aos-delay="400"/>
+                  <hr className="font-bold my-4 bg-black h-[1.5px]"  />
                   <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     Loc Troi Group, formally known as An Giang Plant Protection, are a Vietnamese agricultural company, established in 1993 in the An Giang Province. Growing from a small start-up company of 23 people, Loc Troi is now one of Vietnams leading agricultural distributers, working in fields of crop protection chemicals, seed production, paper packing, tourism and rice processing for export and domestic consumption. Currently, Loc Troi employ in excess of 2,000 people and are working closely with Vietnamese farmers to develop sustainable cultivation techniques.
                   </p>
@@ -261,9 +259,9 @@ const page = () => {
               <div className="md:w-1/2 md:pr-4">
                 <div>
 
-                  <p className="text-[#388521] font-semibold " data-aos="fade-left" data-aos-duration="600" data-aos-ofset="50" data-aos-delay="200">The Benefits
+                  <p className="text-[#388521] font-semibold "  >The Benefits
                   </p>
-                  <hr className="font-bold my-4 bg-black h-[2px]" data-aos="fade-left" data-aos-duration="600" data-aos-ofset="50" data-aos-delay="400"/>
+                  <hr className="font-bold my-4 bg-black h-[2px]"  />
                   <p className="text-gray-500  mt-4 leading-relaxed text-justify">
                     Once the system was successfully installed across a 1000m2 area of Loc Troi’s production facility, the benefits soon became apparent. From an operational perspective, the system had to handle waste coming from a range of sites. Incorporating a nearby river into the design allowed waste to be brought to the site via boat and then loaded directly into the ecoHERO, allowing waste to come directly from a wide area. Once loaded, the operator simply pushed a button, initiating the sequence. The rest happens automatically, with the operator collecting the fertiliser at the end of the process, ensuring that maximum waste could be processed with minimal effort.
                   </p>

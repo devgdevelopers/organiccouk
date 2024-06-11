@@ -37,7 +37,8 @@ export default function Page() {
 
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
-  const [isLoading, setisLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     fetch('/api/productsStatic')
       .then((res) => {
@@ -48,7 +49,7 @@ export default function Page() {
       })
       .then((data) => {
         setProducts(data);
-        setisLoading(false);
+        setLoading(false);
       })
       .catch((err) => setError(err.message));
   }, []);
@@ -61,7 +62,17 @@ export default function Page() {
     <>
       <section className="flex min-h-screen flex-col items-center justify-start md:mt-[8rem]">
         <h2 className="text-2xl text-purple font-semibold">Our Products</h2>
+
+        {loading ? (
+                <div className="flex justify-center items-center h-64">
+  <div className="loader_ ease-linear rounded-full border-8 border-t-8 border-gray-200 h-12 w-12"></div>
+
+                </div>
+            ) : (
         <div className="pt-10 flex flex-col gap-20 container mx-auto">
+
+
+
           {products.map((item, id) => {
             return (
               <>
@@ -105,7 +116,6 @@ Learn More
 
 
 
-
           {products_.map((item) => {
             return (
               <>
@@ -146,7 +156,9 @@ Learn More
               </>
             );
           })}
+
         </div>
+            )}
       </section>
       <section className="py-10">
         <div className="container mx-auto flex flex-col md:flex-row p-3">

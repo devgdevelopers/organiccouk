@@ -26,6 +26,8 @@ export default function Blog() {
     const [updatedShortDesc, setUpdatedShortDesc] = useState('');
     const [updatedContent, setUpdatedContent] = useState('');
     const [updatedImage, setUpdatedImage] = useState('');
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         fetchBlogs();
@@ -34,15 +36,14 @@ export default function Blog() {
     const fetchBlogs = () => {
         fetch('/api/blogs')
             .then(response => response.json())
-            .then(data => setBlogs(data.data))
-            .catch(error => console.error('Fetch error:', error));
-    };
-
-    const deleteBlog = (id) => {
-        fetch(`/api/blogs?id=${id}`, { method: 'DELETE' })
-            .then(response => response.json())
-            .then(() => fetchBlogs())
-            .catch(error => console.error('Delete error:', error));
+            .then(data => {
+                setBlogs(data.data);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+                setLoading(false);
+            });
     };
 
     const updateBlog = (id) => {
@@ -60,6 +61,14 @@ export default function Blog() {
             .catch(error => console.error('Update error:', error));
     };
 
+    const deleteBlog = (id) => {
+        fetch(`/api/blogs?id=${id}`, { method: 'DELETE' })
+            .then(response => response.json())
+            .then(() => fetchBlogs())
+            .catch(error => console.error('Delete error:', error));
+    };
+
+
     const startEditing = (blog) => {
         setIsEditing(true);
         setCurrentBlog(blog);
@@ -76,24 +85,36 @@ export default function Blog() {
     };
 
     return (
-        <div className="p-8 flex justify-center items-center ">
-            <div className="flex flex-wrap m-4  ">
-                {blogs.map(blog => (
-                    <div key={blog._id} className="p-4 ">
-                        <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-md">
-                            <div className="p-6 flex flex-col gap-2 w-80">
-                                <img src={blog.img} alt="" height={300} width={300} />
-                                <h2 className="text-xl font-semibold ">{blog.title}</h2>
 
-                                <div className='flex gap-3'>
-                                    <button onClick={() => deleteBlog(blog._id)} className="bg-red-500 text-white rounded p-2 border border-red-500  hover:border-white">Delete</button>
-                                    <button onClick={() => startEditing(blog)} className="bg-green text-white p-2 rounded border border-green  hover:border-white">Update</button>
+
+        <div className="p-8 flex justify-center items-center ">
+            {loading ? (
+                <div className="flex justify-center items-center h-64">
+  <div className="loader_ ease-linear rounded-full border-8 border-t-8 border-gray-200 h-12 w-12"></div>
+
+                </div>
+            ) : (
+                <div className="flex flex-wrap m-4">
+                    {blogs.length === 0 ? (
+                        <div className="text-center w-full text-xl text-gray-500">No blogs to show</div>
+                    ) : (
+                        blogs.map(blog => (
+                            <div key={blog._id} className="p-4">
+                                <div className="h-[340px] border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-md">
+                                    <div className="p-6 flex flex-col gap-4 w-80 relative">
+                                        <img src={blog.img} alt="" height={300} width={300} />
+                                        <h2 className="text-xl font-semibold truncate">{blog.title}</h2>
+                                        <div className='flex gap-3 absolute top-[270px]'>
+                                            <button onClick={() => deleteBlog(blog._id)} className="bg-red-500 text-white rounded p-2 border border-red-500 hover:border-white">Delete</button>
+                                            <button onClick={() => startEditing(blog)} className="bg-green-500 text-white p-2 rounded border border-green-500 hover:border-white">Update</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
+                        ))
+                    )}
+                </div>
+            )}
 
             {isEditing && (
                 <div className="fixed inset-0 bg-gray-900 bg-opacity-10 flex items-center justify-center backdrop-blur border border-frost rounded-lg shadow-md transition">
@@ -114,13 +135,8 @@ export default function Blog() {
                             onChange={(e) => setUpdatedShortDesc(e.target.value)}
                         />
                         <label className="block mb-2 text-black font-medium">Content</label>
-                        {/* <textarea
-                            className="w-full p-2 border border-gray-300 rounded mb-4 text-black"
-                            value={updatedContent}
-                            onChange={(e) => setUpdatedContent(e.target.value)}
-                            rows="4"
-                        /> */}
-                         <QuillEditor value={updatedContent} onChange={setUpdatedContent} /> 
+
+                        <QuillEditor value={updatedContent} onChange={setUpdatedContent} />
 
                         <label className="block mb-2 mt-4 text-black font-medium">Image</label>
                         <input

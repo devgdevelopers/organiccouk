@@ -25,6 +25,8 @@ export default function UpdateServices() {
     const [updatedCardImg, setUpdatedCardImg] = useState('');
     const [updatedImages, setUpdatedImages] = useState(['', '']);
     const [updatedContent, setUpdatedContent] = useState('');
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         fetchServices();
@@ -33,8 +35,16 @@ export default function UpdateServices() {
     const fetchServices = () => {
         fetch('/api/services')
             .then(response => response.json())
-            .then(data => setServices(data.data))
-            .catch(error => console.error('Fetch error:', error));
+            .then(data => {
+                setServices(data.data)
+                setLoading(false);
+
+            })
+            .catch(error => {
+                console.error('Fetch error:', error)
+                setLoading(false);
+
+            });
     };
 
     const deleteService = (id) => {
@@ -87,13 +97,20 @@ export default function UpdateServices() {
 
     return (
         <div className="p-8 flex flex-col justify-center items-center">
+
+{loading ? (
+                <div className="flex justify-center items-center h-64">
+  <div className="loader_ ease-linear rounded-full border-8 border-t-8 border-gray-200 h-12 w-12"></div>
+
+                </div>
+            ):
             <div className="flex flex-wrap m-4 w-full justify-center">
                 {services.map(service => (
                     <div key={service._id} className="p-4 max-w-xs">
                         <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-md">
                             <div className="p-6 flex flex-col gap-2">
                                 <img src={service.cardImg} alt="" className="object-cover h-48 w-full" />
-                                <h2 className="text-xl font-semibold" dangerouslySetInnerHTML={{__html:service.cardHeading}}></h2>
+                                <h2 className="text-xl font-semibold truncate" dangerouslySetInnerHTML={{ __html: service.cardHeading }}></h2>
                                 <p className="text-gray-600">{service.cardSubHeading}</p>
                                 <div className='flex gap-3'>
                                     <button onClick={() => deleteService(service._id)} className="bg-red-500 text-white rounded p-2 border border-red-500 hover:border-white">Delete</button>
@@ -104,6 +121,7 @@ export default function UpdateServices() {
                     </div>
                 ))}
             </div>
+}
 
             {isEditing && (
                 <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
@@ -112,7 +130,7 @@ export default function UpdateServices() {
                         <div className="space-y-4">
                             <div>
                                 <label className="block mb-2 text-black font-medium">Card Heading</label>
-                                <QuillEditor value={updatedCardHeading} onChange={setUpdatedCardHeading}  />
+                                <QuillEditor value={updatedCardHeading} onChange={setUpdatedCardHeading} />
                             </div>
                             <div>
                                 <label className="block mb-2 text-black font-medium">Card Sub Heading</label>
@@ -166,22 +184,21 @@ export default function UpdateServices() {
                                         onChange={(e) => handleFileUpload(e, (base64) => {
                                             const newImages = [...updatedImages];
 
-                                                        newImages[index] = base64;
-                                                        setUpdatedImages(newImages);
-                                                    })}
-                                                    className="w-full p-2 border border-gray-300 rounded text-black mb-2"
-                                                />
-                                            ))}
-                                        </div>
-                                        <div className="flex justify-end space-x-2">
-                                            <button onClick={() => updateService(currentService._id)} className="bg-blue-500 text-white p-2 rounded">Save</button>
-                                            <button onClick={() => { setIsEditing(false); setCurrentService(null); }} className="bg-gray-500 text-white p-2 rounded">Cancel</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                            newImages[index] = base64;
+                                            setUpdatedImages(newImages);
+                                        })}
+                                        className="w-full p-2 border border-gray-300 rounded text-black mb-2"
+                                    />
+                                ))}
                             </div>
-                        )}
+                            <div className="flex justify-end space-x-2">
+                                <button onClick={() => updateService(currentService._id)} className="bg-blue-500 text-white p-2 rounded">Save</button>
+                                <button onClick={() => { setIsEditing(false); setCurrentService(null); }} className="bg-gray-500 text-white p-2 rounded">Cancel</button>
+                            </div>
+                        </div>
                     </div>
-                );
-            }
-            
+                </div>
+            )}
+        </div>
+    );
+}

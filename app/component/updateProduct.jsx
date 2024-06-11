@@ -27,6 +27,8 @@ export default function UpdateProducts() {
     const [updatedCardImg, setUpdatedCardImg] = useState('');
     const [updatedImages, setUpdatedImages] = useState(['', '']);
     const [updatedContent, setUpdatedContent] = useState('');
+    const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         fetchProducts();
@@ -35,8 +37,14 @@ export default function UpdateProducts() {
     const fetchProducts = () => {
         fetch('/api/products')
             .then(response => response.json())
-            .then(data => setProducts(data.data))
-            .catch(error => console.error('Fetch error:', error));
+            .then(data => {
+                setProducts(data.data)
+    setLoading(false);
+            })
+            .catch(error => {
+                console.error('Fetch error:', error)
+                setLoading(false);
+            });
     };
 
     const deleteProduct = (id) => {
@@ -89,13 +97,20 @@ export default function UpdateProducts() {
 
     return (
         <div className="p-8 flex flex-col justify-center items-center">
+
+{loading ? (
+                <div className="flex justify-center items-center h-64">
+  <div className="loader_ ease-linear rounded-full border-8 border-t-8 border-gray-200 h-12 w-12"></div>
+
+                </div>
+            ):
             <div className="flex flex-wrap m-4 w-full justify-center">
                 {products.map(product => (
                     <div key={product._id} className="p-4 max-w-xs">
                         <div className="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-md">
                             <div className="p-6 flex flex-col gap-2">
                                 <img src={product.cardImg} alt="" className="object-cover h-48 w-full" />
-                                <h2 className="text-xl font-semibold" dangerouslySetInnerHTML={{__html:product.cardHeading}}></h2>
+                                <h2 className="text-xl font-semibold truncate" dangerouslySetInnerHTML={{__html:product.cardHeading}}></h2>
                                 <p className="text-gray-600">{product.cardSubHeading}</p>
                                 <div className='flex gap-3'>
                                     <button onClick={() => deleteProduct(product._id)} className="bg-red-500 text-white rounded p-2 border border-red-500 hover:border-white">Delete</button>
@@ -106,7 +121,7 @@ export default function UpdateProducts() {
                     </div>
                 ))}
             </div>
-
+}
             {isEditing && (
                 <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
                     <div className="bg-white p-6 pt-32 rounded shadow-lg w-full max-w-2xl overflow-auto max-h-full">
@@ -114,13 +129,7 @@ export default function UpdateProducts() {
                         <div className="space-y-4">
                             <div>
                                 <label className="block mb-2 text-black font-medium">Card Heading</label>
-                                {/* <input
-                                    className="w-full p-2 border border-gray-300 rounded text-black"
-                                    placeholder='Card Heading'
-                                    type="text"
-                                    value={updatedCardHeading}
-                                    onChange={(e) => setUpdatedCardHeading(e.target.value)}
-                                /> */}
+
                                 <QuillEditor value={updatedCardHeading} onChange={setUpdatedCardHeading}  />
                             </div>
                             <div>
