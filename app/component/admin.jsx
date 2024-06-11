@@ -1,5 +1,6 @@
 "use client"
 import { useState } from 'react';
+import QuillEditor from './QuillEditor';
 
 function convertToBase64(file) {
     return new Promise((resolve, reject) => {
@@ -52,7 +53,7 @@ export default function Admin() {
     return (
         <div className="bg-white p-8 min-h-screen">
             <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg ">
-                <h1 className="text-2xl font-bold text-gray-900 mb-6">Add blogs</h1>
+
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <div>
                         <label htmlFor="title" className="block text-sm font-medium text-gray-700">Title:</label>
@@ -78,14 +79,8 @@ export default function Admin() {
                     </div>
                     <div>
                         <label htmlFor="content" className="block text-sm font-medium text-gray-700">Content:</label>
-                        <textarea
-                            id="content"
-                            value={content}
-                            onChange={(e) => setContent(e.target.value)}
-                            required
-                            className=" text-black mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                            rows="4"
-                        />
+
+                        <QuillEditor value={content} onChange={setContent} />
                     </div>
                     <div>
                         <label htmlFor="img" className="block text-sm font-medium text-gray-700">Image:</label>

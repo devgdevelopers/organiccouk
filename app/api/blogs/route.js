@@ -97,7 +97,8 @@ export async function GET(req) {
     } else {
         try {
             const posts = await db.collection('blogs').find({}).toArray();
-            return new Response(JSON.stringify({ status: 200, data: posts }), { status: 200 });
+            const count = await db.collection('blogs').countDocuments();
+            return new Response(JSON.stringify({ status: 200, data: posts, count }), { status: 200 });
         } catch (error) {
             return new Response(JSON.stringify({ error: error.message }), { status: 500 });
         }

@@ -63,7 +63,7 @@ export default function page() {
 
           <NavbarContent className="flex gap-5 justify-end link-div-head">
             <NavbarItem>
-              <Link href="/" className=""><i>Home</i></Link>
+              <Link href="/" className="">Home</Link>
             </NavbarItem>
             <NavbarItem>
               <Link href="/products">Products</Link>
