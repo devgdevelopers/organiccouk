@@ -6,6 +6,7 @@ const productcardDataArray = [
     desc: "The ‘ecoHERO’ is a revolutionary accelerated thermophilic aerobic digestion (ATAD) system. It is an energy efficient unit, which digests, stabilises and dries organic waste. Depending on the feedstock, it does this in as little as 24 hours without the help of any enzymes or additives. Unlike our ecoDRYER, it is slow a drier instead uses aerobic conditions.",
     bgClass: "product-card1",
     cardLink: "/products/ecohero",
+    ImgSrc:'/assets/ecohero-loctroi-1.jpg'
   },
   {
     title: "ecoDRYER",
@@ -13,6 +14,7 @@ const productcardDataArray = [
     desc: "The ‘ecoDRYER’ is Organicco’s unique efficient dryer. It uses a combination of hot water and a microwave heating system. It can be configured to suit many applications, including dehydrating high moisture content materials, such as drying digestate for an anaerobic / biogas plant. Unlike the ecoHERO, it does not stablise bioactive materials.",
     bgClass: "product-card2",
     cardLink: "/products/ecodryer",
+      ImgSrc:'/assets/ecodryer.jpg'
   },
   {
     title: "ecoENERGY",
@@ -20,6 +22,7 @@ const productcardDataArray = [
     desc: "Organicco’s ‘ecoENERGY’ is an integrated waste to energy solution. Carefully selected combinations of components are used to construct a reliable and economical answer to organic waste problems, providing a “total solution” for agricultural and commercial purposes. It can be configured with ecoHERO and ecoDRYER units to handle many types of organic waste",
     bgClass: "product-card3",
     cardLink: "/products/ecoenergy",
+      ImgSrc:'/assets/ecoenergy-banner.jpg'
   },
   {
     title: "ecoMAN",
@@ -27,6 +30,7 @@ const productcardDataArray = [
     desc: "Organicco’s ‘ecoENERGY’ is an integrated waste to energy solution. Carefully selected combinations of components are used to construct a reliable and economical answer to organic waste problems, providing a “total solution” for agricultural and commercial purposes. It can be configured with ecoHERO and ecoDRYER units to handle many types of organic waste",
     bgClass: "product-card3",
     cardLink: "/products/ecoman",
+      ImgSrc:'/assets/ecoenergy-banner.jpg'
   },
 ];
 

@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
-import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
+import { Modal, ModalContent, ModalBody, useDisclosure } from "@nextui-org/react";
+import Image from 'next/image';
 
 const VideoPlayer = () => {
     const videoRef = useRef(null);
@@ -60,16 +61,21 @@ const VideoPlayer = () => {
     };
 
     return (
-        <div className="relative w-[100%] lg:w-[50%]">
-            <div onClick={togglePlay}>
-                {!isPlaying && <PlayCircleIcon className="play-icon" />}
+        <div className="relative w-[100%] lg:w-[60%]">
+            <div onClick={togglePlay} className="relative video-container">
+                {!isPlaying && (
+                    <>
+                        <PlayCircleIcon className="play-icon absolute z-10" />
+                        <Image src="/bg-10.jpg" alt="Background" width={100} height={100} className="absolute w-full h-full object-cover z-[-1]" unoptimized />
+                        <div className="overlay absolute w-full h-full z-0"></div>
+                    </>
+                )}
             </div>
-            <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="3xl" backdrop="blur">
+            <Modal isOpen={isOpen} onOpenChange={onOpenChange} size="4xl" backdrop="blur">
                 <ModalContent>
                     {(onClose) => (
                         <>
-                           
-                            <ModalBody >
+                            <ModalBody className=''>
                                 <video
                                     ref={videoRef}
                                     className="react-player bg-none rounded-lg w-full z-20 mx-auto"
@@ -82,7 +88,6 @@ const VideoPlayer = () => {
                                     muted // Mute the video to allow autoplay
                                 />
                             </ModalBody>
-                            
                         </>
                     )}
                 </ModalContent>

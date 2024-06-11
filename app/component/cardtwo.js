@@ -1,9 +1,9 @@
 import Image from 'next/image';
 
-const Card = ({ title, subtitle, desc, bgClass, cardLink }) => {
+const Card = ({ title, subtitle, desc, cardLink,ImgSrc }) => {
   return (
-    <div className={`card ${bgClass}`} >
-      <Image src="/KorahAbraham.jpg" alt={title} layout="fill" className="card-img" />
+    <div className={`card`} >
+      <Image src={ImgSrc} alt={title} layout="fill" className="card-img" />
       <div className="info">
       <h1 className="text-xl ">{title}</h1>
         <p>{subtitle}</p>
