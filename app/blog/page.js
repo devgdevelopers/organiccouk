@@ -12,10 +12,8 @@ export default function Page() {
     Aos.init({
     });
   }, []);
-
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     fetchBlogs();
   }, []);
@@ -32,14 +30,70 @@ export default function Page() {
     }
   };
 
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterSuccess, setNewsletterSuccess] = useState(false);
+  const onNewsletterChangeHandler = (e) => {
+    setNewsletterEmail(e.target.value);
+  };
+
+  const onSubmitNewsletterForm = async (e) => {
+    e.preventDefault();
+
+    const emailError = validateInput("email", newsletterEmail);
+
+    if (!emailError) {
+      setLoading(true);
+      try {
+        const response = await fetch("/api/mail", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: newsletterEmail }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const result = await response.json();
+        if (result.message) {
+          setNewsletterSuccess(true);
+          setNewsletterEmail("");
+        } else {
+          console.error("Failed to subscribe");
+        }
+      } catch (error) {
+        console.error("Error subscribing:", error);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      console.warn("Newsletter submission failed due to errors:", emailError);
+    }
+  };
+
+  const validateInput = (fieldName, value) => {
+    let error = "";
+    switch (fieldName) {
+      case "email":
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          error = "Invalid email format";
+        }
+        break;
+      default:
+        break;
+    }
+    return error;
+  };
 
   return (
     <div className="flex min-h-screen flex-col p-8 items-center justify-start md:mt-[8rem]">
       <h2 className="text-3xl text-purple font-semibold">Blogs</h2>
       {loading ? (
         <div className="flex justify-center items-center h-64 z-30">
-  <div className="loader_ ease-linear rounded-full border-8 border-t-8 border-gray-200 h-12 w-12"></div>
-</div>
+          <div className="loader_ ease-linear rounded-full border-8 border-t-8 border-gray-200 h-12 w-12"></div>
+        </div>
       ) : (
         <div className="p-8 flex justify-center items-center" >
           <div className="flex flex-wrap m-4 ">
@@ -47,7 +101,7 @@ export default function Page() {
               <div key={blog._id} className="p-4 sm:w-[550px] w-[400px] text-center " >
                 <div className="h-full border-2 border-opacity-60 rounded-lg overflow-hidden shadow-md blg_card transition-all ease-in-out duration-300" >
                   <div className="p-6 flex flex-col gap-4 justify-center items-center" >
-                    <img src={blog.img} alt="" height={300} width={300} className="transition-all ease-in-out duration-300"/>
+                    <img src={blog.img} alt="" height={300} width={300} className="transition-all ease-in-out duration-300" />
                     <h2 className="text-2xl font-semibold text-[#2e2e84]">{blog.title}</h2>
                     <p className="leading-relaxed text-gray-700">{blog.shortDesc}</p>
                     <Link href={`/blog/${blog._id}`} className="w-[19rem] inline-flex items-center justify-center rounded-md bg-[#52c42f1f] px-4 py-2 text-sm font-medium text-[#2e2e84] transition-colors duration-300 hover:bg-[#52c42f33] relative bottom-0">
@@ -73,18 +127,22 @@ export default function Page() {
               Join our community and stay connected with Organicco's mission to
               create a greener future.
             </p>
-            <form action="" className="flex my-3 gap-3">
+            <form onSubmit={onSubmitNewsletterForm} className="flex my-3 gap-3">
               <input
                 type="email"
                 placeholder="Your Email"
+                name="newsletterEmail"
                 className="p-3 text-purple w-full newsletter-input rounded-lg"
+                required
+                value={newsletterEmail}
+                onChange={onNewsletterChangeHandler}
               />
-              <button
-                type="submit"
-                className="newsletter-btn bg-green rounded-lg text-white px-10"
-              >
-                Send
+              <button type="submit" className="newsletter-btn bg-green rounded-lg text-white px-10">
+              {loading ? "Sending..." : "Send"}
               </button>
+              {newsletterSuccess && (
+                <p className="success-message text-[green]">Subscription registered!</p>
+              )}
             </form>
           </div>
           <div className="w-[100%] lg:w-[50%] order-1 lg:order-2">

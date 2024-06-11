@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState  } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
@@ -26,11 +26,68 @@ const page = () => {
     }
   };
 
-
-
   useEffect(() => {
     Aos.init({});
   }, []);
+
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [newsletterSuccess, setNewsletterSuccess] = useState(false);
+
+  const onNewsletterChangeHandler = (e) => {
+    setNewsletterEmail(e.target.value);
+  };
+
+  const onSubmitNewsletterForm = async (e) => {
+    e.preventDefault();
+
+    const emailError = validateInput("email", newsletterEmail);
+
+    if (!emailError) {
+      setLoading(true);
+      try {
+        const response = await fetch("/api/mail", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email: newsletterEmail }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const result = await response.json();
+        if (result.message) {
+          setNewsletterSuccess(true);
+          setNewsletterEmail("");
+        } else {
+          console.error("Failed to subscribe");
+        }
+      } catch (error) {
+        console.error("Error subscribing:", error);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      console.warn("Newsletter submission failed due to errors:", emailError);
+    }
+  };
+
+  const validateInput = (fieldName, value) => {
+    let error = "";
+    switch (fieldName) {
+      case "email":
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          error = "Invalid email format";
+        }
+        break;
+      default:
+        break;
+    }
+    return error;
+  };
   return (
     <>
       <section className="flex flex-col  md:mt-[6.5rem] py-10 bg-purple-light">
@@ -95,7 +152,7 @@ const page = () => {
                     <Link
                       href={`/services/${item._id}`}
                       className="text-base uppercase font-bold text-green"
-                      dangerouslySetInnerHTML={{ __html: item.cardHeading}} 
+                      dangerouslySetInnerHTML={{ __html: item.cardHeading }}
                     >
                     </Link>
                     <p className="text-default-500 text-sm text-purple ">
@@ -131,10 +188,22 @@ const page = () => {
               create a greener future.
             </p>
 
-            <form action="" className="flex my-3 gap-3">
-              <input type="email" placeholder="Your Email" className="p-3 text-purple w-full newsletter-input rounded-lg"
+            <form onSubmit={onSubmitNewsletterForm} className="flex my-3 gap-3">
+              <input
+                type="email"
+                placeholder="Your Email"
+                name="newsletterEmail"
+                className="p-3 text-purple w-full newsletter-input rounded-lg"
+                required
+                value={newsletterEmail}
+                onChange={onNewsletterChangeHandler}
               />
-              <button type="submit" className="newsletter-btn bg-green rounded-lg text-white px-10"> Send</button>
+              <button type="submit" className="newsletter-btn bg-green rounded-lg text-white px-10">
+              {loading ? "Sending..." : "Send"}
+              </button>
+              {newsletterSuccess && (
+                <p className="success-message text-[green]">Subscription registered!</p>
+              )}
             </form>
           </div>
           <div className="w-[100%] lg:w-[50%] order-1 lg:order-2">
