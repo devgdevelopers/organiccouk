@@ -167,7 +167,7 @@ export default function Page() {
           </div>
           <div className="p-5 w-[100%] lg:w-[40%] mx-auto text-white form-contact-div bg-white my-auto">
             <form onSubmit={onSubmitContactForm} className="text-white mx-auto p-3 w-[100%] ">
-              <h4 className="text-2xl font-bold text-purple mb-10">
+              <h4 className="text-2xl font-bold tex   t-purple mb-10">
                 Send a message
               </h4>
               <div className="w-[50%] inline">

@@ -110,6 +110,95 @@ export default function Home() {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
   // init Swiper:
+  const [contactData, setContactData] = useState({
+    name: "",
+    email: "",
+    message: "",
+    phoneNum: "",
+    errors: {},
+  });
+  const [loading, setLoading] = useState(false);
+  const [contactSuccess, setContactSuccess] = useState(false);
+  const onContactChangeHandler = (e) => {
+    const { name, value } = e.target;
+    const error = validateInput(name, value);
+    setContactData((prev) => ({
+      ...prev,
+      [name]: value,
+      errors: { ...prev.errors, [name]: error },
+    }));
+  };
+  const onSubmitContactForm = async (e) => {
+    e.preventDefault();
+    const { name, email, message, phoneNum, errors } = contactData;
+
+    const nameError = validateInput("name", name);
+    const emailError = validateInput("email", email);
+    const phoneNumError = validateInput("phoneNum", phoneNum);
+    const messageError = validateInput("message", message);
+
+    const hasErrors = nameError || emailError || phoneNumError || messageError;
+
+    if (!hasErrors) {
+      setLoading(true);
+      try {
+        const response = await fetch("/api/mail", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, phoneNum, message }),
+        });
+
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const result = await response.json();
+        if (result.message) {
+          setContactSuccess(true);
+          setContactData({
+            name: "",
+            email: "",
+            phoneNum: "",
+            message: "",
+            errors: {},
+          });
+        } else {
+          console.error("Failed to send email");
+        }
+      } catch (error) {
+        console.error("Error submitting form:", error);
+      } finally {
+        setLoading(false);
+      }
+    } else {
+      console.warn("Form submission failed due to errors:", errors);
+    }
+  };
+  const validateInput = (fieldName, value) => {
+    let error = "";
+    switch (fieldName) {
+      case "name":
+        if (!value) {
+          error = "Name is required";
+        }
+        break;
+      case "email":
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+          error = "Invalid email format";
+        }
+        break;
+      case "message":
+        if (value.length < 10) {
+          error = "Message must be at least 10 characters long";
+        }
+        break;
+      default:
+        break;
+    }
+    return error;
+  };
 
   return (
     <>
@@ -154,9 +243,9 @@ export default function Home() {
             ))}
           </Slider>
           <div className="my-auto w-full lg:w-[40%] flex justify-end absolute top-1/2 right-0 z-10 banner-form-div">
-          
-           <Zoom>
-           <form className="bg-white shadow-lg pt-2 pb-6 px-7 ">
+
+            <Zoom>
+              <form onSubmit={onSubmitContactForm} className="bg-white shadow-lg pt-2 pb-6 px-7 ">
                 <p className="text-xl mt-5 text-green">send a message</p>
                 <h1 className="text-3xl mb-6 font-bold text-purple">
                   Request a call back
@@ -168,7 +257,13 @@ export default function Home() {
                     id="Name"
                     type="text"
                     placeholder="Name"
+                    name="name"
+                    value={contactData.name}
+                    onChange={onContactChangeHandler}
                   />
+                  {contactData.errors.name && (
+                    <p className="error-message text-[red]">{contactData.errors.name}</p>
+                  )}
                 </div>
                 <div className="mb-4">
                   <input
@@ -176,7 +271,14 @@ export default function Home() {
                     id="Email"
                     type="email"
                     placeholder="Email"
+                    name="email"
+                    required
+                    value={contactData.email}
+                    onChange={onContactChangeHandler}
                   />
+                  {contactData.errors.email && (
+                    <p className="error-message text-[red]">{contactData.errors.email}</p>
+                  )}
                 </div>
                 <div className="mb-4">
                   <input
@@ -184,6 +286,10 @@ export default function Home() {
                     id="Phone"
                     type="tel"
                     placeholder="Phone Number"
+                    name="phoneNum"
+                    required
+                    value={contactData.phoneNum}
+                    onChange={onContactChangeHandler}
                   />
                 </div>
                 <div className="mb-6">
@@ -192,7 +298,14 @@ export default function Home() {
                     id="message"
                     type="text"
                     placeholder="How can we help you ?"
+                    name="message"
+                    required
+                    value={contactData.message}
+                    onChange={onContactChangeHandler}
                   />
+                  {contactData.errors.message && (
+                    <p className="error-message text-[red]">{contactData.errors.message}</p>
+                  )}
                 </div>
                 <div className="flex">
                   <input
@@ -200,6 +313,7 @@ export default function Home() {
                     name="terms-check "
                     id="TermsCheck"
                     className=""
+                    required
                   />
                   <label htmlFor="terms-check " className="px-3 text-black">
                     I agree to the terms of service.{" "}
@@ -214,8 +328,11 @@ export default function Home() {
                   </label>
                 </div>
                 <div className="flex py-5">
-                  
-   <Button text="Get A Quote" />
+
+                  <Button text="Get A Quote" />
+                  {contactSuccess && (
+                <p className="success-message text-[green] pl-3">Message sent successfully!</p>
+              )}
                   {/* <button
                     className="w-full news-blog-btn mt-5  bg-green text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline news-blog-btn"
                     type="button"
@@ -224,8 +341,8 @@ export default function Home() {
                   </button> */}
                 </div>
               </form>
-           
-           </Zoom>
+
+            </Zoom>
           </div>
         </section>
 
@@ -290,9 +407,9 @@ export default function Home() {
                 </div>
               </Zoom>
 
-           <Zoom triggerOnce>
-           <div className="relative">
-                
+              <Zoom triggerOnce>
+                <div className="relative">
+
                   <Image
                     src="/uk-house-solar.webp"
                     width={100}
@@ -301,43 +418,43 @@ export default function Home() {
                     className="w-3/4 md:absolute right-0"
                     unoptimized
                   ></Image>
-               
-              </div>
-              <div className="p-5 ">
-                <p className="m-0 p-0 mb-4 text-justify">
-                  <i>
-                    Our business offers affordable technology for solving
-                    escalating food security problems. The main focus
-                    concentrates on decarbonisation whilst reducing costs and
-                    providing environmental benefits for all.
-                  </i>
-                </p>
-                <p className="mb-4 text-justify">
-                  <i>
-                    This has been achieved with the continuous development of
-                    Organicco’s closed-loop solution where we waste nothing.
-                    Depending on the input material our technologies convert
-                    organic waste into other useful resources, such as
-                    fertiliser, animal feed, animal protein meal, electricity,
-                    heat, steam, grey water, fuel, and compressed CO2 i.e., the
-                    input material is recycled into a commodity with financial
-                    value.
-                  </i>
-                </p>
-                <h3 className="text-xl my-4 text-green font-bold">
-                  Empowering Businesses
-                </h3>
-                <p className="text-justify">
-                  Organicco provides solutions for empowering businesses to
-                  divert waste away from expensive traditional disposal options
-                  whilst helping them meet their net-zero targets. Organicco has
-                  specifically designed a range of products to convert waste
-                  into natural assets.
-                </p>
-              </div>
-           </Zoom>
+
+                </div>
+                <div className="p-5 ">
+                  <p className="m-0 p-0 mb-4 text-justify">
+                    <i>
+                      Our business offers affordable technology for solving
+                      escalating food security problems. The main focus
+                      concentrates on decarbonisation whilst reducing costs and
+                      providing environmental benefits for all.
+                    </i>
+                  </p>
+                  <p className="mb-4 text-justify">
+                    <i>
+                      This has been achieved with the continuous development of
+                      Organicco’s closed-loop solution where we waste nothing.
+                      Depending on the input material our technologies convert
+                      organic waste into other useful resources, such as
+                      fertiliser, animal feed, animal protein meal, electricity,
+                      heat, steam, grey water, fuel, and compressed CO2 i.e., the
+                      input material is recycled into a commodity with financial
+                      value.
+                    </i>
+                  </p>
+                  <h3 className="text-xl my-4 text-green font-bold">
+                    Empowering Businesses
+                  </h3>
+                  <p className="text-justify">
+                    Organicco provides solutions for empowering businesses to
+                    divert waste away from expensive traditional disposal options
+                    whilst helping them meet their net-zero targets. Organicco has
+                    specifically designed a range of products to convert waste
+                    into natural assets.
+                  </p>
+                </div>
+              </Zoom>
               <div className="relative">
-                <Zoom  triggerOnce>
+                <Zoom triggerOnce>
                   <Image
                     src="/uk-house-solar1.jpg"
                     width={100}
@@ -476,7 +593,7 @@ export default function Home() {
                 >
                   Learn More
                 </a> */}
-                <Button text="Learn More"/>
+                <Button text="Learn More" />
               </div>
               <div className=" w-full lg:w-[120%]">
                 <Accordion defaultExpandedKeys={["1"]} variant="splitted">
@@ -485,16 +602,14 @@ export default function Home() {
                     aria-label="Accordion 1"
                     title={
                       <span
-                        className={`${
-                          activeItem === "1" ? "text-black" : "text-green"
-                        }`}
+                        className={`${activeItem === "1" ? "text-black" : "text-green"
+                          }`}
                       >
                         What is organicco?
                       </span>
                     }
-                    className={`outline-none ${
-                      activeItem === "1" ? "bg-green " : ""
-                    }`}
+                    className={`outline-none ${activeItem === "1" ? "bg-green " : ""
+                      }`}
                   >
                     {defaultContent}
                   </AccordionItem>
@@ -503,9 +618,8 @@ export default function Home() {
                     aria-label="Accordion 2"
                     title={
                       <span
-                        className={`${
-                          activeItem === "2" ? "text-black" : "text-green"
-                        }`}
+                        className={`${activeItem === "2" ? "text-black" : "text-green"
+                          }`}
                       >
                         Who we Are?
                       </span>
@@ -519,9 +633,8 @@ export default function Home() {
                     aria-label="Accordion 3"
                     title={
                       <span
-                        className={`${
-                          activeItem === "3" ? "text-black" : "text-green"
-                        }`}
+                        className={`${activeItem === "3" ? "text-black" : "text-green"
+                          }`}
                       >
                         What we Do?
                       </span>
@@ -535,9 +648,8 @@ export default function Home() {
                     aria-label="Accordion 4"
                     title={
                       <span
-                        className={`${
-                          activeItem === "4" ? "text-black" : "text-green"
-                        }`}
+                        className={`${activeItem === "4" ? "text-black" : "text-green"
+                          }`}
                       >
                         How we Do?
                       </span>
