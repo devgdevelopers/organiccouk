@@ -1,11 +1,14 @@
 "use client"
 
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation'; 
+import { useRouter, useSearchParams } from 'next/navigation'; 
 import Image from 'next/image';
 
 const BlogPost = () => {
+
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const id = searchParams.get("id");
     const [blog, setBlog] = useState(null);
 
     useEffect(() => {
