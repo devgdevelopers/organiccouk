@@ -134,7 +134,7 @@ const ProductPage = ({ params }) => {
     return (
         <div>
             <Suspense fallback={<div>Loading...</div>}>
-            <UserProfile productId={id} /></Suspense>
+            <ServicePost productId={id} /></Suspense>
         </div>
     )
 }
