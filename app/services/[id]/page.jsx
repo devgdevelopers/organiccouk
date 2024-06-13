@@ -114,9 +114,7 @@ import ServicePost from '../../component/ServicePost'
 const fetchProducts = async () => {
     // Mock data
     return [
-        { id: '1' },
-        { id: '2' },
-        { id: '3' }
+
     ]
 }
 
