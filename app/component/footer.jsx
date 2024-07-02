@@ -46,7 +46,7 @@ const footer = () => {
               <Link href="/products/ecoman"><em>eco</em>Man</Link>
             </ul>
           </div>
-          <div className=" flex flex-col md:gap-y-3 w-full items-center">
+          <div className=" flex flex-col md:gap-y-3 w-full items-center md:items-start">
             <h2 className="text-[22px] text-white font-bold  mt-6 md:mt-0">Services</h2>
             <ul className="flex flex-col gap-y-3">
               <Link href="/services/odour_control">Odour Control</Link>
@@ -55,7 +55,7 @@ const footer = () => {
               <Link href="/services/consultancy">Consultancy</Link>
             </ul>
           </div>
-          <div className="flex flex-col md:gap-y-3 md:mt-[-90px] w-full items-center">
+          <div className="flex flex-col md:gap-y-3 md:mt-[-90px] w-full items-center md:items-start">
             <h2 className="text-[22px] text-white font-bold  mt-6 md:mt-0">Resources</h2>
             <ul className="flex flex-col gap-y-3">
               <Link href="/news">News</Link>
