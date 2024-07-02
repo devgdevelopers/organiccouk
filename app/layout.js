@@ -13,6 +13,7 @@ import HeaderBg from "./component/headerbg";
 import { AuthProvider } from '../helpers/AuthContext'
 import { Toaster } from 'react-hot-toast';
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
@@ -23,13 +24,14 @@ export default function RootLayout({ children }) {
         <link rel="stylesheet" href="/custom.css" />
       </head>
       <body className={inter.className} suppressHydrationWarning >
-      <AuthProvider>
-        <Analytics />
-        <SpeedInsights />
+       <AuthProvider>
+          <Analytics />
+          <SpeedInsights />
 
           <NextUIProvider>
 
-            {pathname === '/' ? <HomeHeader /> : <HeaderBg />}
+            {/* {pathname === '/' ? <HomeHeader /> : <HeaderBg />} */}
+            <HeaderBg />
 
             {children}
             <footer>
@@ -37,8 +39,12 @@ export default function RootLayout({ children }) {
             </footer>
           </NextUIProvider>
         </AuthProvider>
+
         <Toaster />
+
+
       </body>
+
     </html>
   );
 }

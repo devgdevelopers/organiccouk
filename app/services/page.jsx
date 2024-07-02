@@ -7,6 +7,7 @@ import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { SinglePageServicesData } from "/public/assets/data";
 import Aos from 'aos';
 import 'aos/dist/aos.css'
+import { FaArrowRight } from "react-icons/fa6";
 
 const page = () => {
 

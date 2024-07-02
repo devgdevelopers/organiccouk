@@ -1,0 +1,56 @@
+.card_container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.ca_rd {
+    position: relative;
+    width: 24%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    height: 509px;
+    width: 332px;
+    /* Added height */
+}
+
+.hovered {
+
+}
+
+.hidden_card {
+    width: 24%;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    height: 509px;
+    width: 332px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.card_container.expanded .ca_rd,
+.card_container.expanded .hidden_card {
+
+}
+
+
+.cur__sor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px; /* adjust the size to your liking */
+    height: 20px;
+    border-radius: 50%;
+    pointer-events: none;
+    background-color: #fff;
+  }
+
+
+.card_content,
+.hidden_card_content {
+    height: 100%;
+    /* Ensure content fills the card */
+}
