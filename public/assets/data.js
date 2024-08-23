@@ -91,18 +91,15 @@ const BlogscardDataArray = [
 
 const BannerSlidesData = [
   {
-    heading: "Completing the food cycle!",
-    desc: "We specialise in solving organic & food waste problems by converting waste into valuable resources.",
+   
     bgClass: "hero-banner2",
   },
   {
-    heading: "Inventing affordable organic waste management",
-    desc: "  Organicco is an innovative and modern biotechnology company.",
+   
     bgClass: "hero-banner1",
   },
   {
-    heading: "Efficient dryer technology ",
-    desc: "Using our innovative rotary drum design.",
+   
     bgClass: "hero-banner3",
   },
 ];

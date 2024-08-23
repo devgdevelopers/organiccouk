@@ -1,222 +1,176 @@
-"use client"
+"use client";
+import React from "react";
 
-import React, { useEffect, useState } from "react";
+import Slider from "react-slick";
 import Link from "next/link";
 import Image from "next/image";
-import { Card, CardHeader, CardBody } from "@nextui-org/react";
-import { SinglePageServicesData } from "/public/assets/data";
-import Aos from 'aos';
-import 'aos/dist/aos.css'
-import { FaArrowRight } from "react-icons/fa6";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const page = () => {
-
-  const [products_, setProducts_] = useState([]);
-
-  useEffect(() => {
-    fetchBlogs();
-  }, []);
-
-  const fetchBlogs = async () => {
-    try {
-      const response = await fetch('/api/services');
-      const data = await response.json();
-      setProducts_(data.data);
-    } catch (error) {
-      console.error('Fetch error:', error);
-    }
+const servicesSettings = {
+    dots: true,
+    arrows: false,
+    infinite: false,
+    margin: 10,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
   };
 
-  useEffect(() => {
-    Aos.init({});
-  }, []);
-
-  const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [newsletterSuccess, setNewsletterSuccess] = useState(false);
-
-  const onNewsletterChangeHandler = (e) => {
-    setNewsletterEmail(e.target.value);
-  };
-
-  const onSubmitNewsletterForm = async (e) => {
-    e.preventDefault();
-
-    const emailError = validateInput("email", newsletterEmail);
-
-    if (!emailError) {
-      setLoading(true);
-      try {
-        const response = await fetch("/api/mail", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email: newsletterEmail }),
-        });
-
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-
-        const result = await response.json();
-        if (result.message) {
-          setNewsletterSuccess(true);
-          setNewsletterEmail("");
-        } else {
-          console.error("Failed to subscribe");
-        }
-      } catch (error) {
-        console.error("Error subscribing:", error);
-      } finally {
-        setLoading(false);
-      }
-    } else {
-      console.warn("Newsletter submission failed due to errors:", emailError);
-    }
-  };
-
-  const validateInput = (fieldName, value) => {
-    let error = "";
-    switch (fieldName) {
-      case "email":
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-          error = "Invalid email format";
-        }
-        break;
-      default:
-        break;
-    }
-    return error;
-  };
   return (
     <>
-      <section className="flex flex-col  md:mt-[6.5rem] py-10 bg-purple-light">
-        <div className="container mx-auto">
-          <h2 className=" text-center text-2xl text-purple font-semibold">
-            Our Services
-          </h2>
-          <div className=" pt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 justify-center mx-auto text-black" data-aos="fade-right" data-aos-duration="600">
-            {SinglePageServicesData.map((item, id) => {
-              return (
-                <Card key={id} className="group overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl sm:h-[450px] h-[500px]">
-                  <CardHeader className="">
-                    <Image
-                      alt="Card background"
-                      className="w-full"
-                      src={item.titleImage}
-                      width={100}
-                      height={100}
-                      unoptimized
-                    />
-                  </CardHeader>
-                  <CardBody className="overflow-visible py-2">
-                    <Link
-                      href={`/services/${item.link}`}
-                      className="text-base uppercase font-bold text-green"
-                    >
-                      {item.title}
-                    </Link>
-                    <p className="text-default-500 text-sm text-purple ">
-                      <em>{item.subtitle}</em>
-                    </p>
-                    <p className="text-justify text-sm my-3">
-                      {item.servicesDesc}
-                    </p>
-                    <Link
-                      href={`/services/${item.link}`}
-                      className="inline-flex items-center rounded-md bg-[#52c42f1f] px-4 py-2 text-sm font-medium text-[#2e2e84] transition-colors duration-300 hover:bg-[#52c42f33] services_link"
-                    >
-                      Read More
-                    </Link>
-                  </CardBody>
-                </Card>
-              );
-            })}
+      <section className="w-full bg-[#EBF1ED]">
+        <div className="container mx-auto py-16">
+          <p className="text-[20px] text-green uppercase font-semibold text-center">
+            Discover Our
+          </p>
 
+          <h3 className="text-[44px] font-bold text-center ">
+            Featured Services
+          </h3>
+          <p className="text-[20px] text-center text-[#7E8287]">
+            At Organicco, we pride ourselves on providing cutting-edge solutions
+            that empower businesses <br /> and farmers to operate more
+            sustainably.
+          </p>
 
-
-            {products_.map((item) => {
-              return (
-                <Card key={item._id} className="group overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl sm:h-[450px] h-[500px]">
-                  <CardHeader className="">
-                    <Image
-                      alt="Card background"
-                      className="w-full"
-                      src={item.cardImg}
-                      width={100}
-                      height={100}
-                      unoptimized
-                    />
-                  </CardHeader>
-                  <CardBody className="overflow-visible py-2">
-                    <Link
-                      href={`/services/${item._id}`}
-                      className="text-base uppercase font-bold text-green"
-                      dangerouslySetInnerHTML={{ __html: item.cardHeading }}
-                    >
-                    </Link>
-                    <p className="text-default-500 text-sm text-purple ">
-                      <em>{item.cardSubHeading}</em>
-                    </p>
-                    <p className="text-justify text-sm my-3">
-                      {item.cardDesc}
-                    </p>
-                    <Link
-                      href={`/services/${item._id}`}
-                      className="inline-flex items-center rounded-md bg-[#52c42f1f] px-4 py-2 text-sm font-medium text-[#2e2e84] transition-colors duration-300 hover:bg-[#52c42f33] services_link"
-                    >
-                      Read More
-                    </Link>
-                  </CardBody>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-10">
-        <div className="container mx-auto flex flex-col md:flex-row p-3">
-          <div className="w-[100%] lg:w-[50%] my-auto mx-auto order-2 lg:order-1">
-            <h2 className="text-xl font-semibold text-purple lg:text-left text-center">
-              Stay Informed with Our Newsletter
-            </h2>
-            <p className=" font-normal text-green my-4 lg:text-left text-justify">
-              Subscribe to our newsletter and be the first to hear about our
-              latest innovations, industry insights, and sustainability tips.
-              Join our community and stay connected with Organicco's mission to
-              create a greener future.
-            </p>
-
-            <form onSubmit={onSubmitNewsletterForm} className="flex my-3 gap-3">
-              <input
-                type="email"
-                placeholder="Your Email"
-                name="newsletterEmail"
-                className="p-3 text-purple w-full newsletter-input rounded-lg"
-                required
-                value={newsletterEmail}
-                onChange={onNewsletterChangeHandler}
-              />
-              <button type="submit" className="newsletter-btn bg-green rounded-lg text-white px-10">
-              {loading ? "Sending..." : "Send"}
-              </button>
-              {newsletterSuccess && (
-                <p className="success-message text-[green]">Subscription registered!</p>
-              )}
-            </form>
-          </div>
-          <div className="w-[100%] lg:w-[50%] order-1 lg:order-2">
-            <Image
-              className="w-[100%] mx-auto"
-              src="/assets/newsletter.png"
-              width={100}
-              height={100}
-              alt="newsletter"
-              unoptimized
-            ></Image>
-          </div>
+          <Slider
+            {...servicesSettings}
+            className="container my-10 mx-auto services-section "
+          >
+            <div className=" max-w-[416px] bg-white transition-all product-card mx-auto">
+              <div className="relative overflow-hidden">
+                <Image
+                  src="/assets/service1.png"
+                  width={300}
+                  height={300}
+                  alt="Product Image"
+                  className=" w-full h-[250px] transition-all"
+                  unoptimized
+                ></Image>
+                <div className="bg-green text-white rounded-l-full w-fit absolute right-0 bottom-5 px-10 py-3 flex justify-center items-center">
+                  <p className="text-[20px] font-semibold m-0 p-0">
+                    Odour Control
+                  </p>
+                </div>
+              </div>
+              <div className="p-5 flex flex-col gap-3">
+                <h3 className="text-[28px] font-semibold text-green leading-[45px]">
+                  Regenerative Catalyst
+                </h3>
+                <p className="text-[16px] font-open-sans">
+                  We have a range of odour control and management systems based
+                  on wet scrubbers, venturi scrubbers, carbon...
+                </p>
+                <hr />
+                <Link
+                  href="#"
+                  className="text-[16px] font-medium text-green hover:text-green-500"
+                >
+                  View More &gt;
+                </Link>
+              </div>
+            </div>
+            <div className=" max-w-[416px] bg-white product-card transition-all">
+              <div className="relative overflow-hidden">
+                <Image
+                  src="/assets/service2.png"
+                  width={300}
+                  height={300}
+                  alt="Product Image"
+                  className=" w-full h-[250px] transition-all"
+                  unoptimized
+                ></Image>
+                <div className="bg-green text-white rounded-l-full w-fit absolute right-0 bottom-5 px-10 py-3 flex justify-center items-center">
+                  <p className="text-[20px] font-semibold m-0 p-0">
+                    Automation & IoT
+                  </p>
+                </div>
+              </div>
+              <div className="p-5 flex flex-col gap-3">
+                <h3 className="text-[28px] font-semibold text-green leading-[45px]">
+                  Electrical Control Panels
+                </h3>
+                <p className="text-[16px] font-open-sans">
+                  We are mechatronic engineering experts and have more than 15
+                  years of experience of delivering complex electrical
+                  control...
+                </p>
+                <hr />
+                <Link
+                  href="#"
+                  className="text-[16px] font-medium text-green hover:text-green-500"
+                >
+                  View More &gt;
+                </Link>
+              </div>
+            </div>
+            <div className=" max-w-[416px] bg-white product-card transition-all">
+              <div className="relative overflow-hidden">
+                <Image
+                  src="/assets/service3.png"
+                  width={300}
+                  height={300}
+                  alt="Product Image"
+                  className=" w-full h-[250px] transition-all"
+                  unoptimized
+                ></Image>
+                <div className="bg-green text-white rounded-l-full w-fit absolute right-0 bottom-5 px-10 py-3 flex justify-center items-center">
+                  <p className="text-[20px] font-semibold m-0 p-0">Net-zero</p>
+                </div>
+              </div>
+              <div className="p-5 flex flex-col gap-3">
+                <h3 className="text-[28px] font-semibold text-green leading-[30px]">
+                  Organic & food waste management
+                </h3>
+                <p className="text-[16px] font-open-sans">
+                  In today’s business environment, no company can afford to
+                  waste money...
+                </p>
+                <hr />
+                <Link
+                  href="#"
+                  className="text-[16px] font-medium text-green hover:text-green-500"
+                >
+                  View More &gt;
+                </Link>
+              </div>
+            </div>
+            <div className="max-w-[416px] bg-white product-card transition-all">
+              <div className="relative overflow-hidden">
+                <Image
+                  src="/assets/service4.png"
+                  width={300}
+                  height={300}
+                  alt="Product Image"
+                  className=" w-full h-[250px] transition-all"
+                  unoptimized
+                ></Image>
+                <div className="bg-green text-white rounded-l-full w-fit absolute right-0 bottom-5 px-10 py-3 flex justify-center items-center">
+                  <p className="text-[20px] font-semibold m-0 p-0">
+                    Consultancy
+                  </p>
+                </div>
+              </div>
+              <div className="p-5 flex flex-col gap-3">
+                <h3 className="text-[28px] font-semibold text-green leading-[45px]">
+                  FEED & EPC
+                </h3>
+                <p className="text-[16px] font-open-sans ">
+                  Our project development arm offering Engineering, Procurement,
+                  Construction (EPC) and Project Management is a...
+                </p>
+                <hr />
+                <Link
+                  href="#"
+                  className="text-[16px] font-medium text-green hover:text-green-500"
+                >
+                  View More &gt;
+                </Link>
+              </div>
+            </div>
+          </Slider>
         </div>
       </section>
     </>
@@ -224,4 +178,3 @@ const page = () => {
 };
 
 export default page;
-

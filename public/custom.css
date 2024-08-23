@@ -1,116 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=McLaren&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 * {
-  font-family: "Manrope", sans-serif;
+  font-family: "Barlow", sans-serif;
 
 }
-
-.flip-card {
-  background-color: transparent;
-  width: 350px;
-  height: 370px;
-  perspective: 1000px;
-  z-index: 0;
+html {
+  scroll-behavior: smooth;
 }
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-  cursor: pointer;
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  cursor: pointer;
-  backface-visibility: hidden;
-}
-
-.tilted-item {
-  transform: rotate(5deg);
-}
-
-.flip-card-front {
-  color: white;
-
-  /* filter: blur(1px); */
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
+/* header css  */
+ul.h-full.flex-row.flex-nowrap.items-center.data-\[justify\=start\]\:justify-start.data-\[justify\=start\]\:flex-grow.data-\[justify\=start\]\:basis-0.data-\[justify\=center\]\:justify-center.data-\[justify\=end\]\:justify-end.data-\[justify\=end\]\:flex-grow.data-\[justify\=end\]\:basis-0.flex.gap-5.justify-center.link-div-head {
   justify-content: center;
-  align-items: center;
-
+}
+.font-open-sans{
+  color: #7E8287;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
 }
 
-/* .about-text{
-border-left: 6px solid #196901;
-} */
-.product-card1 {
-  background-image: url("./assets/ecohero-loctroi-1.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-
-}
-
-.product-card2 {
-  background-image: url("./assets/ecodryer.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-}
-
-.product-card3 {
-  background-image: url("./assets/ecoenergy-banner.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-
-}
-
-.flip-card-front::before {
-  content: "";
+button.slick-arrow.slick-prev {
+  color: white;
+  z-index: 91;
   position: absolute;
-  top: 0;
-  left: 0;
+  left: 50px;
+  width: 48px;
+  background-color: none;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-family: 'slick';
+  font-size: 40px !important;
+ 
+ }
+
+ button.slick-arrow.slick-next {
+  color: transparent;
+  z-index: 91;
+  position: absolute;
+  right: 50px;
+  width: 48px;
+}
+
+
+.inventory-machine .slick-dots li button:before {
+ 
+  font-size: 82px !important;
+  
+  content: '-';
+  color: #3caa35;
+ 
+}
+.inventory-machine .slick-prev:before {
+  content: '⬅' !important;
+  font-family: none !important;
+  background-color: white;
+  border-radius: 450%;
+  border: none;
+  color: #52c42f;
+  font-size: 60px;
+  font-weight: 900;
+ padding: 10px;
+  cursor: pointer;
+}
+
+.inventory-machine .slick-arrow.slick-prev {
+  color: #3CAA35;
+  z-index: 91;
+  position: absolute;
+  left: 50px;
+  width: 48px;
+  background-color: none;
+}
+
+/* product card section css  */
+.product-card:hover{
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.product-card:hover img{
+  transform: scale(1.1);
+}
+
+
+/* services section css  */
+
+.services-section .slick-track {
+  gap: 10px;
+  display: flex;
+  margin: a;
+}
+
+.services-section .slick-dots li button:before {
+  font-size: 82px !important;
+  content: '-';
+  color: #3caa35;
+}
+
+
+
+/* video section  */
+.video-section-img{
+  background-image: url('./assets/bg-video-img.png');
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.719);
-  opacity: 0.6;
-
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.flip-card-front h1,
-.flip-card-front p {
-  z-index: 2;
-  /* Higher than .flip-card-front z-index */
+/* custom button css  */
+.green-purple-btn {
+  background-color: #3CAA35;
+  color: white;
+  position: relative;
+  
 }
 
-.flip-card-back {
-  background: linear-gradient(to bottom, #52c42f1f, white);
-
-  color: black;
-  transform: rotateY(180deg);
+.green-purple-btn:hover {
+  background-color: #312C85;
 }
 
-/* .footer-section {
-  border-top: 1px solid #19690126;
-} */
+
+.btn-sign {
+  padding-left: 3px;
+  opacity: 0;
+  
+  transition: transform 0.6s ease, opacity 0.6s ease; 
+}
+
+.green-purple-btn:hover .btn-sign {
+  opacity: 1;
+
+  padding-left: 6px;
+  transition: transform 0.6s ease, opacity 0.6s ease; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .blog-card {
   overflow: hidden;
@@ -136,7 +185,7 @@ border-left: 6px solid #196901;
 }
 
 .text-green {
-  color: #388521;
+  color: #3CAA35;
 }
 
 .logo-image {
@@ -144,7 +193,7 @@ border-left: 6px solid #196901;
 }
 
 .bg-green {
-  background-color: #388521;
+  background-color: #3CAA35;
 }
 
 .bg-dark-purple {
@@ -165,16 +214,17 @@ border-left: 6px solid #196901;
 
 .footer-section div ul a {
   font-size: 18px;
-  color: #fff;
-  font-weight: 500;
+ 
+
   transition: 0.3s;
 }
 
 .footer-section div ul a:hover {
   transform: translateX(7px);
+  color: #3CAA35;
 }
 
-.main-hero-slide {
+/* .main-hero-slide {
   position: relative;
   top: 0;
   width: 100%;
@@ -196,7 +246,7 @@ border-left: 6px solid #196901;
   background-color: rgba(0, 0, 0, 0.719);
   opacity: 0.6;
   z-index: 12;
-}
+} */
 
 .main-hero-slide div {
   z-index: 99;
@@ -211,21 +261,21 @@ border-left: 6px solid #196901;
 }
 
 .hero-banner1 {
-  background-image: url("./assets/001.jpg");
+  background-image: url("./assets/banner-1.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
 .hero-banner2 {
-  background-image: url("./002.jpg");
+  background-image: url("./assets/banner-2.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
 }
 
 .hero-banner3 {
-  background-image: url("./assets/001.jpg");
+  background-image: url("./assets/banner-3.svg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -271,8 +321,8 @@ border-left: 6px solid #196901;
 }
 
 .link-div-head a {
-  color: white;
-  font-size: 20px;
+  
+  font-size: 18px;
 }
 
 .link-div-head-bg {
@@ -1197,3 +1247,6 @@ header.sticky nav header {
   pointer-events: none;
   background-color: #fff;
 }
+
+
+
