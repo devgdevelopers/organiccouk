@@ -65,7 +65,7 @@ export default function page() {
         </div>
       </div>
 
-      <header className="sticky top-0 left-0 z-50 w-full bg-white h-[100px]">
+      <header className="sticky top-0 left-0 z-50 w-full bg-white h-[100px] shadow-lg">
         <Navbar className="hidden md:flex justify-center mx-auto   container py-5 main-nav">
           <NavbarContent className="text-white">
             <NavbarBrand className="">

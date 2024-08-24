@@ -33,6 +33,16 @@ export default function Home() {
     autoplaySpeed: 5000,
     centerPadding: "20px",
     pauseOnHover: false,
+    responsive:[
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+        }
+      }
+    ]
   };
 
 
@@ -43,6 +53,16 @@ export default function Home() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    responsive:[
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+        }
+      }
+    ]
   };
   var servicesSettings = {
     dots: true,
@@ -73,18 +93,18 @@ export default function Home() {
           </Slider>
 
           <div
-            style={{ transform: "translate(-10%,30%)" }}
-            className="absolute w-full top-10"
+            
+            className="absolute w-full top-0 p-4 translate-y-[20%]  sm:translate-y-[30%] xl:translate-x-[-10%] lg:translate-y-[30%]"
           >
-            <div className="banner-text w-1/2 mx-auto my-auto flex flex-col justify-center gap-3 ">
+            <div className="banner-text w-full xl:w-1/2 mx-auto my-auto flex flex-col justify-center gap-3 ">
               <p className="text-white text-[20px] font-semibold uppercase ">
                 Welcome to Organicco
               </p>
               <h2
-                style={{ lineHeight: "95px" }}
-                className="text-[95px] font-bold text-white "
+                
+                className="text-[50px] leading-[55px] xl:text-[95px] font-bold text-white xl:leading-[95px]"
               >
-                Affordable <br /> Organic Waste <br /> Management
+                Affordable <br className="hidden xl:block" /> Organic Waste <br className="hidden xl:block" /> Management
               </h2>
 
               <p className="text-[22px] text-white mb-5 font-normal">
@@ -106,11 +126,10 @@ export default function Home() {
                   Introduction
                 </p>
                 <h3
-                  style={{ lineHeight: "40px" }}
-                  className="text-[44px] text-black font-bold "
+                  className="text-[44px] text-black font-bold leading-[40px] my-5 "
                 >
-                  The most advanced organic <br /> waste and food waste
-                  recycling <br /> solution in the world.
+                  The most advanced organic <br className="hidden lg:block" /> waste and food waste
+                  recycling <br className="hidden lg:block" /> solution in the world.
                 </h3>
                 <p className="text-[20px]">
                   Organicco is an innovative and modern biotechnology company
@@ -125,7 +144,7 @@ export default function Home() {
                   environmental benefits for all.
                 </p>
 
-                <div className="flex justify-between mt-5">
+                <div className="flex justify-between my-10 lg:mt-5">
                   <div className="flex flex-col gap-2">
                     <Image
                       src="/assets/intro-icon1.svg"
@@ -133,12 +152,12 @@ export default function Home() {
                       height={100}
                       alt="icon1"
                     ></Image>
-                    <p className="font-semibold text-[20px] leading-6">
-                      Enabling the <br /> transition.
+                    <p className="font-semibold text-[16px] lg:text-[20px] leading-3 lg:leading-6 ">
+                      Enabling the <br className="hidden lg:block" /> transition.
                     </p>
                   </div>
 
-                  <hr className="w-[2px] flex bg-[#C2C2C2] h-full" />
+                  <hr className="w-[2px]  bg-[#C2C2C2] h-full hidden  lg:block" />
                   <div className="flex flex-col gap-2">
                     <Image
                       src="/assets/intro-icon2.svg"
@@ -146,11 +165,11 @@ export default function Home() {
                       height={100}
                       alt="icon1"
                     ></Image>
-                    <p className="font-semibold text-[20px] leading-6">
+                    <p className="font-semibold text-[16px] lg:text-[20px] leading-3 lg:leading-6">
                       Collaborate with 149MKM <br /> based in Alberta.
                     </p>
                   </div>
-                  <hr className="w-[2px] flex bg-[#C2C2C2] h-full" />
+                  <hr className="w-[2px] flex bg-[#C2C2C2] h-full hidden  lg:block" />
 
                   <div className="flex flex-col gap-2">
                     <Image
@@ -159,7 +178,7 @@ export default function Home() {
                       height={100}
                       alt="icon1"
                     ></Image>
-                    <p className="font-semibold text-[20px] leading-6">
+                    <p className="font-semibold text-[16px] lg:text-[20px] leading-3 lg:leading-6">
                       10+ year’s of research <br /> and development
                     </p>
                   </div>
@@ -198,11 +217,11 @@ export default function Home() {
         </section>
 
         {/* inventory display section */}
-        <section className="w-full  inventory-machine pb-20">
+        <section className="w-full  inventory-machine pb-20 my-20 lg:my-4">
           <div className=" mx-auto">
             <Slider {...InventorySettings} className="w-[70%] mx-auto">
               <div className="  bg-[#EBF1ED] p-10">
-                <div className="flex justify-center gap-10">
+                <div className="flex justify-center gap-10 flex-col md:flex-row">
                   <div className="">
                     <Image
                       src="/assets/machine1.png"
@@ -217,7 +236,7 @@ export default function Home() {
                     <p className="text-[20px] font-semibold uppercase text-green">
                       Lorem Ipsum
                     </p>
-                    <h3 className="text-[44px] font-bold text-black leading-[45px]">
+                    <h3 className="text-[30px] md:text-[44px] font-bold text-black leading-[36px] md:leading-[45px]">
                       Inventing affordable <br /> organic waste <br />{" "}
                       management
                     </h3>
@@ -230,7 +249,7 @@ export default function Home() {
               </div>
 
               <div className="  bg-[#EBF1ED] p-10">
-                <div className="flex justify-center gap-10">
+                <div className="flex justify-center gap-10 flex-col md:flex-row">
                   <div className="">
                     <Image
                       src="/assets/machine2.png"
@@ -245,7 +264,7 @@ export default function Home() {
                     <p className="text-[20px] font-semibold uppercase text-green">
                       Lorem Ipsum
                     </p>
-                    <h3 className="text-[44px] font-bold text-black leading-[45px]">
+                    <h3 className="text-[30px] md:text-[44px] font-bold text-black leading-[45px]">
                       Efficient dryer <br /> technology
                     </h3>
                     <p className="text-[16px] font-medium">
@@ -256,7 +275,7 @@ export default function Home() {
               </div>
 
               <div className="  bg-[#EBF1ED] p-10">
-                <div className="flex justify-center gap-10">
+                <div className="flex justify-center gap-10 flex-col md:flex-row">
                   <div className="">
                     <Image
                       src="/assets/machine3.png"
@@ -271,8 +290,8 @@ export default function Home() {
                     <p className="text-[20px] font-semibold uppercase text-green">
                       Lorem Ipsum
                     </p>
-                    <h3 className="text-[44px] font-bold text-black leading-[45px]">
-                      Completing the food <br /> cycle!
+                    <h3 className="text-[30px] md:text-[44px] font-bold text-black leading-[45px]">
+                      Completing the food <br className="hidden md:flex" /> cycle!
                     </h3>
                     <p className="text-[16px] font-medium">
                       We specialise in solving the organic & food <br /> waste
@@ -289,13 +308,13 @@ export default function Home() {
         {/* products section  */}
         <section className="w-full bg-[#EBF1ED] ">
           <div className="container mx-auto py-20">
-           <div className=" pl-[100px]">
-           <p className="text-[20px] text-green uppercase font-semibold">
+           <div className="p-0 lg:pl-[100px]">
+           <p className="text-[20px] text-green uppercase font-semibold text-center lg:text-left">
               Discover Our
             </p>
-            <h3 className="text-[44px] font-bold">Featured Products</h3>
+            <h3 className="text-[44px] font-bold text-center lg:text-left">Featured Products</h3>
            </div>
-            <div className="flex flex-col justify-center lg:flex-row gap-10 my-10">
+            <div className="flex flex-col lg:flex-row justify-center items-center gap-10 my-10">
               <div className=" max-w-[416px] bg-white transition-all product-card">
                 <div className="relative overflow-hidden">
                   <Image
@@ -566,7 +585,7 @@ export default function Home() {
 
         {/* fixed button section  */}
 
-        <div className="my-auto fixed -bottom-1  right-20">
+        <div className="my-auto fixed -bottom-1  right-20 z-30">
       <GreenButton href="#lala" text="Contact Us"></GreenButton>
     </div>
 
