@@ -18,6 +18,15 @@ ul.h-full.flex-row.flex-nowrap.items-center.data-\[justify\=start\]\:justify-sta
   font-family: "Open Sans", sans-serif;
 }
 
+
+.banner-section .slick-prev:before {
+  content: '‹';
+  font-size: 90px !important;
+}
+.banner-section .slick-next:before {
+  content: '›';
+  font-size: 90px !important;
+}
 button.slick-arrow.slick-prev {
   color: white;
   z-index: 91;
@@ -50,7 +59,10 @@ button.slick-arrow.slick-prev {
   color: #3caa35;
  
 }
-.inventory-machine .slick-prev:before {
+
+
+.inventory-machine .slick-prev:before 
+ {
   content: '⬅' !important;
   font-family: none !important;
   background-color: white;
@@ -63,14 +75,34 @@ button.slick-arrow.slick-prev {
   cursor: pointer;
 }
 
+.inventory-machine .slick-next:before{
+  content: '➞' !important;
+  font-family: none !important;
+  
+  color: #52c42f;
+  font-size: 60px;
+  font-weight: 900;
+ padding: 10px;
+  cursor: pointer;
+}
+
 .inventory-machine .slick-arrow.slick-prev {
   color: #3CAA35;
   z-index: 91;
   position: absolute;
-  left: 50px;
+  left: -110px;
   width: 48px;
   background-color: none;
 }
+
+
+.inventory-machine .slick-arrow.slick-next{
+  color: #3CAA35;
+      z-index: 91;
+      position: absolute;
+      right: -110px;
+      width: 48px;
+      background-color: none;}
 
 /* product card section css  */
 .product-card:hover{
@@ -81,6 +113,8 @@ button.slick-arrow.slick-prev {
 .product-card:hover img{
   transform: scale(1.1);
 }
+
+
 
 
 /* services section css  */

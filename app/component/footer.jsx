@@ -35,7 +35,7 @@ const footer = () => {
 </section>
 
       <div className="container mx-auto py-10 ">
-        <div className=" grid grid-cols-5 justify-center align-center">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 justify-center align-center">
           <div className="">
             <div>
               <Link href="/">
@@ -127,7 +127,7 @@ const footer = () => {
     </section>
 
     <section className="w-full bg-[#fff] relative z-40">
-       <div className=" container mx-auto text-center  w-full py-3 flex  align-center justify-between gap-3 h-[51px] ">
+       <div className=" container mx-auto text-center  w-full py-3 flex flex-col md:flex-row  align-center justify-between gap-3 ">
        
        <div>
         <Link className="underline text-[#7E8287]" href="">Privacy Policy</Link>
@@ -138,7 +138,7 @@ const footer = () => {
           Copyright ©Organicco Ltd. All rights reserved | 2024
         </p>
        </div>
-        <div className="flex gap-3">
+        <div className="flex gap-3 justify-center">
           <Link href="/"> 
           <InstagramIcon className=" text-green " />
         </Link>

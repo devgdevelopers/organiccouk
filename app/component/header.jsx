@@ -81,26 +81,26 @@ export default function page() {
             </NavbarBrand>
           </NavbarContent>
 
-          <NavbarContent className="flex gap-5 justify-center link-div-head">
+          <NavbarContent className="flex gap-6 justify-center link-div-head">
             <NavbarItem>
-              <Link href="/" className=" font-medium hover:text-green transition-all">
+              <Link href="/" className=" font-medium hover:text-[#3CAA35] transition-all mx-4">
                 Home
               </Link>
             </NavbarItem>
             <NavbarItem>
-              <Link href="/products" className="font-medium">Products</Link>
+              <Link href="/products" className="font-medium mx-4">Products</Link>
             </NavbarItem>
             <NavbarItem>
-              <Link href="/services" className="font-medium">Services</Link>
+              <Link href="/services" className="font-medium mx-4">Services</Link>
             </NavbarItem>
             <NavbarItem>
-              <Link href="/about" className="font-medium">About Us</Link>
+              <Link href="/about" className="font-medium mx-4">About Us</Link>
             </NavbarItem>
           </NavbarContent>
           <NavbarContent className="hidden xl:block gap-5 justify-center">
             <Link
               href="mailto:enquiry@organicco.uk"
-              className="text-[18px] text-[#3CAA35] bg-white p-3 my-auto rounded-xl mx-2 border-1 border-[#3CAA35] "
+              className="text-[18px] text-[#3CAA35] bg-white p-3 my-auto rounded-xl mx-2 border-1 border-[#3CAA35] hover:bg-[#3CAA35] hover:text-[#fff] transition-all"
             >
               <EmailOutlinedIcon className="" /> enquiry@organicco.uk
             </Link> 

@@ -72,6 +72,16 @@ export default function Home() {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
+    responsive:[
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+        }
+      }
+    ]
   };
 
 
@@ -80,8 +90,8 @@ export default function Home() {
     <>
       <main className="flex w-full flex-col items-center bg-white ">
         {/* banner section */}
-        <section className="w-full relative">
-          <Slider {...settingsSlider} className="flex gap-10 ">
+        <section className="w-full relative ">
+          <Slider {...settingsSlider} className="flex gap-10 banner-section ">
             {BannerSlidesData.map((item, id) => (
               <>
                 <div
@@ -91,11 +101,7 @@ export default function Home() {
               </>
             ))}
           </Slider>
-
-          <div
-            
-            className="absolute w-full top-0 p-4 translate-y-[20%]  sm:translate-y-[30%] xl:translate-x-[-10%] lg:translate-y-[30%]"
-          >
+          <div className="absolute w-full top-0 p-4 translate-y-[20%]  sm:translate-y-[30%] xl:translate-x-[-10%] lg:translate-y-[20%]">
             <div className="banner-text w-full xl:w-1/2 mx-auto my-auto flex flex-col justify-center gap-3 ">
               <p className="text-white text-[20px] font-semibold uppercase ">
                 Welcome to Organicco
@@ -219,7 +225,7 @@ export default function Home() {
         {/* inventory display section */}
         <section className="w-full  inventory-machine pb-20 my-20 lg:my-4">
           <div className=" mx-auto">
-            <Slider {...InventorySettings} className="w-[70%] mx-auto">
+            <Slider {...InventorySettings} className="w-[90%] lg:w-[70%] mx-auto">
               <div className="  bg-[#EBF1ED] p-10">
                 <div className="flex justify-center gap-10 flex-col md:flex-row">
                   <div className="">
@@ -420,13 +426,13 @@ export default function Home() {
 
         {/* video section  */}
         <section className="video-section-img ">
-          <div className="container mx-auto py-40">
+          <div className="container mx-auto py-20 lg:py-40">
           <p className="text-[44px] text-white font-bold text-center">
           Organicco Presentation
             </p>
            
-            <p className="text-[20px] text-center text-white my-3 mb-10 leading-8">At Organicco, we are committed to revolutionizing sustainable agriculture and eco-friendly <br /> solutions. Our mission is to deliver innovative products that help farmers and businesses <br /> transition to a more sustainable and environmentally conscious future.</p>
-            <video width="70%" height="240" controls className="mx-auto" poster="/assets/organicco-vid-poster.jpg">
+            <p className="text-[20px] text-center text-white my-3 mb-10 leading-8">At Organicco, we are committed to revolutionizing sustainable agriculture and eco-friendly <br className="hidden lg:block"/> solutions. Our mission is to deliver innovative products that help farmers and businesses <br className="hidden lg:block" /> transition to a more sustainable and environmentally conscious future.</p>
+            <video width="70%" height="240" controls className="mx-auto w-[90%] lg:w-[70%]" poster="/assets/organicco-vid-poster.jpg">
               <source src="/assets/videoSec.mp4" type="video/mp4" />
               <source src="movie.ogg" type="video/ogg" />
               Your browser does not support the video tag.
@@ -449,8 +455,8 @@ export default function Home() {
             At Organicco, we pride ourselves on providing cutting-edge solutions that empower businesses <br /> and farmers to operate more sustainably. 
             </p>
 
-             <Slider {...servicesSettings} className="container my-10 mx-auto services-section ">
-             <div className=" max-w-[416px] bg-white transition-all product-card mx-auto">
+             <Slider {...servicesSettings} className="container my-10 mx-auto services-section flex items-center justify-center ">
+             <div className=" max-w-[416px] bg-white transition-all product-card mx-auto ">
                 <div className="relative overflow-hidden">
                   <Image
                     src="/assets/service1.png"
@@ -482,7 +488,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className=" max-w-[416px] bg-white product-card transition-all">
+              <div className=" max-w-[416px] bg-white product-card transition-all mx-auto">
                 <div className="relative overflow-hidden">
                   <Image
                     src="/assets/service2.png"
@@ -514,7 +520,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className=" max-w-[416px] bg-white product-card transition-all">
+              <div className=" max-w-[416px] bg-white product-card transition-all mx-auto">
                 <div className="relative overflow-hidden">
                   <Image
                     src="/assets/service3.png"
@@ -546,7 +552,7 @@ export default function Home() {
                   </Link>
                 </div>
               </div>
-              <div className="max-w-[416px] bg-white product-card transition-all">
+              <div className="max-w-[416px] bg-white product-card transition-all mx-auto">
                 <div className="relative overflow-hidden">
                   <Image
                     src="/assets/service4.png"
