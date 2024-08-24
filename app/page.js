@@ -323,9 +323,9 @@ export default function Home() {
                   <hr />
                   <Link
                     href="#"
-                    className="text-[16px] font-medium text-green hover:text-green-500"
+                    className="text-[16px] font-medium text-green "
                   >
-                    View More &gt;
+                    View More <span className="btn-sign"> &gt;</span>
                   </Link>
                 </div>
               </div>
